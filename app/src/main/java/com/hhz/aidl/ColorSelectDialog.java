@@ -1,0 +1,125 @@
+package com.hhz.aidl;
+
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface.OnCancelListener;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ColorSelectDialog {
+
+    private static LinearLayout layout;
+    private static Dialog dlg;
+    private static Button cancelBtn;
+    private static int selectPosition = -1;
+    //卡券的颜色
+    private static List<Integer> couponColorRes = new ArrayList<>();
+    //卡券的类型
+    private static List<String> couponType = new ArrayList<>();
+    private static ImageView imageView;
+    private static RelativeLayout rl_select;
+
+    public interface OnColorSelected {
+        void onColorSelected(int position);
+    }
+
+    public ColorSelectDialog() {
+    }
+
+    public static Dialog selectColor(final Context context, final OnColorSelected onColorSelected,
+                                     OnCancelListener cancelListener) {
+        dlg = new Dialog(context, R.style.AlertDialogStyle);
+        dlg.setCanceledOnTouchOutside(false);
+
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        layout = (LinearLayout) inflater.inflate(R.layout.dialog_color_selector, null);
+        final int cFullFillWidth = 10000;
+        layout.setMinimumWidth(cFullFillWidth);
+
+        layout.findViewById(R.id.btn_cancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dlg.dismiss();
+            }
+        });
+        //完成
+        layout.findViewById(R.id.btn_confirm).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (selectPosition == -1) {
+                    Toast.makeText(context, "请选择一个颜色", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                onColorSelected.onColorSelected(selectPosition);
+                dlg.dismiss();
+            }
+        });
+
+        //添加10类优惠券颜色
+        couponColorRes.clear();
+        couponType.clear();
+        for (int i = 1; i <= 10; i++) {
+            couponColorRes.add(CouponColorType.getResID("" + i));
+            couponType.add("" + i);
+        }
+
+        MyGridView mGridView = layout.findViewById(R.id.mgridview);
+        mGridView.setAdapter(new FinalAdapter<Integer>(couponColorRes, couponType, R.layout.item_gridview, new FinalAdapter.OnAdapterListener() {
+            @Override
+            public void bindView(FinalAdapter.FinalViewHolder finalViewHolder, Object content, String tag) {
+                imageView = (ImageView) finalViewHolder.getViewById(R.id.gridview_image);
+                imageView.setImageResource(((Integer) content));
+                rl_select = (RelativeLayout) finalViewHolder.getViewById(R.id.rl_select);
+            }
+        }));
+        mGridView.setNumColumns(5);
+        mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                LogT.w("selectPosition="+selectPosition+";position="+position);
+                if (selectPosition != -1 && selectPosition == position) {
+                    rl_select.setBackgroundResource(R.mipmap.selected);
+                } else {
+                    rl_select.setBackgroundColor(0);
+                }
+                selectPosition = position;
+            }
+        });
+        Window w = dlg.getWindow();
+        WindowManager.LayoutParams lp = w.getAttributes();
+//        lp.x = 0;
+//        final int cMakeBottom = -1000;
+//        lp.y = cMakeBottom;
+        lp.gravity = Gravity.BOTTOM;
+        dlg.onWindowAttributesChanged(lp);
+        if (cancelListener != null)
+            dlg.setOnCancelListener(cancelListener);
+        dlg.setContentView(layout);
+        dlg.show();
+        return dlg;
+    }
+
+//    private static void onClickId(final OnColorSelected onColorSelected, final int whichButton) {
+//        layout.findViewById(whichButton).setOnClickListener(new OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                onColorSelected.onColorSelected(whichButton);
+//                dlg.dismiss();
+//            }
+//        });
+//    }
+
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hhz.aidl.MainActivity">
+
+    <Button
+        android:id="@+id/btn_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Service"/>
+    <Button
+        android:id="@+id/btn_intentservice"
+        android:layout_toRightOf="@+id/btn_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="intentService"/>
+    <Button
+        android:id="@+id/btn_color_select"
+        android:layout_below="@+id/btn_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="color_Select"/>
+    <Button
+        android:id="@+id/btn_coupon_select"
+        android:layout_below="@+id/btn_service"
+        android:layout_toRightOf="@+id/btn_color_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="color_Select"/>
+    <ImageView
+        android:id="@+id/iv_select"
+        android:layout_below="@+id/btn_color_select"
+        android:background="@color/sheetTextClicked"
+        android:layout_margin="10dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+</RelativeLayout>
