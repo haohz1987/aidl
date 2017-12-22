@@ -1,70 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.hhz.aidl.MainActivity">
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btn_service"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="服务"/>
-    <Button
-        android:id="@+id/btn_intentservice"
-        android:layout_toRightOf="@+id/btn_service"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="子线程服务"/>
-    <Button
-        android:id="@+id/btn_color_select"
-        android:layout_below="@+id/btn_service"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="颜色选择器"/>
-    <ImageView
-        android:id="@+id/iv_select"
-        android:layout_below="@+id/btn_intentservice"
-        android:layout_toRightOf="@+id/btn_color_select"
-        android:background="@color/sheetTextClicked"
-        android:layout_margin="10dp"
-        android:layout_width="40dp"
-        android:layout_height="40dp" />
-    <Button
-        android:id="@+id/btn_coupon_select"
-        android:layout_below="@+id/btn_service"
-        android:layout_toRightOf="@+id/iv_select"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="固定列表选择"/>
+        <Button
+            android:id="@+id/btn_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="服务" />
 
-    <TextView
-        android:id="@+id/tv_coupon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-       android:layout_below="@+id/btn_intentservice"
-        android:layout_toRightOf="@+id/btn_coupon_select"
-        android:text="优惠券类型" />
-    <Button
-        android:id="@+id/btn_getOpenId"
-        android:layout_below="@+id/btn_coupon_select"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="获取会员卡信息"/>
-    <Button
-        android:id="@+id/btn_getCoupList"
-        android:layout_below="@+id/btn_coupon_select"
-        android:layout_toRightOf="@+id/btn_getOpenId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="优惠券列表"/>
-    <Button
-        android:id="@+id/btn_getRecord"
-        android:layout_below="@+id/btn_coupon_select"
-        android:layout_toRightOf="@+id/btn_getCoupList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="历史记录"/>
+        <Button
+            android:id="@+id/btn_intentservice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btn_service"
+            android:text="子线程服务" />
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/btn_color_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_service"
+            android:text="颜色选择器" />
+
+        <ImageView
+            android:id="@+id/iv_select"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/btn_intentservice"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@+id/btn_color_select"
+            android:background="@color/sheetTextClicked" />
+
+        <Button
+            android:id="@+id/btn_coupon_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_service"
+            android:layout_toRightOf="@+id/iv_select"
+            android:text="固定列表选择" />
+
+        <TextView
+            android:id="@+id/tv_coupon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_intentservice"
+            android:layout_toRightOf="@+id/btn_coupon_select"
+            android:text="优惠券类型" />
+
+        <Button
+            android:id="@+id/btn_getOpenId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_coupon_select"
+            android:text="获取会员卡信息" />
+
+        <Button
+            android:id="@+id/btn_getCoupList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_coupon_select"
+            android:layout_toRightOf="@+id/btn_getOpenId"
+            android:text="优惠券列表" />
+
+        <Button
+            android:id="@+id/btn_getRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_coupon_select"
+            android:layout_toRightOf="@+id/btn_getCoupList"
+            android:text="历史记录" />
+
+        <TextView
+            android:id="@+id/tv_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_getOpenId"
+            android:layout_marginTop="10dp" />
+
+    </RelativeLayout>
+</ScrollView>

@@ -31,6 +31,30 @@ public class CouponBean implements Parcelable{
     private String validRepertoryTerm;
     private ResultBean result;
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("{");
+        sb.append("\"validRepertoryTerm\":\"")
+                .append(validRepertoryTerm).append('\"');
+        sb.append(",\"result\":")
+                .append(result);
+        sb.append(",\"respMsg\":\"")
+                .append(respMsg).append('\"');
+        sb.append(",\"respCode\":\"")
+                .append(respCode).append('\"');
+        sb.append(",\"mechantName\":\"")
+                .append(mechantName).append('\"');
+        sb.append(",\"mechantId\":\"")
+                .append(mechantId).append('\"');
+        sb.append(",\"logo\":\"")
+                .append(logo).append('\"');
+        sb.append(",\"describeContents\":")
+                .append(describeContents());
+        sb.append(",\"cardTotal\":")
+                .append(cardTotal);
+        sb.append('}');
+        return sb.toString();
+    }
 
     protected CouponBean(Parcel in) {
         respCode = in.readString();

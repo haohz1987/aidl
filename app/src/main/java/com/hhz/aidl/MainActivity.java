@@ -102,6 +102,7 @@ public class MainActivity extends BaseActivity<MainModel.View, MainPresenter>
                 break;
         }
         ((TextView) findViewById(R.id.tv_coupon)).setText(tag);
+
     }
 
     @Override
@@ -138,16 +139,16 @@ public class MainActivity extends BaseActivity<MainModel.View, MainPresenter>
 
     @Override
     public void onGetOpenIdSuccess(MemberShipBean memberShipBean) {
-
+        ((TextView) findViewById(R.id.tv_request)).setText(memberShipBean.toString());
     }
 
     @Override
     public void onGetCoupListSuccess(CouponBean couponBean) {
-
+        ((TextView) findViewById(R.id.tv_request)).setText(couponBean.toString());
     }
 
     @Override
     public void onGetRecordSuccess(RecordBean recordBean) {
-
+        ((TextView) findViewById(R.id.tv_request)).setText(recordBean.toString());
     }
 }

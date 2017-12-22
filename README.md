@@ -1,8 +1,12 @@
-http://blog.csdn.net/NongJushi/article/details/75500867
- Android Studio 配置 toString( ) 模板，定制 JSON 格式字串的步骤
+Rxjava+Retrofit
+aidl
+service笔记
 
-http://blog.csdn.net/luoyanglizi/article/details/51586437
+ Android Studio 配置 toString( ) 模板，定制 JSON 格式字串的步骤
+ http://blog.csdn.net/NongJushi/article/details/75500867
+
 service:
+http://blog.csdn.net/luoyanglizi/article/details/51586437
 
 1.与其他组件联系方式：startService()、bindService()
     “其他组件”不包括Broadcast receiver，其无法直接启动或绑定service。
