@@ -1,3 +1,6 @@
+http://blog.csdn.net/NongJushi/article/details/75500867
+ Android Studio 配置 toString( ) 模板，定制 JSON 格式字串的步骤
+
 http://blog.csdn.net/luoyanglizi/article/details/51586437
 service:
 

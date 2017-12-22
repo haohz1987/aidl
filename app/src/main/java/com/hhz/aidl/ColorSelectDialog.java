@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -22,7 +21,6 @@ public class ColorSelectDialog {
 
     private static LinearLayout layout;
     private static Dialog dlg;
-    private static Button cancelBtn;
     private static int selectPosition = -1;
     //卡券的颜色
     private static List<Integer> couponColorRes = new ArrayList<>();
@@ -30,6 +28,7 @@ public class ColorSelectDialog {
     private static List<String> couponType = new ArrayList<>();
     private static ImageView imageView;
     private static RelativeLayout rl_select;
+    private static FinalAdapter finalAdapter;
 
     public interface OnColorSelected {
         void onColorSelected(int position);
@@ -40,7 +39,9 @@ public class ColorSelectDialog {
 
     public static Dialog selectColor(final Context context, final OnColorSelected onColorSelected,
                                      OnCancelListener cancelListener) {
-        dlg = new Dialog(context, R.style.AlertDialogStyle);
+        if(dlg==null){
+            dlg = new Dialog(context, R.style.AlertDialogStyle);
+        }
         dlg.setCanceledOnTouchOutside(false);
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -75,26 +76,31 @@ public class ColorSelectDialog {
             couponType.add("" + i);
         }
 
-        MyGridView mGridView = layout.findViewById(R.id.mgridview);
-        mGridView.setAdapter(new FinalAdapter<Integer>(couponColorRes, couponType, R.layout.item_gridview, new FinalAdapter.OnAdapterListener() {
+        final MyGridView mGridView = layout.findViewById(R.id.mgridview);
+        finalAdapter = new FinalAdapter<Integer>(couponColorRes, couponType, R.layout.item_gridview, new FinalAdapter.OnAdapterListener() {
             @Override
-            public void bindView(FinalAdapter.FinalViewHolder finalViewHolder, Object content, String tag) {
+            public void bindView(FinalAdapter.FinalViewHolder finalViewHolder, Object content, String tag,int position) {
                 imageView = (ImageView) finalViewHolder.getViewById(R.id.gridview_image);
                 imageView.setImageResource(((Integer) content));
                 rl_select = (RelativeLayout) finalViewHolder.getViewById(R.id.rl_select);
-            }
-        }));
-        mGridView.setNumColumns(5);
-        mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                LogT.w("selectPosition="+selectPosition+";position="+position);
-                if (selectPosition != -1 && selectPosition == position) {
+                rl_select.setClickable(false);
+                if (position == selectPosition) {
                     rl_select.setBackgroundResource(R.mipmap.selected);
                 } else {
                     rl_select.setBackgroundColor(0);
                 }
+            }
+        });
+        mGridView.setAdapter(finalAdapter);
+        mGridView.setNumColumns(5);
+        mGridView.setSelection(-1);
+        mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                rl_select.setClickable(true);
                 selectPosition = position;
+                rl_select.setBackgroundResource(R.mipmap.selected);
+                finalAdapter.notifyDataSetChanged();
             }
         });
         Window w = dlg.getWindow();
@@ -113,7 +119,6 @@ public class ColorSelectDialog {
 
 //    private static void onClickId(final OnColorSelected onColorSelected, final int whichButton) {
 //        layout.findViewById(whichButton).setOnClickListener(new OnClickListener() {
-//
 //            @Override
 //            public void onClick(View v) {
 //                onColorSelected.onColorSelected(whichButton);

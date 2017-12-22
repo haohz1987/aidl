@@ -26,8 +26,6 @@ public class MyGridView extends GridView {
     }
 //    @Override
 //    public int getNumColumns() {
-//        return 2;
+//        return 5;
 //    }
-
-
 }

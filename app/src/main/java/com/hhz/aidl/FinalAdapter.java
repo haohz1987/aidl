@@ -18,7 +18,6 @@ public class FinalAdapter<T> extends BaseAdapter {
     private List<T> mShowItems = new ArrayList<>();
     private List<String> mHomeTagList = new ArrayList<>();
     private int mLayoutId = 0;
-
     private OnAdapterListener mAdapterListener;
 
     public FinalAdapter(List<T> showItems, List<String> homeTagList, int layoutId, OnAdapterListener adapterListener) {
@@ -27,7 +26,6 @@ public class FinalAdapter<T> extends BaseAdapter {
         this.mLayoutId = layoutId;
         this.mAdapterListener = adapterListener;
     }
-
     @Override
     public int getCount() {
         return mShowItems.size();
@@ -56,22 +54,16 @@ public class FinalAdapter<T> extends BaseAdapter {
         } else {
             finalViewHolder = (FinalViewHolder) convertView.getTag();
         }
-        //绑定数据
-        bindView(finalViewHolder, mShowItems.get(position),mHomeTagList.get(position));
+        bindView(finalViewHolder, mShowItems.get(position),mHomeTagList.get(position),position);
         return convertView;
     }
-
-    //这里是可变
-    private void bindView( FinalViewHolder finalViewHolder,T content,String tag) {
-        // finalViewHolder.tv.setText(content);
-        //谁用谁来绑定数据
-        mAdapterListener.bindView(finalViewHolder,content,tag);
+    private void bindView( FinalViewHolder finalViewHolder,T content,String tag,int position) {
+        mAdapterListener.bindView(finalViewHolder,content,tag,position);
     }
-
     //接口
     public interface OnAdapterListener<T>
     {
-        void bindView(FinalViewHolder finalViewHolder, T content, String tag);
+        void bindView(FinalViewHolder finalViewHolder, T content, String tag,int position);
     }
 
     //接收

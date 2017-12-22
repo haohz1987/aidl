@@ -3,20 +3,21 @@ package com.hhz.aidl;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface.OnCancelListener;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class ActionSheetCoupon {
 
     private static LinearLayout layout;
     private static Dialog dlg;
-    private static Button cancelBtn;
 
     public interface OnActionSheetSelected {
         void onSheetClick(int whichButton);
@@ -27,7 +28,9 @@ public class ActionSheetCoupon {
 
     public static Dialog showSheet(final Context context, final OnActionSheetSelected actionSheetSelected,
                                    OnCancelListener cancelListener) {
-        dlg = new Dialog(context, R.style.AlertDialogStyle);
+        if(dlg==null){
+            dlg = new Dialog(context, R.style.AlertDialogStyle);
+        }
         dlg.setCanceledOnTouchOutside(true);
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -38,7 +41,7 @@ public class ActionSheetCoupon {
         onClickId(actionSheetSelected, R.id.btn_cashcoupon);
         onClickId(actionSheetSelected, R.id.btn_discount);
         onClickId(actionSheetSelected, R.id.btn_exchange);
-        onClickId(actionSheetSelected, R.id.cancel);
+        onClickId(context,actionSheetSelected, R.id.cancel);
 
         Window w = dlg.getWindow();
         WindowManager.LayoutParams lp = w.getAttributes();
@@ -64,5 +67,21 @@ public class ActionSheetCoupon {
             }
         });
     }
+    private static void onClickId(final Context context,final OnActionSheetSelected actionSheetSelected, final int whichButton) {
+        layout.findViewById(whichButton).setOnClickListener(new OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                if(whichButton==R.id.cancel){
+                    Resources resource=context.getResources();
+                    ColorStateList csl=(ColorStateList)resource.getColorStateList(R.color.btn_text_color);
+                    if(csl!=null){
+                        ((TextView)layout.findViewById(R.id.cancel)).setTextColor(context.getResources().getColor(R.color.btn_text_color));//设置按钮文字颜色
+                    }
+                }
+                actionSheetSelected.onSheetClick(whichButton);
+                dlg.dismiss();
+            }
+        });
+    }
 }
