@@ -1,7 +1,7 @@
 package com.hhz.aidl.rxjava;
 
 import com.google.gson.Gson;
-import com.hhz.aidl.LogT;
+import com.hhz.aidl.util.LogT;
 
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;

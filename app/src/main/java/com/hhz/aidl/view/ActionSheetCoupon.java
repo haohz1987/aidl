@@ -1,4 +1,4 @@
-package com.hhz.aidl;
+package com.hhz.aidl.view;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -13,6 +13,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.hhz.aidl.R;
 
 public class ActionSheetCoupon {
 

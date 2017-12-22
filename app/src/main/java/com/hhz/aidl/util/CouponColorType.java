@@ -1,4 +1,6 @@
-package com.hhz.aidl;
+package com.hhz.aidl.util;
+
+import com.hhz.aidl.R;
 
 public enum CouponColorType {
     CouponColorType01("1", R.color.couponColor01),

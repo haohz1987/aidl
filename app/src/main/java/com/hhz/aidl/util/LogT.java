@@ -1,4 +1,4 @@
-package com.hhz.aidl;
+package com.hhz.aidl.util;
 
 import android.text.TextUtils;
 import android.util.Log;

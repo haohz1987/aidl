@@ -32,11 +32,6 @@ public interface IBaseView {
 //    void showNetError(EmptyLayout.OnRetryListener onRetryListener);
 
     /**
-     * 手机号为空
-     */
-    void mobileIsNull();
-
-    /**
      * 绑定生命周期
      *
      * @param <T>

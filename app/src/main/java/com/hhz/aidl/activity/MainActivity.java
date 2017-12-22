@@ -1,4 +1,4 @@
-package com.hhz.aidl;
+package com.hhz.aidl.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -6,6 +6,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.hhz.aidl.view.ActionSheetCoupon;
+import com.hhz.aidl.view.ColorSelectDialog;
+import com.hhz.aidl.util.CouponColorType;
+import com.hhz.aidl.R;
 import com.hhz.aidl.mvp.model.MainModel;
 import com.hhz.aidl.mvp.presenter.MainPresenter;
 import com.hhz.aidl.rxjava.CouponBean;
@@ -130,12 +134,6 @@ public class MainActivity extends BaseActivity<MainModel.View, MainPresenter>
     public void showNoData() {
 
     }
-
-    @Override
-    public void mobileIsNull() {
-
-    }
-
 
     @Override
     public void onGetOpenIdSuccess(MemberShipBean memberShipBean) {

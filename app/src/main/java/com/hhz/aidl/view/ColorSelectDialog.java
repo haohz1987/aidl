@@ -1,4 +1,4 @@
-package com.hhz.aidl;
+package com.hhz.aidl.view;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -13,6 +13,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import com.hhz.aidl.util.CouponColorType;
+import com.hhz.aidl.R;
+import com.hhz.aidl.util.FinalAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

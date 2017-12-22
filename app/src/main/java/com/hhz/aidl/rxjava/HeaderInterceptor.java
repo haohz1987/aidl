@@ -1,6 +1,6 @@
 package com.hhz.aidl.rxjava;
 
-import com.hhz.aidl.LogT;
+import com.hhz.aidl.util.LogT;
 
 import org.json.JSONException;
 import org.json.JSONObject;

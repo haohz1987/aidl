@@ -1,4 +1,4 @@
-package com.hhz.aidl;
+package com.hhz.aidl.activity;
 
 import android.content.Context;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.hhz.aidl;
+package com.hhz.aidl.view;
 
 import android.content.Context;
 import android.util.AttributeSet;

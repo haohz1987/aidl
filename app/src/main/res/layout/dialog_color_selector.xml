@@ -39,7 +39,7 @@
         android:layout_height="1dp"
         android:background="@color/sheetTextcolor" />
 
-    <com.hhz.aidl.MyGridView
+    <com.hhz.aidl.view.MyGridView
         android:id="@+id/mgridview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

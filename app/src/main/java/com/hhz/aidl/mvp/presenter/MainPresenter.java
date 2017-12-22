@@ -1,6 +1,6 @@
 package com.hhz.aidl.mvp.presenter;
 
-import com.hhz.aidl.LogT;
+import com.hhz.aidl.util.LogT;
 import com.hhz.aidl.mvp.BasePresenterImpl;
 import com.hhz.aidl.mvp.model.MainModel;
 import com.hhz.aidl.rxjava.CouponBean;
@@ -22,79 +22,101 @@ public class MainPresenter extends BasePresenterImpl<MainModel.View> implements 
 
     @Override
     public void getOpenId(HashMap<String, Object> params) {
-        RxApi.getInstance().getOpenId(params)
-                .compose(getIView().<MemberShipBean>bindToLife())
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<MemberShipBean>() {
-                    @Override
-                    public void onCompleted() {
+        if (getIView() != null)
+            RxApi.getInstance().getOpenId(params)
+                    .compose(getIView().<MemberShipBean>bindToLife())
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Subscriber<MemberShipBean>() {
+                        @Override
+                        public void onStart() {
+                            super.onStart();
+                            getIView().showLoading();
+                        }
 
-                    }
+                        @Override
+                        public void onCompleted() {
+                            getIView().hideLoading();
+                        }
 
-                    @Override
-                    public void onError(Throwable e) {
-                        LogT.w("onError" + e.getMessage());
-                    }
+                        @Override
+                        public void onError(Throwable e) {
+                            getIView().hideLoading();
+                            LogT.w("onError" + e.getMessage());
+                        }
 
-                    @Override
-                    public void onNext(MemberShipBean memberShipBean) {
-                        LogT.w(memberShipBean.toString());
-                        getIView().onGetOpenIdSuccess(memberShipBean);
+                        @Override
+                        public void onNext(MemberShipBean memberShipBean) {
+                            LogT.w(memberShipBean.toString());
+                            getIView().onGetOpenIdSuccess(memberShipBean);
 
-                    }
-                });
+                        }
+                    });
     }
 
     @Override
     public void getCoupList(HashMap<String, Object> params) {
         LogT.w("getCoupList");
-        RxApi.getInstance().getCoupList(params)
-                .compose(getIView().<CouponBean>bindToLife())
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<CouponBean>() {
-                    @Override
-                    public void onCompleted() {
+        if (getIView() != null)
+            RxApi.getInstance().getCoupList(params)
+                    .compose(getIView().<CouponBean>bindToLife())
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Subscriber<CouponBean>() {
+                        @Override
+                        public void onStart() {
+                            super.onStart();
+                            getIView().showLoading();
+                        }
+                        @Override
+                        public void onCompleted() {
+                            getIView().hideLoading();
+                        }
 
-                    }
+                        @Override
+                        public void onError(Throwable e) {
+                            getIView().hideLoading();
+                            LogT.w("onError" + e.getMessage());
+                        }
 
-                    @Override
-                    public void onError(Throwable e) {
-                        LogT.w("onError" + e.getMessage());
-                    }
-
-                    @Override
-                    public void onNext(CouponBean couponBean) {
-                        LogT.w(couponBean.toString());
-                        getIView().onGetCoupListSuccess(couponBean);
-                    }
-                });
+                        @Override
+                        public void onNext(CouponBean couponBean) {
+                            LogT.w(couponBean.toString());
+                            getIView().onGetCoupListSuccess(couponBean);
+                        }
+                    });
     }
 
     @Override
     public void getRecord(HashMap<String, Object> params) {
         LogT.w("getRecord");
-        RxApi.getInstance().getRecord(params)
-                .compose(getIView().<RecordBean>bindToLife())
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<RecordBean>() {
-                    @Override
-                    public void onCompleted() {
+        if (getIView() != null)
+            RxApi.getInstance().getRecord(params)
+                    .compose(getIView().<RecordBean>bindToLife())
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Subscriber<RecordBean>() {
+                        @Override
+                        public void onStart() {
+                            super.onStart();
+                            getIView().showLoading();
+                        }
+                        @Override
+                        public void onCompleted() {
+                            getIView().hideLoading();
+                        }
 
-                    }
+                        @Override
+                        public void onError(Throwable e) {
+                            getIView().hideLoading();
+                            LogT.w("onError" + e.getMessage());
+                        }
 
-                    @Override
-                    public void onError(Throwable e) {
-                        LogT.w("onError" + e.getMessage());
-                    }
-
-                    @Override
-                    public void onNext(RecordBean recordBean) {
-                        LogT.w(recordBean.toString());
-                        getIView().onGetRecordSuccess(recordBean);
-                    }
-                });
+                        @Override
+                        public void onNext(RecordBean recordBean) {
+                            LogT.w(recordBean.toString());
+                            getIView().onGetRecordSuccess(recordBean);
+                        }
+                    });
     }
 }

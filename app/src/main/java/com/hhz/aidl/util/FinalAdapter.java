@@ -1,4 +1,4 @@
-package com.hhz.aidl;
+package com.hhz.aidl.util;
 
 import android.util.SparseArray;
 import android.view.View;
