@@ -12,16 +12,16 @@ import java.util.List;
 public class RecordBean implements Parcelable{
 
     /**
-     * respCode : 0000
-     * respMsg : 请求成功
+     * responseCode : 0000
+     * errorMessage : 请求成功
      * logo : http://api.map.baidu.com/images/weather/day/duoyun.png
      * mechantName : 商户01
      * mechantId : 0123456789
-     * result : {"cancelRecord":{"recordType":1,"recordCount":2,"recordList":[{"recordDate":"201712181033","coupType":1,"serialNo":"123456789","coupNo":"12345678922","orderAmount":53.23,"coupAmount":10,"discount":"","consumeLite":100,"usedCount":5,"usedLimit":1},{"recordDate":"201712181033","coupType":1,"serialNo":"123456789","coupNo":"12345678922","orderAmount":53.23,"coupAmount":0,"discount":"8折","consumeLite":100,"usedCount":5,"usedLimit":1}]},"provideRecord":{"recordType":2,"recordCount":2,"recordList":[{"recordDate":"201712181033","coupType":1,"serialNo":"123456789","coupNo":"12345678922","orderAmount":53.23,"coupAmount":10,"discount":"","consumeLite":100,"usedCount":5,"usedLimit":1},{"recordDate":"201712181033","coupType":1,"serialNo":"123456789","coupNo":"12345678922","orderAmount":53.23,"coupAmount":0,"discount":"8折","consumeLite":100,"usedCount":5,"usedLimit":1}]}}
+     * result : {"cancelRecord":{"recordType":1,"recordCount":2,"recordList":[{"recordDate":"201712181033","couponType":1,"serialNo":"123456789","couponNo":"12345678922","orderAmount":53.23,"couponAmount":10,"discount":"","consumeLite":100,"usedCount":5,"usedLimit":1},{"recordDate":"201712181033","couponType":1,"serialNo":"123456789","couponNo":"12345678922","orderAmount":53.23,"couponAmount":0,"discount":"8折","consumeLite":100,"usedCount":5,"usedLimit":1}]},"provideRecord":{"recordType":2,"recordCount":2,"recordList":[{"recordDate":"201712181033","couponType":1,"serialNo":"123456789","couponNo":"12345678922","orderAmount":53.23,"couponAmount":10,"discount":"","consumeLite":100,"usedCount":5,"usedLimit":1},{"recordDate":"201712181033","couponType":1,"serialNo":"123456789","couponNo":"12345678922","orderAmount":53.23,"couponAmount":0,"discount":"8折","consumeLite":100,"usedCount":5,"usedLimit":1}]}}
      */
 
-    private String respCode;
-    private String respMsg;
+    private String responseCode;
+    private String errorMessage;
     private String logo;
     private String mechantName;
     private String mechantId;
@@ -32,16 +32,16 @@ public class RecordBean implements Parcelable{
         final StringBuilder sb = new StringBuilder("{");
         sb.append("\"result\":")
                 .append(result);
-        sb.append(",\"respMsg\":\"")
-                .append(respMsg).append('\"');
-        sb.append(",\"respCode\":\"")
-                .append(respCode).append('\"');
+        sb.append(",\"responseCode\":\"")
+                .append(responseCode).append('\"');
         sb.append(",\"mechantName\":\"")
                 .append(mechantName).append('\"');
         sb.append(",\"mechantId\":\"")
                 .append(mechantId).append('\"');
         sb.append(",\"logo\":\"")
                 .append(logo).append('\"');
+        sb.append(",\"errorMessage\":\"")
+                .append(errorMessage).append('\"');
         sb.append(",\"describeContents\":")
                 .append(describeContents());
         sb.append('}');
@@ -49,8 +49,8 @@ public class RecordBean implements Parcelable{
     }
 
     protected RecordBean(Parcel in) {
-        respCode = in.readString();
-        respMsg = in.readString();
+        responseCode = in.readString();
+        errorMessage = in.readString();
         logo = in.readString();
         mechantName = in.readString();
         mechantId = in.readString();
@@ -68,20 +68,20 @@ public class RecordBean implements Parcelable{
         }
     };
 
-    public String getRespCode() {
-        return respCode;
+    public String getResponseCode() {
+        return responseCode;
     }
 
-    public void setRespCode(String respCode) {
-        this.respCode = respCode;
+    public void setResponseCode(String responseCode) {
+        this.responseCode = responseCode;
     }
 
-    public String getRespMsg() {
-        return respMsg;
+    public String getErrorMessage() {
+        return errorMessage;
     }
 
-    public void setRespMsg(String respMsg) {
-        this.respMsg = respMsg;
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
     }
 
     public String getLogo() {
@@ -100,11 +100,11 @@ public class RecordBean implements Parcelable{
         this.mechantName = mechantName;
     }
 
-    public String getmechantId() {
+    public String getMechantId() {
         return mechantId;
     }
 
-    public void setmechantId(String mechantId) {
+    public void setMechantId(String mechantId) {
         this.mechantId = mechantId;
     }
 
@@ -123,8 +123,8 @@ public class RecordBean implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(respCode);
-        dest.writeString(respMsg);
+        dest.writeString(responseCode);
+        dest.writeString(errorMessage);
         dest.writeString(logo);
         dest.writeString(mechantName);
         dest.writeString(mechantId);
@@ -132,8 +132,8 @@ public class RecordBean implements Parcelable{
 
     public static class ResultBean implements Parcelable{
         /**
-         * cancelRecord : {"recordType":1,"recordCount":2,"recordList":[{"recordDate":"201712181033","coupType":1,"serialNo":"123456789","coupNo":"12345678922","orderAmount":53.23,"coupAmount":10,"discount":"","consumeLite":100,"usedCount":5,"usedLimit":1},{"recordDate":"201712181033","coupType":1,"serialNo":"123456789","coupNo":"12345678922","orderAmount":53.23,"coupAmount":0,"discount":"8折","consumeLite":100,"usedCount":5,"usedLimit":1}]}
-         * provideRecord : {"recordType":2,"recordCount":2,"recordList":[{"recordDate":"201712181033","coupType":1,"serialNo":"123456789","coupNo":"12345678922","orderAmount":53.23,"coupAmount":10,"discount":"","consumeLite":100,"usedCount":5,"usedLimit":1},{"recordDate":"201712181033","coupType":1,"serialNo":"123456789","coupNo":"12345678922","orderAmount":53.23,"coupAmount":0,"discount":"8折","consumeLite":100,"usedCount":5,"usedLimit":1}]}
+         * cancelRecord : {"recordType":1,"recordCount":2,"recordList":[{"recordDate":"201712181033","couponType":1,"serialNo":"123456789","couponNo":"12345678922","orderAmount":53.23,"couponAmount":10,"discount":"","consumeLite":100,"usedCount":5,"usedLimit":1},{"recordDate":"201712181033","couponType":1,"serialNo":"123456789","couponNo":"12345678922","orderAmount":53.23,"couponAmount":0,"discount":"8折","consumeLite":100,"usedCount":5,"usedLimit":1}]}
+         * provideRecord : {"recordType":2,"recordCount":2,"recordList":[{"recordDate":"201712181033","couponType":1,"serialNo":"123456789","couponNo":"12345678922","orderAmount":53.23,"couponAmount":10,"discount":"","consumeLite":100,"usedCount":5,"usedLimit":1},{"recordDate":"201712181033","couponType":1,"serialNo":"123456789","couponNo":"12345678922","orderAmount":53.23,"couponAmount":0,"discount":"8折","consumeLite":100,"usedCount":5,"usedLimit":1}]}
          */
 
         private CancelRecordBean cancelRecord;
@@ -196,7 +196,7 @@ public class RecordBean implements Parcelable{
             /**
              * recordType : 1
              * recordCount : 2
-             * recordList : [{"recordDate":"201712181033","coupType":1,"serialNo":"123456789","coupNo":"12345678922","orderAmount":53.23,"coupAmount":10,"discount":"","consumeLite":100,"usedCount":5,"usedLimit":1},{"recordDate":"201712181033","coupType":1,"serialNo":"123456789","coupNo":"12345678922","orderAmount":53.23,"coupAmount":0,"discount":"8折","consumeLite":100,"usedCount":5,"usedLimit":1}]
+             * recordList : [{"recordDate":"201712181033","couponType":1,"serialNo":"123456789","couponNo":"12345678922","orderAmount":53.23,"couponAmount":10,"discount":"","consumeLite":100,"usedCount":5,"usedLimit":1},{"recordDate":"201712181033","couponType":1,"serialNo":"123456789","couponNo":"12345678922","orderAmount":53.23,"couponAmount":0,"discount":"8折","consumeLite":100,"usedCount":5,"usedLimit":1}]
              */
 
             private int recordType;
@@ -273,11 +273,11 @@ public class RecordBean implements Parcelable{
             public static class RecordListBean implements Parcelable{
                 /**
                  * recordDate : 201712181033
-                 * coupType : 1
+                 * couponType : 1
                  * serialNo : 123456789
-                 * coupNo : 12345678922
+                 * couponNo : 12345678922
                  * orderAmount : 53.23
-                 * coupAmount : 10
+                 * couponAmount : 10
                  * discount :
                  * consumeLite : 100
                  * usedCount : 5
@@ -285,11 +285,11 @@ public class RecordBean implements Parcelable{
                  */
 
                 private String recordDate;
-                private int coupType;
+                private int couponType;
                 private String serialNo;
-                private String coupNo;
+                private String couponNo;
                 private double orderAmount;
-                private int coupAmount;
+                private int couponAmount;
                 private String discount;
                 private int consumeLite;
                 private int usedCount;
@@ -312,12 +312,12 @@ public class RecordBean implements Parcelable{
                             .append(discount).append('\"');
                     sb.append(",\"describeContents\":")
                             .append(describeContents());
-                    sb.append(",\"coupType\":")
-                            .append(coupType);
-                    sb.append(",\"coupNo\":\"")
-                            .append(coupNo).append('\"');
-                    sb.append(",\"coupAmount\":")
-                            .append(coupAmount);
+                    sb.append(",\"couponType\":")
+                            .append(couponType);
+                    sb.append(",\"couponNo\":\"")
+                            .append(couponNo).append('\"');
+                    sb.append(",\"couponAmount\":")
+                            .append(couponAmount);
                     sb.append(",\"consumeLite\":")
                             .append(consumeLite);
                     sb.append('}');
@@ -326,11 +326,11 @@ public class RecordBean implements Parcelable{
 
                 protected RecordListBean(Parcel in) {
                     recordDate = in.readString();
-                    coupType = in.readInt();
+                    couponType = in.readInt();
                     serialNo = in.readString();
-                    coupNo = in.readString();
+                    couponNo = in.readString();
                     orderAmount = in.readDouble();
-                    coupAmount = in.readInt();
+                    couponAmount = in.readInt();
                     discount = in.readString();
                     consumeLite = in.readInt();
                     usedCount = in.readInt();
@@ -357,12 +357,12 @@ public class RecordBean implements Parcelable{
                     this.recordDate = recordDate;
                 }
 
-                public int getCoupType() {
-                    return coupType;
+                public int getCouponType() {
+                    return couponType;
                 }
 
-                public void setCoupType(int coupType) {
-                    this.coupType = coupType;
+                public void setCouponType(int couponType) {
+                    this.couponType = couponType;
                 }
 
                 public String getSerialNo() {
@@ -373,12 +373,12 @@ public class RecordBean implements Parcelable{
                     this.serialNo = serialNo;
                 }
 
-                public String getCoupNo() {
-                    return coupNo;
+                public String getCouponNo() {
+                    return couponNo;
                 }
 
-                public void setCoupNo(String coupNo) {
-                    this.coupNo = coupNo;
+                public void setCouponNo(String couponNo) {
+                    this.couponNo = couponNo;
                 }
 
                 public double getOrderAmount() {
@@ -389,12 +389,12 @@ public class RecordBean implements Parcelable{
                     this.orderAmount = orderAmount;
                 }
 
-                public int getCoupAmount() {
-                    return coupAmount;
+                public int getCouponAmount() {
+                    return couponAmount;
                 }
 
-                public void setCoupAmount(int coupAmount) {
-                    this.coupAmount = coupAmount;
+                public void setCouponAmount(int couponAmount) {
+                    this.couponAmount = couponAmount;
                 }
 
                 public String getDiscount() {
@@ -437,11 +437,11 @@ public class RecordBean implements Parcelable{
                 @Override
                 public void writeToParcel(Parcel dest, int flags) {
                     dest.writeString(recordDate);
-                    dest.writeInt(coupType);
+                    dest.writeInt(couponType);
                     dest.writeString(serialNo);
-                    dest.writeString(coupNo);
+                    dest.writeString(couponNo);
                     dest.writeDouble(orderAmount);
-                    dest.writeInt(coupAmount);
+                    dest.writeInt(couponAmount);
                     dest.writeString(discount);
                     dest.writeInt(consumeLite);
                     dest.writeInt(usedCount);
@@ -450,11 +450,11 @@ public class RecordBean implements Parcelable{
             }
         }
 
-        public static class ProvideRecordBean implements Parcelable{
+        public static class ProvideRecordBean {
             /**
              * recordType : 2
              * recordCount : 2
-             * recordList : [{"recordDate":"201712181033","coupType":1,"serialNo":"123456789","coupNo":"12345678922","orderAmount":53.23,"coupAmount":10,"discount":"","consumeLite":100,"usedCount":5,"usedLimit":1},{"recordDate":"201712181033","coupType":1,"serialNo":"123456789","coupNo":"12345678922","orderAmount":53.23,"coupAmount":0,"discount":"8折","consumeLite":100,"usedCount":5,"usedLimit":1}]
+             * recordList : [{"recordDate":"201712181033","couponType":1,"serialNo":"123456789","couponNo":"12345678922","orderAmount":53.23,"couponAmount":10,"discount":"","consumeLite":100,"usedCount":5,"usedLimit":1},{"recordDate":"201712181033","couponType":1,"serialNo":"123456789","couponNo":"12345678922","orderAmount":53.23,"couponAmount":0,"discount":"8折","consumeLite":100,"usedCount":5,"usedLimit":1}]
              */
 
             private int recordType;
@@ -470,29 +470,9 @@ public class RecordBean implements Parcelable{
                         .append(recordList);
                 sb.append(",\"recordCount\":")
                         .append(recordCount);
-                sb.append(",\"describeContents\":")
-                        .append(describeContents());
                 sb.append('}');
                 return sb.toString();
             }
-
-            protected ProvideRecordBean(Parcel in) {
-                recordType = in.readInt();
-                recordCount = in.readInt();
-                recordList = in.createTypedArrayList(RecordListBeanX.CREATOR);
-            }
-
-            public static final Creator<ProvideRecordBean> CREATOR = new Creator<ProvideRecordBean>() {
-                @Override
-                public ProvideRecordBean createFromParcel(Parcel in) {
-                    return new ProvideRecordBean(in);
-                }
-
-                @Override
-                public ProvideRecordBean[] newArray(int size) {
-                    return new ProvideRecordBean[size];
-                }
-            };
 
             public int getRecordType() {
                 return recordType;
@@ -518,26 +498,14 @@ public class RecordBean implements Parcelable{
                 this.recordList = recordList;
             }
 
-            @Override
-            public int describeContents() {
-                return 0;
-            }
-
-            @Override
-            public void writeToParcel(Parcel dest, int flags) {
-                dest.writeInt(recordType);
-                dest.writeInt(recordCount);
-                dest.writeTypedList(recordList);
-            }
-
-            public static class RecordListBeanX implements Parcelable{
+            public static class RecordListBeanX {
                 /**
                  * recordDate : 201712181033
-                 * coupType : 1
+                 * couponType : 1
                  * serialNo : 123456789
-                 * coupNo : 12345678922
+                 * couponNo : 12345678922
                  * orderAmount : 53.23
-                 * coupAmount : 10
+                 * couponAmount : 10
                  * discount :
                  * consumeLite : 100
                  * usedCount : 5
@@ -545,11 +513,11 @@ public class RecordBean implements Parcelable{
                  */
 
                 private String recordDate;
-                private int coupType;
+                private int couponType;
                 private String serialNo;
-                private String coupNo;
+                private String couponNo;
                 private double orderAmount;
-                private int coupAmount;
+                private int couponAmount;
                 private String discount;
                 private int consumeLite;
                 private int usedCount;
@@ -570,44 +538,17 @@ public class RecordBean implements Parcelable{
                             .append(orderAmount);
                     sb.append(",\"discount\":\"")
                             .append(discount).append('\"');
-                    sb.append(",\"describeContents\":")
-                            .append(describeContents());
-                    sb.append(",\"coupType\":")
-                            .append(coupType);
-                    sb.append(",\"coupNo\":\"")
-                            .append(coupNo).append('\"');
-                    sb.append(",\"coupAmount\":")
-                            .append(coupAmount);
+                    sb.append(",\"couponType\":")
+                            .append(couponType);
+                    sb.append(",\"couponNo\":\"")
+                            .append(couponNo).append('\"');
+                    sb.append(",\"couponAmount\":")
+                            .append(couponAmount);
                     sb.append(",\"consumeLite\":")
                             .append(consumeLite);
                     sb.append('}');
                     return sb.toString();
                 }
-
-                protected RecordListBeanX(Parcel in) {
-                    recordDate = in.readString();
-                    coupType = in.readInt();
-                    serialNo = in.readString();
-                    coupNo = in.readString();
-                    orderAmount = in.readDouble();
-                    coupAmount = in.readInt();
-                    discount = in.readString();
-                    consumeLite = in.readInt();
-                    usedCount = in.readInt();
-                    usedLimit = in.readInt();
-                }
-
-                public static final Creator<RecordListBeanX> CREATOR = new Creator<RecordListBeanX>() {
-                    @Override
-                    public RecordListBeanX createFromParcel(Parcel in) {
-                        return new RecordListBeanX(in);
-                    }
-
-                    @Override
-                    public RecordListBeanX[] newArray(int size) {
-                        return new RecordListBeanX[size];
-                    }
-                };
 
                 public String getRecordDate() {
                     return recordDate;
@@ -617,12 +558,12 @@ public class RecordBean implements Parcelable{
                     this.recordDate = recordDate;
                 }
 
-                public int getCoupType() {
-                    return coupType;
+                public int getCouponType() {
+                    return couponType;
                 }
 
-                public void setCoupType(int coupType) {
-                    this.coupType = coupType;
+                public void setCouponType(int couponType) {
+                    this.couponType = couponType;
                 }
 
                 public String getSerialNo() {
@@ -633,12 +574,12 @@ public class RecordBean implements Parcelable{
                     this.serialNo = serialNo;
                 }
 
-                public String getCoupNo() {
-                    return coupNo;
+                public String getCouponNo() {
+                    return couponNo;
                 }
 
-                public void setCoupNo(String coupNo) {
-                    this.coupNo = coupNo;
+                public void setCouponNo(String couponNo) {
+                    this.couponNo = couponNo;
                 }
 
                 public double getOrderAmount() {
@@ -649,12 +590,12 @@ public class RecordBean implements Parcelable{
                     this.orderAmount = orderAmount;
                 }
 
-                public int getCoupAmount() {
-                    return coupAmount;
+                public int getCouponAmount() {
+                    return couponAmount;
                 }
 
-                public void setCoupAmount(int coupAmount) {
-                    this.coupAmount = coupAmount;
+                public void setCouponAmount(int couponAmount) {
+                    this.couponAmount = couponAmount;
                 }
 
                 public String getDiscount() {
@@ -687,25 +628,6 @@ public class RecordBean implements Parcelable{
 
                 public void setUsedLimit(int usedLimit) {
                     this.usedLimit = usedLimit;
-                }
-
-                @Override
-                public int describeContents() {
-                    return 0;
-                }
-
-                @Override
-                public void writeToParcel(Parcel dest, int flags) {
-                    dest.writeString(recordDate);
-                    dest.writeInt(coupType);
-                    dest.writeString(serialNo);
-                    dest.writeString(coupNo);
-                    dest.writeDouble(orderAmount);
-                    dest.writeInt(coupAmount);
-                    dest.writeString(discount);
-                    dest.writeInt(consumeLite);
-                    dest.writeInt(usedCount);
-                    dest.writeInt(usedLimit);
                 }
             }
         }

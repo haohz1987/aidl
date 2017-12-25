@@ -79,7 +79,8 @@ public class MainActivity extends BaseActivity<MainModel.View, MainPresenter>
                         });
                 break;
             case R.id.btn_getOpenId:
-                mPresenter.getOpenId(params);
+
+                startActivity(new Intent(MainActivity.this,MemberShip.class));
                 break;
             case R.id.btn_getCoupList:
                 mPresenter.getCoupList(params);

@@ -49,6 +49,10 @@
         </activity>
         <!--<service android:name=".service.IntentServiceDemo"/>-->
         <service android:name=".service.ServiceDemo"/>
+        <activity android:name=".activity.MemberShip"/>
+        <activity android:name=".activity.Coupon"/>
+        <activity android:name=".activity.Record"/>
+
     </application>
 
 </manifest>

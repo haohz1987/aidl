@@ -12,23 +12,23 @@ import java.util.List;
 public class CouponBean implements Parcelable{
 
     /**
-     * respCode : 0000
-     * respMsg : 请求成功
+     * responseCode : 0000
+     * errorMessage : 请求成功
      * logo : http://api.map.baidu.com/images/weather/day/duoyun.png
      * mechantName : 商户01
      * mechantId : 0123456789
-     * cardTotal : 5
+     * couponTotal : 5
      * validRepertoryTerm : 30
-     * result : {"cashCoup":{"coupType":1,"CoupCount":2,"CoupList":[{"coupNo":"201712181033","coupColor":0,"coupTitle":"coupTitle","coupAmount":2.03,"discount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"201712181033","endDay":"coupTitle","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedPerson":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"coupNo":"201712181133","coupColor":0,"coupTitle":"coupTitle","coupAmount":2.03,"discount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201712181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedPerson":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]},"discountCoup":{"coupType":2,"CoupCount":2,"CoupList":[{"coupNo":"201712181033","coupColor":0,"coupTitle":"coupTitle","coupAmount":2.03,"discount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedPerson":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"coupNo":"201712181133","coupColor":0,"coupTitle":"coupTitle","coupAmount":2.03,"discount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201712181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedPerson":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]},"exchangeCoup":{"coupType":3,"CoupCount":2,"CoupList":[{"coupNo":"201712181033","coupColor":0,"coupTitle":"coupTitle","coupAmount":2.03,"discount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedPerson":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"coupNo":"201712181133","coupColor":0,"coupTitle":"coupTitle","coupAmount":2.03,"discount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201712181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedPerson":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]}}
+     * result : {"cashCoupon":{"couponType":1,"couponCount":2,"coupList":[{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201801181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]},"discountCoup":{"couponType":2,"couponCount":2,"coupList":[{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201801181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]},"exchangeCoup":{"couponType":3,"couponCount":2,"coupList":[{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"coupTitle","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]}}
      */
 
-    private String respCode;
-    private String respMsg;
+    private String responseCode;
+    private String errorMessage;
     private String logo;
     private String mechantName;
     private String mechantId;
-    private int cardTotal;
-    private String validRepertoryTerm;
+    private int couponTotal;
+    private int validRepertoryTerm;
     private ResultBean result;
 
     @Override
@@ -38,32 +38,32 @@ public class CouponBean implements Parcelable{
                 .append(validRepertoryTerm).append('\"');
         sb.append(",\"result\":")
                 .append(result);
-        sb.append(",\"respMsg\":\"")
-                .append(respMsg).append('\"');
-        sb.append(",\"respCode\":\"")
-                .append(respCode).append('\"');
+        sb.append(",\"responseCode\":\"")
+                .append(responseCode).append('\"');
         sb.append(",\"mechantName\":\"")
                 .append(mechantName).append('\"');
         sb.append(",\"mechantId\":\"")
                 .append(mechantId).append('\"');
         sb.append(",\"logo\":\"")
                 .append(logo).append('\"');
+        sb.append(",\"errorMessage\":\"")
+                .append(errorMessage).append('\"');
         sb.append(",\"describeContents\":")
                 .append(describeContents());
-        sb.append(",\"cardTotal\":")
-                .append(cardTotal);
+        sb.append(",\"couponTotal\":")
+                .append(couponTotal);
         sb.append('}');
         return sb.toString();
     }
 
     protected CouponBean(Parcel in) {
-        respCode = in.readString();
-        respMsg = in.readString();
+        responseCode = in.readString();
+        errorMessage = in.readString();
         logo = in.readString();
         mechantName = in.readString();
         mechantId = in.readString();
-        cardTotal = in.readInt();
-        validRepertoryTerm = in.readString();
+        couponTotal = in.readInt();
+        validRepertoryTerm = in.readInt();
     }
 
     public static final Creator<CouponBean> CREATOR = new Creator<CouponBean>() {
@@ -78,20 +78,20 @@ public class CouponBean implements Parcelable{
         }
     };
 
-    public String getRespCode() {
-        return respCode;
+    public String getResponseCode() {
+        return responseCode;
     }
 
-    public void setRespCode(String respCode) {
-        this.respCode = respCode;
+    public void setResponseCode(String responseCode) {
+        this.responseCode = responseCode;
     }
 
-    public String getRespMsg() {
-        return respMsg;
+    public String getErrorMessage() {
+        return errorMessage;
     }
 
-    public void setRespMsg(String respMsg) {
-        this.respMsg = respMsg;
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
     }
 
     public String getLogo() {
@@ -110,27 +110,27 @@ public class CouponBean implements Parcelable{
         this.mechantName = mechantName;
     }
 
-    public String getmechantId() {
+    public String getMechantId() {
         return mechantId;
     }
 
-    public void setmechantId(String mechantId) {
+    public void setMechantId(String mechantId) {
         this.mechantId = mechantId;
     }
 
-    public int getCardTotal() {
-        return cardTotal;
+    public int getCouponTotal() {
+        return couponTotal;
     }
 
-    public void setCardTotal(int cardTotal) {
-        this.cardTotal = cardTotal;
+    public void setCouponTotal(int couponTotal) {
+        this.couponTotal = couponTotal;
     }
 
-    public String getValidRepertoryTerm() {
+    public int getValidRepertoryTerm() {
         return validRepertoryTerm;
     }
 
-    public void setValidRepertoryTerm(String validRepertoryTerm) {
+    public void setValidRepertoryTerm(int validRepertoryTerm) {
         this.validRepertoryTerm = validRepertoryTerm;
     }
 
@@ -149,23 +149,23 @@ public class CouponBean implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(respCode);
-        dest.writeString(respMsg);
+        dest.writeString(responseCode);
+        dest.writeString(errorMessage);
         dest.writeString(logo);
         dest.writeString(mechantName);
         dest.writeString(mechantId);
-        dest.writeInt(cardTotal);
-        dest.writeString(validRepertoryTerm);
+        dest.writeInt(couponTotal);
+        dest.writeInt(validRepertoryTerm);
     }
 
     public static class ResultBean implements Parcelable{
         /**
-         * cashCoup : {"coupType":1,"CoupCount":2,"CoupList":[{"coupNo":"201712181033","coupColor":0,"coupTitle":"coupTitle","coupAmount":2.03,"discount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"201712181033","endDay":"coupTitle","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedPerson":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"coupNo":"201712181133","coupColor":0,"coupTitle":"coupTitle","coupAmount":2.03,"discount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201712181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedPerson":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]}
-         * discountCoup : {"coupType":2,"CoupCount":2,"CoupList":[{"coupNo":"201712181033","coupColor":0,"coupTitle":"coupTitle","coupAmount":2.03,"discount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedPerson":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"coupNo":"201712181133","coupColor":0,"coupTitle":"coupTitle","coupAmount":2.03,"discount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201712181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedPerson":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]}
-         * exchangeCoup : {"coupType":3,"CoupCount":2,"CoupList":[{"coupNo":"201712181033","coupColor":0,"coupTitle":"coupTitle","coupAmount":2.03,"discount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedPerson":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"coupNo":"201712181133","coupColor":0,"coupTitle":"coupTitle","coupAmount":2.03,"discount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201712181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedPerson":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]}
+         * cashCoupon : {"couponType":1,"couponCount":2,"coupList":[{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201801181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]}
+         * discountCoup : {"couponType":2,"couponCount":2,"coupList":[{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201801181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]}
+         * exchangeCoup : {"couponType":3,"couponCount":2,"coupList":[{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"coupTitle","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]}
          */
 
-        private CashCoupBean cashCoup;
+        private CashCouponBean cashCoupon;
         private DiscountCoupBean discountCoup;
         private ExchangeCoupBean exchangeCoup;
 
@@ -178,8 +178,8 @@ public class CouponBean implements Parcelable{
                     .append(discountCoup);
             sb.append(",\"describeContents\":")
                     .append(describeContents());
-            sb.append(",\"cashCoup\":")
-                    .append(cashCoup);
+            sb.append(",\"cashCoupon\":")
+                    .append(cashCoupon);
             sb.append('}');
             return sb.toString();
         }
@@ -199,12 +199,12 @@ public class CouponBean implements Parcelable{
             }
         };
 
-        public CashCoupBean getCashCoup() {
-            return cashCoup;
+        public CashCouponBean getCashCoupon() {
+            return cashCoupon;
         }
 
-        public void setCashCoup(CashCoupBean cashCoup) {
-            this.cashCoup = cashCoup;
+        public void setCashCoupon(CashCouponBean cashCoupon) {
+            this.cashCoupon = cashCoupon;
         }
 
         public DiscountCoupBean getDiscountCoup() {
@@ -232,76 +232,71 @@ public class CouponBean implements Parcelable{
         public void writeToParcel(Parcel dest, int flags) {
         }
 
-        public static class CashCoupBean implements Parcelable{
+        public static class CashCouponBean implements Parcelable{
             /**
-             * coupType : 1
-             * CoupCount : 2
-             * CoupList : [{"coupNo":"201712181033","coupColor":0,"coupTitle":"coupTitle","coupAmount":2.03,"discount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"201712181033","endDay":"coupTitle","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedPerson":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"coupNo":"201712181133","coupColor":0,"coupTitle":"coupTitle","coupAmount":2.03,"discount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201712181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedPerson":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]
+             * couponType : 1
+             * couponCount : 2
+             * coupList : [{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201801181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]
              */
 
-            private int coupType;
-            private int CoupCount;
-            private List<CoupListBean> CoupList;
+            private int couponType;
+            private int couponCount;
+            private List<CoupListBean> coupList;
 
             @Override
             public String toString() {
                 final StringBuilder sb = new StringBuilder("{");
                 sb.append("\"describeContents\":")
                         .append(describeContents());
-                sb.append(",\"coupType\":")
-                        .append(coupType);
-                sb.append(",\"CoupList\":")
-                        .append(CoupList);
+                sb.append(",\"couponType\":")
+                        .append(couponType);
+                sb.append(",\"couponCount\":")
+                        .append(couponCount);
                 sb.append(",\"coupList\":")
-                        .append(getCoupList());
-                sb.append(",\"CoupCount\":")
-                        .append(CoupCount);
-                sb.append(",\"coupCount\":")
-                        .append(getCoupCount());
+                        .append(coupList);
                 sb.append('}');
                 return sb.toString();
             }
 
-            protected CashCoupBean(Parcel in) {
-                coupType = in.readInt();
-                CoupCount = in.readInt();
-                CoupList = in.createTypedArrayList(CoupListBean.CREATOR);
+            protected CashCouponBean(Parcel in) {
+                couponType = in.readInt();
+                couponCount = in.readInt();
             }
 
-            public static final Creator<CashCoupBean> CREATOR = new Creator<CashCoupBean>() {
+            public static final Creator<CashCouponBean> CREATOR = new Creator<CashCouponBean>() {
                 @Override
-                public CashCoupBean createFromParcel(Parcel in) {
-                    return new CashCoupBean(in);
+                public CashCouponBean createFromParcel(Parcel in) {
+                    return new CashCouponBean(in);
                 }
 
                 @Override
-                public CashCoupBean[] newArray(int size) {
-                    return new CashCoupBean[size];
+                public CashCouponBean[] newArray(int size) {
+                    return new CashCouponBean[size];
                 }
             };
 
-            public int getCoupType() {
-                return coupType;
+            public int getCouponType() {
+                return couponType;
             }
 
-            public void setCoupType(int coupType) {
-                this.coupType = coupType;
+            public void setCouponType(int couponType) {
+                this.couponType = couponType;
             }
 
-            public int getCoupCount() {
-                return CoupCount;
+            public int getCouponCount() {
+                return couponCount;
             }
 
-            public void setCoupCount(int CoupCount) {
-                this.CoupCount = CoupCount;
+            public void setCouponCount(int couponCount) {
+                this.couponCount = couponCount;
             }
 
             public List<CoupListBean> getCoupList() {
-                return CoupList;
+                return coupList;
             }
 
-            public void setCoupList(List<CoupListBean> CoupList) {
-                this.CoupList = CoupList;
+            public void setCoupList(List<CoupListBean> coupList) {
+                this.coupList = coupList;
             }
 
             @Override
@@ -311,37 +306,36 @@ public class CouponBean implements Parcelable{
 
             @Override
             public void writeToParcel(Parcel dest, int flags) {
-                dest.writeInt(coupType);
-                dest.writeInt(CoupCount);
-                dest.writeTypedList(CoupList);
+                dest.writeInt(couponType);
+                dest.writeInt(couponCount);
             }
 
             public static class CoupListBean implements Parcelable{
                 /**
-                 * coupNo : 201712181033
-                 * coupColor : 0
-                 * coupTitle : coupTitle
-                 * coupAmount : 2.03
-                 * discount :
+                 * couponNo : 201712181033
+                 * couponColor : 0
+                 * couponTitle : 小店1
+                 * couponAmount : 2.03
+                 * discountAmount :
                  * consumeLite : 10000.63
                  * validPeriod : 30
                  * receiveTime : 201712181033
-                 * startDay : 201712181033
-                 * endDay : coupTitle
+                 * startDay :
+                 * endDay :
                  * repertoryAmount : 100
                  * usedLimit : 1
                  * explain : 到店请出示优惠券
-                 * usedPerson : 2
+                 * usedQty : 2
                  * usedCount : 2
                  * cancelCount : 1
-                 * qrCode : http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100
+                 * qrCode : http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100
                  */
 
-                private String coupNo;
-                private int coupColor;
-                private String coupTitle;
-                private double coupAmount;
-                private String discount;
+                private String couponNo;
+                private int couponColor;
+                private String couponTitle;
+                private double couponAmount;
+                private String discountAmount;
                 private double consumeLite;
                 private String validPeriod;
                 private String receiveTime;
@@ -350,7 +344,7 @@ public class CouponBean implements Parcelable{
                 private int repertoryAmount;
                 private int usedLimit;
                 private String explain;
-                private int usedPerson;
+                private int usedQty;
                 private int usedCount;
                 private int cancelCount;
                 private String qrCode;
@@ -360,8 +354,8 @@ public class CouponBean implements Parcelable{
                     final StringBuilder sb = new StringBuilder("{");
                     sb.append("\"validPeriod\":\"")
                             .append(validPeriod).append('\"');
-                    sb.append(",\"usedPerson\":")
-                            .append(usedPerson);
+                    sb.append(",\"usedQty\":")
+                            .append(usedQty);
                     sb.append(",\"usedLimit\":")
                             .append(usedLimit);
                     sb.append(",\"usedCount\":")
@@ -378,18 +372,18 @@ public class CouponBean implements Parcelable{
                             .append(explain).append('\"');
                     sb.append(",\"endDay\":\"")
                             .append(endDay).append('\"');
-                    sb.append(",\"discount\":\"")
-                            .append(discount).append('\"');
+                    sb.append(",\"discountAmount\":\"")
+                            .append(discountAmount).append('\"');
                     sb.append(",\"describeContents\":")
                             .append(describeContents());
-                    sb.append(",\"coupTitle\":\"")
-                            .append(coupTitle).append('\"');
-                    sb.append(",\"coupNo\":\"")
-                            .append(coupNo).append('\"');
-                    sb.append(",\"coupColor\":")
-                            .append(coupColor);
-                    sb.append(",\"coupAmount\":")
-                            .append(coupAmount);
+                    sb.append(",\"couponTitle\":\"")
+                            .append(couponTitle).append('\"');
+                    sb.append(",\"couponNo\":\"")
+                            .append(couponNo).append('\"');
+                    sb.append(",\"couponColor\":")
+                            .append(couponColor);
+                    sb.append(",\"couponAmount\":")
+                            .append(couponAmount);
                     sb.append(",\"consumeLite\":")
                             .append(consumeLite);
                     sb.append(",\"cancelCount\":")
@@ -399,11 +393,11 @@ public class CouponBean implements Parcelable{
                 }
 
                 protected CoupListBean(Parcel in) {
-                    coupNo = in.readString();
-                    coupColor = in.readInt();
-                    coupTitle = in.readString();
-                    coupAmount = in.readDouble();
-                    discount = in.readString();
+                    couponNo = in.readString();
+                    couponColor = in.readInt();
+                    couponTitle = in.readString();
+                    couponAmount = in.readDouble();
+                    discountAmount = in.readString();
                     consumeLite = in.readDouble();
                     validPeriod = in.readString();
                     receiveTime = in.readString();
@@ -412,7 +406,7 @@ public class CouponBean implements Parcelable{
                     repertoryAmount = in.readInt();
                     usedLimit = in.readInt();
                     explain = in.readString();
-                    usedPerson = in.readInt();
+                    usedQty = in.readInt();
                     usedCount = in.readInt();
                     cancelCount = in.readInt();
                     qrCode = in.readString();
@@ -430,44 +424,44 @@ public class CouponBean implements Parcelable{
                     }
                 };
 
-                public String getCoupNo() {
-                    return coupNo;
+                public String getCouponNo() {
+                    return couponNo;
                 }
 
-                public void setCoupNo(String coupNo) {
-                    this.coupNo = coupNo;
+                public void setCouponNo(String couponNo) {
+                    this.couponNo = couponNo;
                 }
 
-                public int getCoupColor() {
-                    return coupColor;
+                public int getCouponColor() {
+                    return couponColor;
                 }
 
-                public void setCoupColor(int coupColor) {
-                    this.coupColor = coupColor;
+                public void setCouponColor(int couponColor) {
+                    this.couponColor = couponColor;
                 }
 
-                public String getCoupTitle() {
-                    return coupTitle;
+                public String getCouponTitle() {
+                    return couponTitle;
                 }
 
-                public void setCoupTitle(String coupTitle) {
-                    this.coupTitle = coupTitle;
+                public void setCouponTitle(String couponTitle) {
+                    this.couponTitle = couponTitle;
                 }
 
-                public double getCoupAmount() {
-                    return coupAmount;
+                public double getCouponAmount() {
+                    return couponAmount;
                 }
 
-                public void setCoupAmount(double coupAmount) {
-                    this.coupAmount = coupAmount;
+                public void setCouponAmount(double couponAmount) {
+                    this.couponAmount = couponAmount;
                 }
 
-                public String getDiscount() {
-                    return discount;
+                public String getDiscountAmount() {
+                    return discountAmount;
                 }
 
-                public void setDiscount(String discount) {
-                    this.discount = discount;
+                public void setDiscountAmount(String discountAmount) {
+                    this.discountAmount = discountAmount;
                 }
 
                 public double getConsumeLite() {
@@ -534,12 +528,12 @@ public class CouponBean implements Parcelable{
                     this.explain = explain;
                 }
 
-                public int getUsedPerson() {
-                    return usedPerson;
+                public int getUsedQty() {
+                    return usedQty;
                 }
 
-                public void setUsedPerson(int usedPerson) {
-                    this.usedPerson = usedPerson;
+                public void setUsedQty(int usedQty) {
+                    this.usedQty = usedQty;
                 }
 
                 public int getUsedCount() {
@@ -573,11 +567,11 @@ public class CouponBean implements Parcelable{
 
                 @Override
                 public void writeToParcel(Parcel dest, int flags) {
-                    dest.writeString(coupNo);
-                    dest.writeInt(coupColor);
-                    dest.writeString(coupTitle);
-                    dest.writeDouble(coupAmount);
-                    dest.writeString(discount);
+                    dest.writeString(couponNo);
+                    dest.writeInt(couponColor);
+                    dest.writeString(couponTitle);
+                    dest.writeDouble(couponAmount);
+                    dest.writeString(discountAmount);
                     dest.writeDouble(consumeLite);
                     dest.writeString(validPeriod);
                     dest.writeString(receiveTime);
@@ -586,7 +580,7 @@ public class CouponBean implements Parcelable{
                     dest.writeInt(repertoryAmount);
                     dest.writeInt(usedLimit);
                     dest.writeString(explain);
-                    dest.writeInt(usedPerson);
+                    dest.writeInt(usedQty);
                     dest.writeInt(usedCount);
                     dest.writeInt(cancelCount);
                     dest.writeString(qrCode);
@@ -596,37 +590,33 @@ public class CouponBean implements Parcelable{
 
         public static class DiscountCoupBean implements Parcelable{
             /**
-             * coupType : 2
-             * CoupCount : 2
-             * CoupList : [{"coupNo":"201712181033","coupColor":0,"coupTitle":"coupTitle","coupAmount":2.03,"discount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedPerson":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"coupNo":"201712181133","coupColor":0,"coupTitle":"coupTitle","coupAmount":2.03,"discount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201712181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedPerson":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]
+             * couponType : 2
+             * couponCount : 2
+             * coupList : [{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201801181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]
              */
 
-            private int coupType;
-            private int CoupCount;
-            private List<CoupListBeanX> CoupList;
+            private int couponType;
+            private int couponCount;
+            private List<CoupListBeanX> coupList;
 
             @Override
             public String toString() {
                 final StringBuilder sb = new StringBuilder("{");
                 sb.append("\"describeContents\":")
                         .append(describeContents());
-                sb.append(",\"coupType\":")
-                        .append(coupType);
-                sb.append(",\"CoupList\":")
-                        .append(CoupList);
+                sb.append(",\"couponType\":")
+                        .append(couponType);
+                sb.append(",\"couponCount\":")
+                        .append(couponCount);
                 sb.append(",\"coupList\":")
-                        .append(getCoupList());
-                sb.append(",\"CoupCount\":")
-                        .append(CoupCount);
-                sb.append(",\"coupCount\":")
-                        .append(getCoupCount());
+                        .append(coupList);
                 sb.append('}');
                 return sb.toString();
             }
 
             protected DiscountCoupBean(Parcel in) {
-                coupType = in.readInt();
-                CoupCount = in.readInt();
+                couponType = in.readInt();
+                couponCount = in.readInt();
             }
 
             public static final Creator<DiscountCoupBean> CREATOR = new Creator<DiscountCoupBean>() {
@@ -641,28 +631,28 @@ public class CouponBean implements Parcelable{
                 }
             };
 
-            public int getCoupType() {
-                return coupType;
+            public int getCouponType() {
+                return couponType;
             }
 
-            public void setCoupType(int coupType) {
-                this.coupType = coupType;
+            public void setCouponType(int couponType) {
+                this.couponType = couponType;
             }
 
-            public int getCoupCount() {
-                return CoupCount;
+            public int getCouponCount() {
+                return couponCount;
             }
 
-            public void setCoupCount(int CoupCount) {
-                this.CoupCount = CoupCount;
+            public void setCouponCount(int couponCount) {
+                this.couponCount = couponCount;
             }
 
             public List<CoupListBeanX> getCoupList() {
-                return CoupList;
+                return coupList;
             }
 
-            public void setCoupList(List<CoupListBeanX> CoupList) {
-                this.CoupList = CoupList;
+            public void setCoupList(List<CoupListBeanX> coupList) {
+                this.coupList = coupList;
             }
 
             @Override
@@ -672,36 +662,36 @@ public class CouponBean implements Parcelable{
 
             @Override
             public void writeToParcel(Parcel dest, int flags) {
-                dest.writeInt(coupType);
-                dest.writeInt(CoupCount);
+                dest.writeInt(couponType);
+                dest.writeInt(couponCount);
             }
 
             public static class CoupListBeanX implements Parcelable{
                 /**
-                 * coupNo : 201712181033
-                 * coupColor : 0
-                 * coupTitle : coupTitle
-                 * coupAmount : 2.03
-                 * discount :
+                 * couponNo : 201712181033
+                 * couponColor : 0
+                 * couponTitle : 小店1
+                 * couponAmount : 2.03
+                 * discountAmount :
                  * consumeLite : 10000.63
-                 * validPeriod : 30
-                 * receiveTime : 201712181033
-                 * startDay :
-                 * endDay :
+                 * validPeriod :
+                 * receiveTime :
+                 * startDay : 201712181033
+                 * endDay : 201801181033
                  * repertoryAmount : 100
                  * usedLimit : 1
                  * explain : 到店请出示优惠券
-                 * usedPerson : 2
+                 * usedQty : 2
                  * usedCount : 2
                  * cancelCount : 1
-                 * qrCode : http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100
+                 * qrCode : http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100
                  */
 
-                private String coupNo;
-                private int coupColor;
-                private String coupTitle;
-                private double coupAmount;
-                private String discount;
+                private String couponNo;
+                private int couponColor;
+                private String couponTitle;
+                private double couponAmount;
+                private String discountAmount;
                 private double consumeLite;
                 private String validPeriod;
                 private String receiveTime;
@@ -710,7 +700,7 @@ public class CouponBean implements Parcelable{
                 private int repertoryAmount;
                 private int usedLimit;
                 private String explain;
-                private int usedPerson;
+                private int usedQty;
                 private int usedCount;
                 private int cancelCount;
                 private String qrCode;
@@ -720,8 +710,8 @@ public class CouponBean implements Parcelable{
                     final StringBuilder sb = new StringBuilder("{");
                     sb.append("\"validPeriod\":\"")
                             .append(validPeriod).append('\"');
-                    sb.append(",\"usedPerson\":")
-                            .append(usedPerson);
+                    sb.append(",\"usedQty\":")
+                            .append(usedQty);
                     sb.append(",\"usedLimit\":")
                             .append(usedLimit);
                     sb.append(",\"usedCount\":")
@@ -738,18 +728,18 @@ public class CouponBean implements Parcelable{
                             .append(explain).append('\"');
                     sb.append(",\"endDay\":\"")
                             .append(endDay).append('\"');
-                    sb.append(",\"discount\":\"")
-                            .append(discount).append('\"');
+                    sb.append(",\"discountAmount\":\"")
+                            .append(discountAmount).append('\"');
                     sb.append(",\"describeContents\":")
                             .append(describeContents());
-                    sb.append(",\"coupTitle\":\"")
-                            .append(coupTitle).append('\"');
-                    sb.append(",\"coupNo\":\"")
-                            .append(coupNo).append('\"');
-                    sb.append(",\"coupColor\":")
-                            .append(coupColor);
-                    sb.append(",\"coupAmount\":")
-                            .append(coupAmount);
+                    sb.append(",\"couponTitle\":\"")
+                            .append(couponTitle).append('\"');
+                    sb.append(",\"couponNo\":\"")
+                            .append(couponNo).append('\"');
+                    sb.append(",\"couponColor\":")
+                            .append(couponColor);
+                    sb.append(",\"couponAmount\":")
+                            .append(couponAmount);
                     sb.append(",\"consumeLite\":")
                             .append(consumeLite);
                     sb.append(",\"cancelCount\":")
@@ -759,11 +749,11 @@ public class CouponBean implements Parcelable{
                 }
 
                 protected CoupListBeanX(Parcel in) {
-                    coupNo = in.readString();
-                    coupColor = in.readInt();
-                    coupTitle = in.readString();
-                    coupAmount = in.readDouble();
-                    discount = in.readString();
+                    couponNo = in.readString();
+                    couponColor = in.readInt();
+                    couponTitle = in.readString();
+                    couponAmount = in.readDouble();
+                    discountAmount = in.readString();
                     consumeLite = in.readDouble();
                     validPeriod = in.readString();
                     receiveTime = in.readString();
@@ -772,7 +762,7 @@ public class CouponBean implements Parcelable{
                     repertoryAmount = in.readInt();
                     usedLimit = in.readInt();
                     explain = in.readString();
-                    usedPerson = in.readInt();
+                    usedQty = in.readInt();
                     usedCount = in.readInt();
                     cancelCount = in.readInt();
                     qrCode = in.readString();
@@ -790,44 +780,44 @@ public class CouponBean implements Parcelable{
                     }
                 };
 
-                public String getCoupNo() {
-                    return coupNo;
+                public String getCouponNo() {
+                    return couponNo;
                 }
 
-                public void setCoupNo(String coupNo) {
-                    this.coupNo = coupNo;
+                public void setCouponNo(String couponNo) {
+                    this.couponNo = couponNo;
                 }
 
-                public int getCoupColor() {
-                    return coupColor;
+                public int getCouponColor() {
+                    return couponColor;
                 }
 
-                public void setCoupColor(int coupColor) {
-                    this.coupColor = coupColor;
+                public void setCouponColor(int couponColor) {
+                    this.couponColor = couponColor;
                 }
 
-                public String getCoupTitle() {
-                    return coupTitle;
+                public String getCouponTitle() {
+                    return couponTitle;
                 }
 
-                public void setCoupTitle(String coupTitle) {
-                    this.coupTitle = coupTitle;
+                public void setCouponTitle(String couponTitle) {
+                    this.couponTitle = couponTitle;
                 }
 
-                public double getCoupAmount() {
-                    return coupAmount;
+                public double getCouponAmount() {
+                    return couponAmount;
                 }
 
-                public void setCoupAmount(double coupAmount) {
-                    this.coupAmount = coupAmount;
+                public void setCouponAmount(double couponAmount) {
+                    this.couponAmount = couponAmount;
                 }
 
-                public String getDiscount() {
-                    return discount;
+                public String getDiscountAmount() {
+                    return discountAmount;
                 }
 
-                public void setDiscount(String discount) {
-                    this.discount = discount;
+                public void setDiscountAmount(String discountAmount) {
+                    this.discountAmount = discountAmount;
                 }
 
                 public double getConsumeLite() {
@@ -894,12 +884,12 @@ public class CouponBean implements Parcelable{
                     this.explain = explain;
                 }
 
-                public int getUsedPerson() {
-                    return usedPerson;
+                public int getUsedQty() {
+                    return usedQty;
                 }
 
-                public void setUsedPerson(int usedPerson) {
-                    this.usedPerson = usedPerson;
+                public void setUsedQty(int usedQty) {
+                    this.usedQty = usedQty;
                 }
 
                 public int getUsedCount() {
@@ -933,11 +923,11 @@ public class CouponBean implements Parcelable{
 
                 @Override
                 public void writeToParcel(Parcel dest, int flags) {
-                    dest.writeString(coupNo);
-                    dest.writeInt(coupColor);
-                    dest.writeString(coupTitle);
-                    dest.writeDouble(coupAmount);
-                    dest.writeString(discount);
+                    dest.writeString(couponNo);
+                    dest.writeInt(couponColor);
+                    dest.writeString(couponTitle);
+                    dest.writeDouble(couponAmount);
+                    dest.writeString(discountAmount);
                     dest.writeDouble(consumeLite);
                     dest.writeString(validPeriod);
                     dest.writeString(receiveTime);
@@ -946,7 +936,7 @@ public class CouponBean implements Parcelable{
                     dest.writeInt(repertoryAmount);
                     dest.writeInt(usedLimit);
                     dest.writeString(explain);
-                    dest.writeInt(usedPerson);
+                    dest.writeInt(usedQty);
                     dest.writeInt(usedCount);
                     dest.writeInt(cancelCount);
                     dest.writeString(qrCode);
@@ -956,37 +946,33 @@ public class CouponBean implements Parcelable{
 
         public static class ExchangeCoupBean implements Parcelable{
             /**
-             * coupType : 3
-             * CoupCount : 2
-             * CoupList : [{"coupNo":"201712181033","coupColor":0,"coupTitle":"coupTitle","coupAmount":2.03,"discount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedPerson":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"coupNo":"201712181133","coupColor":0,"coupTitle":"coupTitle","coupAmount":2.03,"discount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201712181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedPerson":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]
+             * couponType : 3
+             * couponCount : 2
+             * coupList : [{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"coupTitle","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]
              */
 
-            private int coupType;
-            private int CoupCount;
-            private List<CoupListBeanXX> CoupList;
+            private int couponType;
+            private int couponCount;
+            private List<CoupListBeanXX> coupList;
 
             @Override
             public String toString() {
                 final StringBuilder sb = new StringBuilder("{");
                 sb.append("\"describeContents\":")
                         .append(describeContents());
-                sb.append(",\"coupType\":")
-                        .append(coupType);
-                sb.append(",\"CoupList\":")
-                        .append(CoupList);
+                sb.append(",\"couponType\":")
+                        .append(couponType);
+                sb.append(",\"couponCount\":")
+                        .append(couponCount);
                 sb.append(",\"coupList\":")
-                        .append(getCoupList());
-                sb.append(",\"CoupCount\":")
-                        .append(CoupCount);
-                sb.append(",\"coupCount\":")
-                        .append(getCoupCount());
+                        .append(coupList);
                 sb.append('}');
                 return sb.toString();
             }
 
             protected ExchangeCoupBean(Parcel in) {
-                coupType = in.readInt();
-                CoupCount = in.readInt();
+                couponType = in.readInt();
+                couponCount = in.readInt();
             }
 
             public static final Creator<ExchangeCoupBean> CREATOR = new Creator<ExchangeCoupBean>() {
@@ -1001,28 +987,28 @@ public class CouponBean implements Parcelable{
                 }
             };
 
-            public int getCoupType() {
-                return coupType;
+            public int getCouponType() {
+                return couponType;
             }
 
-            public void setCoupType(int coupType) {
-                this.coupType = coupType;
+            public void setCouponType(int couponType) {
+                this.couponType = couponType;
             }
 
-            public int getCoupCount() {
-                return CoupCount;
+            public int getCouponCount() {
+                return couponCount;
             }
 
-            public void setCoupCount(int CoupCount) {
-                this.CoupCount = CoupCount;
+            public void setCouponCount(int couponCount) {
+                this.couponCount = couponCount;
             }
 
             public List<CoupListBeanXX> getCoupList() {
-                return CoupList;
+                return coupList;
             }
 
-            public void setCoupList(List<CoupListBeanXX> CoupList) {
-                this.CoupList = CoupList;
+            public void setCoupList(List<CoupListBeanXX> coupList) {
+                this.coupList = coupList;
             }
 
             @Override
@@ -1032,36 +1018,36 @@ public class CouponBean implements Parcelable{
 
             @Override
             public void writeToParcel(Parcel dest, int flags) {
-                dest.writeInt(coupType);
-                dest.writeInt(CoupCount);
+                dest.writeInt(couponType);
+                dest.writeInt(couponCount);
             }
 
             public static class CoupListBeanXX implements Parcelable{
                 /**
-                 * coupNo : 201712181033
-                 * coupColor : 0
-                 * coupTitle : coupTitle
-                 * coupAmount : 2.03
-                 * discount :
+                 * couponNo : 201712181033
+                 * couponColor : 0
+                 * couponTitle : 小店1
+                 * couponAmount : 2.03
+                 * discountAmount :
                  * consumeLite : 10000.63
-                 * validPeriod : 30
-                 * receiveTime : 201712181033
-                 * startDay :
-                 * endDay :
+                 * validPeriod :
+                 * receiveTime :
+                 * startDay : 201712181033
+                 * endDay : coupTitle
                  * repertoryAmount : 100
                  * usedLimit : 1
                  * explain : 到店请出示优惠券
-                 * usedPerson : 2
+                 * usedQty : 2
                  * usedCount : 2
                  * cancelCount : 1
-                 * qrCode : http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100
+                 * qrCode : http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100
                  */
 
-                private String coupNo;
-                private int coupColor;
-                private String coupTitle;
-                private double coupAmount;
-                private String discount;
+                private String couponNo;
+                private int couponColor;
+                private String couponTitle;
+                private double couponAmount;
+                private String discountAmount;
                 private double consumeLite;
                 private String validPeriod;
                 private String receiveTime;
@@ -1070,7 +1056,7 @@ public class CouponBean implements Parcelable{
                 private int repertoryAmount;
                 private int usedLimit;
                 private String explain;
-                private int usedPerson;
+                private int usedQty;
                 private int usedCount;
                 private int cancelCount;
                 private String qrCode;
@@ -1080,8 +1066,8 @@ public class CouponBean implements Parcelable{
                     final StringBuilder sb = new StringBuilder("{");
                     sb.append("\"validPeriod\":\"")
                             .append(validPeriod).append('\"');
-                    sb.append(",\"usedPerson\":")
-                            .append(usedPerson);
+                    sb.append(",\"usedQty\":")
+                            .append(usedQty);
                     sb.append(",\"usedLimit\":")
                             .append(usedLimit);
                     sb.append(",\"usedCount\":")
@@ -1098,18 +1084,18 @@ public class CouponBean implements Parcelable{
                             .append(explain).append('\"');
                     sb.append(",\"endDay\":\"")
                             .append(endDay).append('\"');
-                    sb.append(",\"discount\":\"")
-                            .append(discount).append('\"');
+                    sb.append(",\"discountAmount\":\"")
+                            .append(discountAmount).append('\"');
                     sb.append(",\"describeContents\":")
                             .append(describeContents());
-                    sb.append(",\"coupTitle\":\"")
-                            .append(coupTitle).append('\"');
-                    sb.append(",\"coupNo\":\"")
-                            .append(coupNo).append('\"');
-                    sb.append(",\"coupColor\":")
-                            .append(coupColor);
-                    sb.append(",\"coupAmount\":")
-                            .append(coupAmount);
+                    sb.append(",\"couponTitle\":\"")
+                            .append(couponTitle).append('\"');
+                    sb.append(",\"couponNo\":\"")
+                            .append(couponNo).append('\"');
+                    sb.append(",\"couponColor\":")
+                            .append(couponColor);
+                    sb.append(",\"couponAmount\":")
+                            .append(couponAmount);
                     sb.append(",\"consumeLite\":")
                             .append(consumeLite);
                     sb.append(",\"cancelCount\":")
@@ -1119,11 +1105,11 @@ public class CouponBean implements Parcelable{
                 }
 
                 protected CoupListBeanXX(Parcel in) {
-                    coupNo = in.readString();
-                    coupColor = in.readInt();
-                    coupTitle = in.readString();
-                    coupAmount = in.readDouble();
-                    discount = in.readString();
+                    couponNo = in.readString();
+                    couponColor = in.readInt();
+                    couponTitle = in.readString();
+                    couponAmount = in.readDouble();
+                    discountAmount = in.readString();
                     consumeLite = in.readDouble();
                     validPeriod = in.readString();
                     receiveTime = in.readString();
@@ -1132,7 +1118,7 @@ public class CouponBean implements Parcelable{
                     repertoryAmount = in.readInt();
                     usedLimit = in.readInt();
                     explain = in.readString();
-                    usedPerson = in.readInt();
+                    usedQty = in.readInt();
                     usedCount = in.readInt();
                     cancelCount = in.readInt();
                     qrCode = in.readString();
@@ -1150,44 +1136,44 @@ public class CouponBean implements Parcelable{
                     }
                 };
 
-                public String getCoupNo() {
-                    return coupNo;
+                public String getCouponNo() {
+                    return couponNo;
                 }
 
-                public void setCoupNo(String coupNo) {
-                    this.coupNo = coupNo;
+                public void setCouponNo(String couponNo) {
+                    this.couponNo = couponNo;
                 }
 
-                public int getCoupColor() {
-                    return coupColor;
+                public int getCouponColor() {
+                    return couponColor;
                 }
 
-                public void setCoupColor(int coupColor) {
-                    this.coupColor = coupColor;
+                public void setCouponColor(int couponColor) {
+                    this.couponColor = couponColor;
                 }
 
-                public String getCoupTitle() {
-                    return coupTitle;
+                public String getCouponTitle() {
+                    return couponTitle;
                 }
 
-                public void setCoupTitle(String coupTitle) {
-                    this.coupTitle = coupTitle;
+                public void setCouponTitle(String couponTitle) {
+                    this.couponTitle = couponTitle;
                 }
 
-                public double getCoupAmount() {
-                    return coupAmount;
+                public double getCouponAmount() {
+                    return couponAmount;
                 }
 
-                public void setCoupAmount(double coupAmount) {
-                    this.coupAmount = coupAmount;
+                public void setCouponAmount(double couponAmount) {
+                    this.couponAmount = couponAmount;
                 }
 
-                public String getDiscount() {
-                    return discount;
+                public String getDiscountAmount() {
+                    return discountAmount;
                 }
 
-                public void setDiscount(String discount) {
-                    this.discount = discount;
+                public void setDiscountAmount(String discountAmount) {
+                    this.discountAmount = discountAmount;
                 }
 
                 public double getConsumeLite() {
@@ -1254,12 +1240,12 @@ public class CouponBean implements Parcelable{
                     this.explain = explain;
                 }
 
-                public int getUsedPerson() {
-                    return usedPerson;
+                public int getUsedQty() {
+                    return usedQty;
                 }
 
-                public void setUsedPerson(int usedPerson) {
-                    this.usedPerson = usedPerson;
+                public void setUsedQty(int usedQty) {
+                    this.usedQty = usedQty;
                 }
 
                 public int getUsedCount() {
@@ -1293,11 +1279,11 @@ public class CouponBean implements Parcelable{
 
                 @Override
                 public void writeToParcel(Parcel dest, int flags) {
-                    dest.writeString(coupNo);
-                    dest.writeInt(coupColor);
-                    dest.writeString(coupTitle);
-                    dest.writeDouble(coupAmount);
-                    dest.writeString(discount);
+                    dest.writeString(couponNo);
+                    dest.writeInt(couponColor);
+                    dest.writeString(couponTitle);
+                    dest.writeDouble(couponAmount);
+                    dest.writeString(discountAmount);
                     dest.writeDouble(consumeLite);
                     dest.writeString(validPeriod);
                     dest.writeString(receiveTime);
@@ -1306,7 +1292,7 @@ public class CouponBean implements Parcelable{
                     dest.writeInt(repertoryAmount);
                     dest.writeInt(usedLimit);
                     dest.writeString(explain);
-                    dest.writeInt(usedPerson);
+                    dest.writeInt(usedQty);
                     dest.writeInt(usedCount);
                     dest.writeInt(cancelCount);
                     dest.writeString(qrCode);

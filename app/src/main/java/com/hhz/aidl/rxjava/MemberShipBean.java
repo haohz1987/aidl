@@ -12,40 +12,68 @@ import java.util.List;
 public class MemberShipBean implements Parcelable{
 
     /**
-     * respCode : 0000
-     * respMsg : 请求成功
+     * responseCode : 0000
+     * errorMessage : 请求成功
      * logo : http://api.map.baidu.com/images/weather/day/duoyun.png
      * mechantName : 商户01
      * mechantId : 0123456789
      * couponType : 2
-     * cardAccount : 2
-     * cardTotal : 5
+     * membershipCardCount : 2
+     * membershipCardTotal : 5
      * validRepertoryTerm : 30
-     * result : [{"merchantId":"123456789","mechantType":1,"cardColor":1,"title":"梨花小店会员卡1","couponAmount":"9折","explain":"到店请出示优惠券","usedPerson":10,"usedCount":2,"validPeriod":"20171220112233","startDay":"","endDay":"","qrCode":"http://1.hpaypos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"merchantId":"123456780","mechantType":1,"cardColor":1,"title":"梨花小店会员卡2","couponAmount":"9折","explain":"到店请出示优惠券","usedPerson":10,"usedCount":2,"validPeriod":"","startDay":"20171220112233","endDay":"20180120112233","qrCode":"http://1.hpaypos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]
+     * result : [{"membershipCardId":"123456789","membershipCardType":1,"cardColor":1,"title":"梨花小店会员卡1","discountAmount":"9折","explain":"到店请出示优惠券","usedQty":10,"usedCount":2,"validPeriod":"30","receiveTime":"20171220112233","startDay":"","endDay":"","qrCode":"http://1.hpaypos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"membershipCardId":"123456789","membershipCardType":1,"cardColor":1,"title":"梨花小店会员卡1","discountAmount":"9折","explain":"到店请出示优惠券","usedQty":10,"usedCount":2,"validPeriod":"","receiveTime":"","startDay":"20171220112233","endDay":"20180120112233","qrCode":"http://1.hpaypos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]
      */
 
-    private String respCode;
-    private String respMsg;
+    private String responseCode;
+    private String errorMessage;
     private String logo;
     private String mechantName;
     private String mechantId;
     private int couponType;
-    private int cardAccount;
-    private int cardTotal;
-    private String validRepertoryTerm;
+    private int membershipCardCount;
+    private int membershipCardTotal;
+    private int validRepertoryTerm;
     private List<ResultBean> result;
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("{");
+        sb.append("\"validRepertoryTerm\":\"")
+                .append(validRepertoryTerm).append('\"');
+        sb.append(",\"result\":")
+                .append(result);
+        sb.append(",\"responseCode\":\"")
+                .append(responseCode).append('\"');
+        sb.append(",\"membershipCardTotal\":")
+                .append(membershipCardTotal);
+        sb.append(",\"membershipCardCount\":")
+                .append(membershipCardCount);
+        sb.append(",\"mechantName\":\"")
+                .append(mechantName).append('\"');
+        sb.append(",\"mechantId\":\"")
+                .append(mechantId).append('\"');
+        sb.append(",\"logo\":\"")
+                .append(logo).append('\"');
+        sb.append(",\"errorMessage\":\"")
+                .append(errorMessage).append('\"');
+        sb.append(",\"describeContents\":")
+                .append(describeContents());
+        sb.append(",\"couponType\":")
+                .append(couponType);
+        sb.append('}');
+        return sb.toString();
+    }
+
     protected MemberShipBean(Parcel in) {
-        respCode = in.readString();
-        respMsg = in.readString();
+        responseCode = in.readString();
+        errorMessage = in.readString();
         logo = in.readString();
         mechantName = in.readString();
         mechantId = in.readString();
         couponType = in.readInt();
-        cardAccount = in.readInt();
-        cardTotal = in.readInt();
-        validRepertoryTerm = in.readString();
-        result = in.createTypedArrayList(ResultBean.CREATOR);
+        membershipCardCount = in.readInt();
+        membershipCardTotal = in.readInt();
+        validRepertoryTerm = in.readInt();
     }
 
     public static final Creator<MemberShipBean> CREATOR = new Creator<MemberShipBean>() {
@@ -60,49 +88,20 @@ public class MemberShipBean implements Parcelable{
         }
     };
 
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("{");
-        sb.append("\"validRepertoryTerm\":\"")
-                .append(validRepertoryTerm).append('\"');
-        sb.append(",\"result\":")
-                .append(result);
-        sb.append(",\"respMsg\":\"")
-                .append(respMsg).append('\"');
-        sb.append(",\"respCode\":\"")
-                .append(respCode).append('\"');
-        sb.append(",\"mechantName\":\"")
-                .append(mechantName).append('\"');
-        sb.append(",\"mechantId\":\"")
-                .append(mechantId).append('\"');
-        sb.append(",\"logo\":\"")
-                .append(logo).append('\"');
-        sb.append(",\"describeContents\":")
-                .append(describeContents());
-        sb.append(",\"couponType\":")
-                .append(couponType);
-        sb.append(",\"cardTotal\":")
-                .append(cardTotal);
-        sb.append(",\"cardAccount\":")
-                .append(cardAccount);
-        sb.append('}');
-        return sb.toString();
+    public String getResponseCode() {
+        return responseCode;
     }
 
-    public String getRespCode() {
-        return respCode;
+    public void setResponseCode(String responseCode) {
+        this.responseCode = responseCode;
     }
 
-    public void setRespCode(String respCode) {
-        this.respCode = respCode;
+    public String getErrorMessage() {
+        return errorMessage;
     }
 
-    public String getRespMsg() {
-        return respMsg;
-    }
-
-    public void setRespMsg(String respMsg) {
-        this.respMsg = respMsg;
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
     }
 
     public String getLogo() {
@@ -121,11 +120,11 @@ public class MemberShipBean implements Parcelable{
         this.mechantName = mechantName;
     }
 
-    public String getmechantId() {
+    public String getMechantId() {
         return mechantId;
     }
 
-    public void setmechantId(String mechantId) {
+    public void setMechantId(String mechantId) {
         this.mechantId = mechantId;
     }
 
@@ -137,27 +136,27 @@ public class MemberShipBean implements Parcelable{
         this.couponType = couponType;
     }
 
-    public int getCardAccount() {
-        return cardAccount;
+    public int getMembershipCardCount() {
+        return membershipCardCount;
     }
 
-    public void setCardAccount(int cardAccount) {
-        this.cardAccount = cardAccount;
+    public void setMembershipCardCount(int membershipCardCount) {
+        this.membershipCardCount = membershipCardCount;
     }
 
-    public int getCardTotal() {
-        return cardTotal;
+    public int getMembershipCardTotal() {
+        return membershipCardTotal;
     }
 
-    public void setCardTotal(int cardTotal) {
-        this.cardTotal = cardTotal;
+    public void setMembershipCardTotal(int membershipCardTotal) {
+        this.membershipCardTotal = membershipCardTotal;
     }
 
-    public String getValidRepertoryTerm() {
+    public int getValidRepertoryTerm() {
         return validRepertoryTerm;
     }
 
-    public void setValidRepertoryTerm(String validRepertoryTerm) {
+    public void setValidRepertoryTerm(int validRepertoryTerm) {
         this.validRepertoryTerm = validRepertoryTerm;
     }
 
@@ -176,57 +175,94 @@ public class MemberShipBean implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(respCode);
-        dest.writeString(respMsg);
+        dest.writeString(responseCode);
+        dest.writeString(errorMessage);
         dest.writeString(logo);
         dest.writeString(mechantName);
         dest.writeString(mechantId);
         dest.writeInt(couponType);
-        dest.writeInt(cardAccount);
-        dest.writeInt(cardTotal);
-        dest.writeString(validRepertoryTerm);
-        dest.writeTypedList(result);
+        dest.writeInt(membershipCardCount);
+        dest.writeInt(membershipCardTotal);
+        dest.writeInt(validRepertoryTerm);
     }
 
     public static class ResultBean implements Parcelable{
         /**
-         * merchantId : 123456789
-         * mechantType : 1
+         * membershipCardId : 123456789
+         * membershipCardType : 1
          * cardColor : 1
          * title : 梨花小店会员卡1
-         * couponAmount : 9折
+         * discountAmount : 9折
          * explain : 到店请出示优惠券
-         * usedPerson : 10
+         * usedQty : 10
          * usedCount : 2
-         * validPeriod : 20171220112233
+         * validPeriod : 30
+         * receiveTime : 20171220112233
          * startDay :
          * endDay :
-         * qrCode : http://1.hpaypos.applinzi.com/qrCode.png?wechatNo=122&mechantId=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100
+         * qrCode : http://1.hpaypos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100
          */
 
-        private String merchantId;
-        private int mechantType;
+        private String membershipCardId;
+        private int membershipCardType;
         private int cardColor;
         private String title;
-        private String couponAmount;
+        private double discountAmount;
         private String explain;
-        private int usedPerson;
+        private int usedQty;
         private int usedCount;
         private String validPeriod;
+        private String receiveTime;
         private String startDay;
         private String endDay;
         private String qrCode;
 
+        @Override
+        public String toString() {
+            final StringBuilder sb = new StringBuilder("{");
+            sb.append("\"validPeriod\":\"")
+                    .append(validPeriod).append('\"');
+            sb.append(",\"usedQty\":")
+                    .append(usedQty);
+            sb.append(",\"usedCount\":")
+                    .append(usedCount);
+            sb.append(",\"title\":\"")
+                    .append(title).append('\"');
+            sb.append(",\"startDay\":\"")
+                    .append(startDay).append('\"');
+            sb.append(",\"receiveTime\":\"")
+                    .append(receiveTime).append('\"');
+            sb.append(",\"qrCode\":\"")
+                    .append(qrCode).append('\"');
+            sb.append(",\"membershipCardType\":")
+                    .append(membershipCardType);
+            sb.append(",\"membershipCardId\":\"")
+                    .append(membershipCardId).append('\"');
+            sb.append(",\"explain\":\"")
+                    .append(explain).append('\"');
+            sb.append(",\"endDay\":\"")
+                    .append(endDay).append('\"');
+            sb.append(",\"discountAmount\":")
+                    .append(discountAmount);
+            sb.append(",\"describeContents\":")
+                    .append(describeContents());
+            sb.append(",\"cardColor\":")
+                    .append(cardColor);
+            sb.append('}');
+            return sb.toString();
+        }
+
         protected ResultBean(Parcel in) {
-            merchantId = in.readString();
-            mechantType = in.readInt();
+            membershipCardId = in.readString();
+            membershipCardType = in.readInt();
             cardColor = in.readInt();
             title = in.readString();
-            couponAmount = in.readString();
+            discountAmount = in.readDouble();
             explain = in.readString();
-            usedPerson = in.readInt();
+            usedQty = in.readInt();
             usedCount = in.readInt();
             validPeriod = in.readString();
+            receiveTime = in.readString();
             startDay = in.readString();
             endDay = in.readString();
             qrCode = in.readString();
@@ -244,53 +280,20 @@ public class MemberShipBean implements Parcelable{
             }
         };
 
-        @Override
-        public String toString() {
-            final StringBuilder sb = new StringBuilder("{");
-            sb.append("\"validPeriod\":\"")
-                    .append(validPeriod).append('\"');
-            sb.append(",\"usedPerson\":")
-                    .append(usedPerson);
-            sb.append(",\"usedCount\":")
-                    .append(usedCount);
-            sb.append(",\"title\":\"")
-                    .append(title).append('\"');
-            sb.append(",\"startDay\":\"")
-                    .append(startDay).append('\"');
-            sb.append(",\"qrCode\":\"")
-                    .append(qrCode).append('\"');
-            sb.append(",\"merchantId\":\"")
-                    .append(merchantId).append('\"');
-            sb.append(",\"mechantType\":")
-                    .append(mechantType);
-            sb.append(",\"explain\":\"")
-                    .append(explain).append('\"');
-            sb.append(",\"endDay\":\"")
-                    .append(endDay).append('\"');
-            sb.append(",\"describeContents\":")
-                    .append(describeContents());
-            sb.append(",\"couponAmount\":\"")
-                    .append(couponAmount).append('\"');
-            sb.append(",\"cardColor\":")
-                    .append(cardColor);
-            sb.append('}');
-            return sb.toString();
+        public String getMembershipCardId() {
+            return membershipCardId;
         }
 
-        public String getMerchantId() {
-            return merchantId;
+        public void setMembershipCardId(String membershipCardId) {
+            this.membershipCardId = membershipCardId;
         }
 
-        public void setMerchantId(String merchantId) {
-            this.merchantId = merchantId;
+        public int getMembershipCardType() {
+            return membershipCardType;
         }
 
-        public int getMechantType() {
-            return mechantType;
-        }
-
-        public void setMechantType(int mechantType) {
-            this.mechantType = mechantType;
+        public void setMembershipCardType(int membershipCardType) {
+            this.membershipCardType = membershipCardType;
         }
 
         public int getCardColor() {
@@ -309,12 +312,12 @@ public class MemberShipBean implements Parcelable{
             this.title = title;
         }
 
-        public String getCouponAmount() {
-            return couponAmount;
+        public double getDiscountAmount() {
+            return discountAmount;
         }
 
-        public void setCouponAmount(String couponAmount) {
-            this.couponAmount = couponAmount;
+        public void setDiscountAmount(double discountAmount) {
+            this.discountAmount = discountAmount;
         }
 
         public String getExplain() {
@@ -325,12 +328,12 @@ public class MemberShipBean implements Parcelable{
             this.explain = explain;
         }
 
-        public int getUsedPerson() {
-            return usedPerson;
+        public int getUsedQty() {
+            return usedQty;
         }
 
-        public void setUsedPerson(int usedPerson) {
-            this.usedPerson = usedPerson;
+        public void setUsedQty(int usedQty) {
+            this.usedQty = usedQty;
         }
 
         public int getUsedCount() {
@@ -347,6 +350,14 @@ public class MemberShipBean implements Parcelable{
 
         public void setValidPeriod(String validPeriod) {
             this.validPeriod = validPeriod;
+        }
+
+        public String getReceiveTime() {
+            return receiveTime;
+        }
+
+        public void setReceiveTime(String receiveTime) {
+            this.receiveTime = receiveTime;
         }
 
         public String getStartDay() {
@@ -380,15 +391,16 @@ public class MemberShipBean implements Parcelable{
 
         @Override
         public void writeToParcel(Parcel dest, int flags) {
-            dest.writeString(merchantId);
-            dest.writeInt(mechantType);
+            dest.writeString(membershipCardId);
+            dest.writeInt(membershipCardType);
             dest.writeInt(cardColor);
             dest.writeString(title);
-            dest.writeString(couponAmount);
+            dest.writeDouble(discountAmount);
             dest.writeString(explain);
-            dest.writeInt(usedPerson);
+            dest.writeInt(usedQty);
             dest.writeInt(usedCount);
             dest.writeString(validPeriod);
+            dest.writeString(receiveTime);
             dest.writeString(startDay);
             dest.writeString(endDay);
             dest.writeString(qrCode);
