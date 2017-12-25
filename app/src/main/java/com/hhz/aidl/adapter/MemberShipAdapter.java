@@ -1,15 +1,16 @@
 package com.hhz.aidl.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.hhz.aidl.R;
+import com.hhz.aidl.activity.GrantMemberCard;
 import com.hhz.aidl.rxjava.MemberShipBean;
 import com.hhz.aidl.util.CouponColorType;
-import com.hhz.aidl.util.LogT;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,18 +40,27 @@ public class MemberShipAdapter extends BaseQuickAdapter<MemberShipBean.ResultBea
     }
 
     @Override
-    protected void convert(BaseViewHolder helper, MemberShipBean.ResultBean item) {
+    protected void convert(BaseViewHolder helper, final MemberShipBean.ResultBean item) {
 //        final int position = helper.getLayoutPosition();
         helper.setText(R.id.tv_store_name, item.getTitle());
-        if (item.getMembershipCardType() == 2) helper.setText(R.id.tv_card_type, "高级会员卡");
-        else helper.setText(R.id.tv_card_type, "普通会员卡");
+        String membershipCardType = "";
+        if (item.getMembershipCardType() == 2)  membershipCardType = "高级会员卡";
+        else membershipCardType = "普通会员卡";
+        helper.setText(R.id.tv_card_type, membershipCardType);
         helper.setText(R.id.tv_discount, Math.floor(item.getDiscountAmount() / 10) + "折");
         if (item.getCardColor() != -1)
             helper.setBackgroundRes(R.id.ll_membership, CouponColorType.getResID(item.getCardColor() + ""));
+        final String finalMembershipCardType = membershipCardType;
         helper.getView(R.id.btn_send_card).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LogT.d("发卡");
+                Intent intent = new Intent(context, GrantMemberCard.class);
+                intent.putExtra("title", item.getTitle());
+                intent.putExtra("membershipCardType", finalMembershipCardType);
+                intent.putExtra("discountAmount", Math.floor(item.getDiscountAmount() / 10) + "折");
+                intent.putExtra("backgroundRes",CouponColorType.getResID(item.getCardColor() + ""));
+                intent.putExtra("qrCode", item.getQrCode());
+                context.startActivity(intent);
             }
         });
     }

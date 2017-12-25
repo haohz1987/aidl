@@ -24,4 +24,5 @@
     <color name="selectBg">#C6C6C6</color>
     <color name="sky_blue">#37A1FF</color>
     <color name="colorWhite">#F1EEEF</color>
+    <color name="placeholder_color">#1A000000</color>
 </resources>

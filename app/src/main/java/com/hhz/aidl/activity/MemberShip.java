@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 import com.hhz.aidl.R;
 import com.hhz.aidl.adapter.MemberShipAdapter;
@@ -41,6 +42,7 @@ public class MemberShip extends BaseActivity<MainModel.View, MainPresenter>
     protected void initializeView() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setToolbar(toolbar);
+        ((TextView)findViewById(R.id.toolbar_title)).setText("会员卡");
         listContainer = findViewById(R.id.list_container);
         listContainer.setLayoutManager(new LinearLayoutManager(this));
         initAdapter();

@@ -52,6 +52,7 @@
         <activity android:name=".activity.MemberShip"/>
         <activity android:name=".activity.Coupon"/>
         <activity android:name=".activity.Record"/>
+        <activity android:name=".activity.GrantMemberCard"/>
 
     </application>
 
