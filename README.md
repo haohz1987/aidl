@@ -1,6 +1,11 @@
+Demo合辑，
+
 1.Glide缓存
 
     /**
+     *
+     * 默认所有图片地址均不同
+     *
      * @param context
      * @param imageView 放入的图片
      * @param qrCodeUrl 请求网址

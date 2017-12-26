@@ -6,7 +6,6 @@ import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.TextView;
 
 import com.hhz.aidl.R;
@@ -26,7 +25,7 @@ import java.util.HashMap;
  */
 
 public class MemberShip extends BaseActivity<MainModel.View, MainPresenter>
-        implements MainModel.View, View.OnClickListener {
+        implements MainModel.View{
 
     private RecyclerView listContainer;
     public static MemberShipAdapter memberShipAdapter;
@@ -62,11 +61,6 @@ public class MemberShip extends BaseActivity<MainModel.View, MainPresenter>
     }
 
     @Override
-    public void onClick(View v) {
-
-    }
-
-    @Override
     public void showLoading() {
 
     }
@@ -80,7 +74,7 @@ public class MemberShip extends BaseActivity<MainModel.View, MainPresenter>
     public void showNoData() {
 
     }
-    private final MyHandlerNotice myHandler= new MyHandlerNotice(this);
+    private final MyHandler myHandler= new MyHandler(this);
     @Override
     public void onGetOpenIdSuccess(MemberShipBean memberShipBean) {
         dataList = (ArrayList<MemberShipBean.ResultBean>) memberShipBean.getResult();
@@ -90,10 +84,10 @@ public class MemberShip extends BaseActivity<MainModel.View, MainPresenter>
         msg.setData(bundle);
         myHandler.sendMessage(msg);
     }
-    private static class MyHandlerNotice extends Handler {
+    private static class MyHandler extends Handler {
         private final WeakReference<MemberShip> mActivty;
 
-        public MyHandlerNotice(MemberShip activity) {
+        public MyHandler(MemberShip activity) {
             mActivty = new WeakReference<>(activity);
         }
 

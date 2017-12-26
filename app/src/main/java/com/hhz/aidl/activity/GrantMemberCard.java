@@ -41,11 +41,13 @@ public class GrantMemberCard extends BaseActivity<BaseModel.View, BasePresenter>
         String discountAmount = getIntent().getStringExtra("discountAmount");
         int backgroundRes = getIntent().getIntExtra("backgroundRes", 0);
         String qrCodeUrl = getIntent().getStringExtra("qrCode");
+        String mechantLogo=getIntent().getStringExtra("mechantLogo");
 
         ((TextView) findViewById(R.id.tv_store_name)).setText(title);
         ((TextView) findViewById(R.id.tv_card_type)).setText(membershipCardType);
         ((TextView) findViewById(R.id.tv_discount)).setText(discountAmount);
         findViewById(R.id.ll_grant).setBackgroundResource(backgroundRes);
+
         ImageView iv_qrcode = findViewById(R.id.iv_qrcode);
         /**
          * Glide缓存
@@ -56,9 +58,11 @@ public class GrantMemberCard extends BaseActivity<BaseModel.View, BasePresenter>
          * @param cacheName 缓存到本地的网址标签名
          */
         GlideUtils.readCache(this,iv_qrcode,qrCodeUrl,mACache,title);
+
+        ImageView iv_store_logo = findViewById(R.id.iv_store_logo);
+        GlideUtils.readCache(GrantMemberCard.this,iv_store_logo,mechantLogo,mACache,title);
+
     }
-
-
 
     @Override
     public void showLoading() {

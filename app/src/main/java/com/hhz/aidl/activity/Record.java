@@ -1,7 +1,10 @@
 package com.hhz.aidl.activity;
 
+import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
+import com.hhz.aidl.R;
 import com.hhz.aidl.mvp.model.MainModel;
 import com.hhz.aidl.mvp.presenter.MainPresenter;
 import com.hhz.aidl.rxjava.CouponBean;
@@ -13,12 +16,25 @@ import com.hhz.aidl.rxjava.RecordBean;
  */
 
 public class Record extends BaseActivity<MainModel.View, MainPresenter>
-        implements MainModel.View,View.OnClickListener{
-    @Override
-    public void onClick(View v) {
+        implements MainModel.View{
 
+    @Override
+    protected int getLayoutResId() {
+        return R.layout.activity_record;
     }
 
+    @Override
+    protected void initializeView() {
+        findViewById(R.id.iv_message).setVisibility(View.GONE);
+        ((TextView) findViewById(R.id.toolbar_title)).setText("记录");
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setToolbar(toolbar);
+    }
+
+    @Override
+    protected void initializeData() {
+
+    }
     @Override
     public void showLoading() {
 
@@ -49,18 +65,5 @@ public class Record extends BaseActivity<MainModel.View, MainPresenter>
 
     }
 
-    @Override
-    protected int getLayoutResId() {
-        return 0;
-    }
 
-    @Override
-    protected void initializeView() {
-
-    }
-
-    @Override
-    protected void initializeData() {
-
-    }
 }

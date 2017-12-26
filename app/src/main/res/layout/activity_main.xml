@@ -71,29 +71,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_1"
-                android:text="获取会员卡信息" />
+                android:text="获取会员卡信息+glide图片缓存+gson+json" />
 
             <Button
                 android:id="@+id/btn_getCoupList"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_1"
-                android:layout_toRightOf="@+id/btn_getOpenId"
-                android:text="优惠券列表" />
+                android:layout_below="@+id/btn_getOpenId"
+                android:text="优惠券列表+luaTable" />
 
-            <Button
-                android:id="@+id/btn_getRecord"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_1"
-                android:layout_toRightOf="@+id/btn_getCoupList"
-                android:text="历史记录" />
+
 
             <TextView
                 android:id="@+id/tv_request"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/btn_getOpenId"
+                android:layout_below="@+id/btn_getCoupList"
                 android:layout_marginTop="10dp" />
 
         </RelativeLayout>

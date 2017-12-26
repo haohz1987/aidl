@@ -40,7 +40,7 @@ public class GlideUtils {
      * @param cacheName 缓存到本地的网址标签名
      */
     public static void readCache(Context context,ImageView imageView, String qrCodeUrl,ACache mACache, String cacheName) {
-        cacheName = cacheName+"_cache";
+        cacheName = cacheName+"_"+System.currentTimeMillis();
         //有缓存的网址
         if (!ACache.isEmpty(mACache.getAsString(cacheName))) {
             String qrCodeUrlCache = mACache.getAsString(cacheName);

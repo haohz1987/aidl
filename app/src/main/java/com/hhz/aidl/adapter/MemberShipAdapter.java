@@ -65,6 +65,7 @@ public class MemberShipAdapter extends BaseQuickAdapter<MemberShipBean.ResultBea
                 intent.putExtra("discountAmount", Math.floor(item.getDiscountAmount() / 10) + "折");
                 intent.putExtra("backgroundRes",CouponColorType.getResID(item.getCardColor() + ""));
                 intent.putExtra("qrCode", item.getQrCode());
+                intent.putExtra("mechantLogo",item.getMechantLogo());
                 context.startActivity(intent);
             }
         });

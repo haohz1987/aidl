@@ -40,7 +40,7 @@ public class MainActivity extends BaseActivity<MainModel.View, MainPresenter>
 
         findViewById(R.id.btn_getOpenId).setOnClickListener(this);
         findViewById(R.id.btn_getCoupList).setOnClickListener(this);
-        findViewById(R.id.btn_getRecord).setOnClickListener(this);
+        ((TextView) findViewById(R.id.toolbar_title)).setText("Demo合集");
     }
 
     @Override
@@ -83,10 +83,7 @@ public class MainActivity extends BaseActivity<MainModel.View, MainPresenter>
                 startActivity(new Intent(MainActivity.this,MemberShip.class));
                 break;
             case R.id.btn_getCoupList:
-                mPresenter.getCoupList(params);
-                break;
-            case R.id.btn_getRecord:
-                mPresenter.getRecord(params);
+                startActivity(new Intent(MainActivity.this,Coupon.class));
                 break;
         }
     }
