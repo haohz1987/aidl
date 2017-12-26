@@ -14,19 +14,17 @@ public class MemberShipBean implements Parcelable{
     /**
      * responseCode : 0000
      * errorMessage : 请求成功
-     * logo : http://api.map.baidu.com/images/weather/day/duoyun.png
      * mechantName : 商户01
      * mechantId : 0123456789
      * couponType : 2
      * membershipCardCount : 2
      * membershipCardTotal : 5
      * validRepertoryTerm : 30
-     * result : [{"membershipCardId":"123456789","membershipCardType":1,"cardColor":1,"title":"梨花小店会员卡1","discountAmount":"9折","explain":"到店请出示优惠券","usedQty":10,"usedCount":2,"validPeriod":"30","receiveTime":"20171220112233","startDay":"","endDay":"","qrCode":"http://1.hpaypos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"membershipCardId":"123456789","membershipCardType":1,"cardColor":1,"title":"梨花小店会员卡1","discountAmount":"9折","explain":"到店请出示优惠券","usedQty":10,"usedCount":2,"validPeriod":"","receiveTime":"","startDay":"20171220112233","endDay":"20180120112233","qrCode":"http://1.hpaypos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]
+     * result : [{"membershipCardId":"123456789","membershipCardType":1,"cardColor":1,"title":"梨花小店会员卡1","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","discountAmount":90,"explain":"到店请出示优惠券","usedQty":10,"usedCount":2,"validPeriod":"30","receiveTime":"20171220112233","startDay":"","endDay":"","qrCode":"http://1.hpaypos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"membershipCardId":"123456789","membershipCardType":1,"cardColor":2,"title":"梨花小店会员卡2","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","discountAmount":90,"explain":"到店请出示优惠券","usedQty":10,"usedCount":2,"validPeriod":"30","receiveTime":"20171220112233","startDay":"","endDay":"","qrCode":"http://1.hpaypos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"membershipCardId":"123456789","membershipCardType":2,"cardColor":3,"title":"梨花小店会员卡3","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","discountAmount":70,"explain":"到店请出示优惠券","usedQty":10,"usedCount":2,"validPeriod":"30","receiveTime":"20171220112233","startDay":"","endDay":"","qrCode":"http://1.hpaypos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"membershipCardId":"123456789","membershipCardType":2,"cardColor":5,"title":"梨花小店会员卡4","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","discountAmount":40,"explain":"到店请出示优惠券","usedQty":10,"usedCount":2,"validPeriod":"","receiveTime":"","startDay":"20171220112233","endDay":"20180120112233","qrCode":"http://1.hpaypos.applinzi.com/qrCodae.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]
      */
 
     private String responseCode;
     private String errorMessage;
-    private String logo;
     private String mechantName;
     private String mechantId;
     private int couponType;
@@ -38,8 +36,8 @@ public class MemberShipBean implements Parcelable{
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("{");
-        sb.append("\"validRepertoryTerm\":\"")
-                .append(validRepertoryTerm).append('\"');
+        sb.append("\"validRepertoryTerm\":")
+                .append(validRepertoryTerm);
         sb.append(",\"result\":")
                 .append(result);
         sb.append(",\"responseCode\":\"")
@@ -52,8 +50,6 @@ public class MemberShipBean implements Parcelable{
                 .append(mechantName).append('\"');
         sb.append(",\"mechantId\":\"")
                 .append(mechantId).append('\"');
-        sb.append(",\"logo\":\"")
-                .append(logo).append('\"');
         sb.append(",\"errorMessage\":\"")
                 .append(errorMessage).append('\"');
         sb.append(",\"describeContents\":")
@@ -67,13 +63,13 @@ public class MemberShipBean implements Parcelable{
     protected MemberShipBean(Parcel in) {
         responseCode = in.readString();
         errorMessage = in.readString();
-        logo = in.readString();
         mechantName = in.readString();
         mechantId = in.readString();
         couponType = in.readInt();
         membershipCardCount = in.readInt();
         membershipCardTotal = in.readInt();
         validRepertoryTerm = in.readInt();
+        result = in.createTypedArrayList(ResultBean.CREATOR);
     }
 
     public static final Creator<MemberShipBean> CREATOR = new Creator<MemberShipBean>() {
@@ -102,14 +98,6 @@ public class MemberShipBean implements Parcelable{
 
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
-    }
-
-    public String getLogo() {
-        return logo;
-    }
-
-    public void setLogo(String logo) {
-        this.logo = logo;
     }
 
     public String getMechantName() {
@@ -177,13 +165,13 @@ public class MemberShipBean implements Parcelable{
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(responseCode);
         dest.writeString(errorMessage);
-        dest.writeString(logo);
         dest.writeString(mechantName);
         dest.writeString(mechantId);
         dest.writeInt(couponType);
         dest.writeInt(membershipCardCount);
         dest.writeInt(membershipCardTotal);
         dest.writeInt(validRepertoryTerm);
+        dest.writeTypedList(result);
     }
 
     public static class ResultBean implements Parcelable{
@@ -192,7 +180,8 @@ public class MemberShipBean implements Parcelable{
          * membershipCardType : 1
          * cardColor : 1
          * title : 梨花小店会员卡1
-         * discountAmount : 9折
+         * mechantLogo : http://api.map.baidu.com/images/weather/day/duoyun.png
+         * discountAmount : 90
          * explain : 到店请出示优惠券
          * usedQty : 10
          * usedCount : 2
@@ -207,7 +196,8 @@ public class MemberShipBean implements Parcelable{
         private int membershipCardType;
         private int cardColor;
         private String title;
-        private double discountAmount;
+        private String mechantLogo;
+        private int discountAmount;
         private String explain;
         private int usedQty;
         private int usedCount;
@@ -238,6 +228,8 @@ public class MemberShipBean implements Parcelable{
                     .append(membershipCardType);
             sb.append(",\"membershipCardId\":\"")
                     .append(membershipCardId).append('\"');
+            sb.append(",\"mechantLogo\":\"")
+                    .append(mechantLogo).append('\"');
             sb.append(",\"explain\":\"")
                     .append(explain).append('\"');
             sb.append(",\"endDay\":\"")
@@ -257,7 +249,8 @@ public class MemberShipBean implements Parcelable{
             membershipCardType = in.readInt();
             cardColor = in.readInt();
             title = in.readString();
-            discountAmount = in.readDouble();
+            mechantLogo = in.readString();
+            discountAmount = in.readInt();
             explain = in.readString();
             usedQty = in.readInt();
             usedCount = in.readInt();
@@ -312,11 +305,19 @@ public class MemberShipBean implements Parcelable{
             this.title = title;
         }
 
-        public double getDiscountAmount() {
+        public String getMechantLogo() {
+            return mechantLogo;
+        }
+
+        public void setMechantLogo(String mechantLogo) {
+            this.mechantLogo = mechantLogo;
+        }
+
+        public int getDiscountAmount() {
             return discountAmount;
         }
 
-        public void setDiscountAmount(double discountAmount) {
+        public void setDiscountAmount(int discountAmount) {
             this.discountAmount = discountAmount;
         }
 
@@ -395,7 +396,8 @@ public class MemberShipBean implements Parcelable{
             dest.writeInt(membershipCardType);
             dest.writeInt(cardColor);
             dest.writeString(title);
-            dest.writeDouble(discountAmount);
+            dest.writeString(mechantLogo);
+            dest.writeInt(discountAmount);
             dest.writeString(explain);
             dest.writeInt(usedQty);
             dest.writeInt(usedCount);

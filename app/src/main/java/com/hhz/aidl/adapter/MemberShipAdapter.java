@@ -4,13 +4,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.hhz.aidl.R;
 import com.hhz.aidl.activity.GrantMemberCard;
 import com.hhz.aidl.rxjava.MemberShipBean;
+import com.hhz.aidl.util.ACache;
 import com.hhz.aidl.util.CouponColorType;
+import com.hhz.aidl.util.glide.GlideUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,12 +26,14 @@ public class MemberShipAdapter extends BaseQuickAdapter<MemberShipBean.ResultBea
 
     private List<MemberShipBean.ResultBean> dataList = new ArrayList<>();
     private Context context;
+    private ACache mACache;
 
     public MemberShipAdapter(Context context, @Nullable List<MemberShipBean.ResultBean> dataList) {
         super(R.layout.item_member, dataList);
         this.dataList.clear();
         this.context = context;
         this.dataList = dataList;
+        mACache = ACache.get(context);
     }
 
     public void appendData(ArrayList<MemberShipBean.ResultBean> dataList, int page) {
@@ -63,5 +68,9 @@ public class MemberShipAdapter extends BaseQuickAdapter<MemberShipBean.ResultBea
                 context.startActivity(intent);
             }
         });
+
+        ImageView iv_store_logo = helper.getView(R.id.iv_store_logo);
+        GlideUtils.readCache(context,iv_store_logo,item.getMechantLogo(),mACache,item.getTitle());
+
     }
 }

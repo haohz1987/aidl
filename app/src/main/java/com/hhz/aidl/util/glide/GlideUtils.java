@@ -2,6 +2,12 @@ package com.hhz.aidl.util.glide;
 
 import android.content.Context;
 import android.text.TextUtils;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.hhz.aidl.R;
+import com.hhz.aidl.util.ACache;
 
 import java.io.File;
 import java.security.MessageDigest;
@@ -13,6 +19,61 @@ import java.util.List;
  * 缓存、文件判断、md5时间戳加密
  */
 public class GlideUtils {
+    /**
+     * 没有缓存 或 缓存不是最新
+     * 使用ACache保存网址
+     *
+     * @param imageView
+     * @param imageUrl  网址
+     */
+    public static void noneCache(Context context, ImageView imageView, String imageUrl, ACache mACache,String cacheName) {
+        Glide.with(context).load(imageUrl).placeholder(R.color.placeholder_color).diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView);
+        cacheImage(imageUrl, context, new MyGlideCacheListener());
+        mACache.put(cacheName, imageUrl);
+    }
+    /**
+     * Glide缓存
+     * @param context
+     * @param imageView 放入的图片
+     * @param qrCodeUrl 请求网址
+     * @param mACache 本地缓存工具
+     * @param cacheName 缓存到本地的网址标签名
+     */
+    public static void readCache(Context context,ImageView imageView, String qrCodeUrl,ACache mACache, String cacheName) {
+        cacheName = cacheName+"_cache";
+        //有缓存的网址
+        if (!ACache.isEmpty(mACache.getAsString(cacheName))) {
+            String qrCodeUrlCache = mACache.getAsString(cacheName);
+            if (!GlideUtils.haveCache(context, qrCodeUrlCache)) {
+                GlideUtils.noneCache(context,imageView, qrCodeUrl,mACache,cacheName);
+                return;
+            }
+            if(ACache.isEmpty(qrCodeUrl)){
+                Glide.with(context).load(GlideUtils.getCache(context, qrCodeUrlCache)).into(imageView);
+                return;
+            }
+            if (qrCodeUrl.equals(qrCodeUrlCache)) {
+                Glide.with(context).load(GlideUtils.getCache(context, qrCodeUrl)).into(imageView);
+            }
+            //缓存地址错误或不是最新
+            else {
+                GlideUtils.noneCache(context,imageView, qrCodeUrl,mACache,cacheName);
+            }
+        } else {
+            GlideUtils.noneCache(context,imageView, qrCodeUrl,mACache,cacheName);
+        }
+    }
+    /**
+     * 没有缓存 或 缓存不是最新
+     * 使用ACache保存网址
+     *
+     * @param imageView
+     * @param imageUrl  网址
+     */
+    public static void noneCache(Context context, ImageView imageView, String imageUrl) {
+        Glide.with(context).load(imageUrl).placeholder(R.color.placeholder_color).diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView);
+        cacheImage(imageUrl, context, new MyGlideCacheListener());
+    }
     /**
      * 获取缓存的路径
      *

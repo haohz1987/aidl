@@ -14,17 +14,15 @@ public class CouponBean implements Parcelable{
     /**
      * responseCode : 0000
      * errorMessage : 请求成功
-     * logo : http://api.map.baidu.com/images/weather/day/duoyun.png
      * mechantName : 商户01
      * mechantId : 0123456789
      * couponTotal : 5
      * validRepertoryTerm : 30
-     * result : {"cashCoupon":{"couponType":1,"couponCount":2,"coupList":[{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201801181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]},"discountCoup":{"couponType":2,"couponCount":2,"coupList":[{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201801181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]},"exchangeCoup":{"couponType":3,"couponCount":2,"coupList":[{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"coupTitle","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]}}
+     * result : {"cashCoupon":{"couponType":1,"couponCount":2,"cashCouponList":[{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201801181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]},"discountCoupon":{"couponType":2,"couponCount":2,"discountCouponList":[{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201801181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]},"exchangeCoupon":{"couponType":3,"couponCount":2,"exchangeCouponList":[{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"coupTitle","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]}}
      */
 
     private String responseCode;
     private String errorMessage;
-    private String logo;
     private String mechantName;
     private String mechantId;
     private int couponTotal;
@@ -34,8 +32,8 @@ public class CouponBean implements Parcelable{
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("{");
-        sb.append("\"validRepertoryTerm\":\"")
-                .append(validRepertoryTerm).append('\"');
+        sb.append("\"validRepertoryTerm\":")
+                .append(validRepertoryTerm);
         sb.append(",\"result\":")
                 .append(result);
         sb.append(",\"responseCode\":\"")
@@ -44,8 +42,6 @@ public class CouponBean implements Parcelable{
                 .append(mechantName).append('\"');
         sb.append(",\"mechantId\":\"")
                 .append(mechantId).append('\"');
-        sb.append(",\"logo\":\"")
-                .append(logo).append('\"');
         sb.append(",\"errorMessage\":\"")
                 .append(errorMessage).append('\"');
         sb.append(",\"describeContents\":")
@@ -59,7 +55,6 @@ public class CouponBean implements Parcelable{
     protected CouponBean(Parcel in) {
         responseCode = in.readString();
         errorMessage = in.readString();
-        logo = in.readString();
         mechantName = in.readString();
         mechantId = in.readString();
         couponTotal = in.readInt();
@@ -92,14 +87,6 @@ public class CouponBean implements Parcelable{
 
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
-    }
-
-    public String getLogo() {
-        return logo;
-    }
-
-    public void setLogo(String logo) {
-        this.logo = logo;
     }
 
     public String getMechantName() {
@@ -151,7 +138,6 @@ public class CouponBean implements Parcelable{
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(responseCode);
         dest.writeString(errorMessage);
-        dest.writeString(logo);
         dest.writeString(mechantName);
         dest.writeString(mechantId);
         dest.writeInt(couponTotal);
@@ -160,22 +146,22 @@ public class CouponBean implements Parcelable{
 
     public static class ResultBean implements Parcelable{
         /**
-         * cashCoupon : {"couponType":1,"couponCount":2,"coupList":[{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201801181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]}
-         * discountCoup : {"couponType":2,"couponCount":2,"coupList":[{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201801181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]}
-         * exchangeCoup : {"couponType":3,"couponCount":2,"coupList":[{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"coupTitle","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]}
+         * cashCoupon : {"couponType":1,"couponCount":2,"cashCouponList":[{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201801181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]}
+         * discountCoupon : {"couponType":2,"couponCount":2,"discountCouponList":[{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201801181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]}
+         * exchangeCoupon : {"couponType":3,"couponCount":2,"exchangeCouponList":[{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"coupTitle","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]}
          */
 
         private CashCouponBean cashCoupon;
-        private DiscountCoupBean discountCoup;
-        private ExchangeCoupBean exchangeCoup;
+        private DiscountCouponBean discountCoupon;
+        private ExchangeCouponBean exchangeCoupon;
 
         @Override
         public String toString() {
             final StringBuilder sb = new StringBuilder("{");
-            sb.append("\"exchangeCoup\":")
-                    .append(exchangeCoup);
-            sb.append(",\"discountCoup\":")
-                    .append(discountCoup);
+            sb.append("\"exchangeCoupon\":")
+                    .append(exchangeCoupon);
+            sb.append(",\"discountCoupon\":")
+                    .append(discountCoupon);
             sb.append(",\"describeContents\":")
                     .append(describeContents());
             sb.append(",\"cashCoupon\":")
@@ -185,6 +171,9 @@ public class CouponBean implements Parcelable{
         }
 
         protected ResultBean(Parcel in) {
+            cashCoupon = in.readParcelable(CashCouponBean.class.getClassLoader());
+            discountCoupon = in.readParcelable(DiscountCouponBean.class.getClassLoader());
+            exchangeCoupon = in.readParcelable(ExchangeCouponBean.class.getClassLoader());
         }
 
         public static final Creator<ResultBean> CREATOR = new Creator<ResultBean>() {
@@ -207,20 +196,20 @@ public class CouponBean implements Parcelable{
             this.cashCoupon = cashCoupon;
         }
 
-        public DiscountCoupBean getDiscountCoup() {
-            return discountCoup;
+        public DiscountCouponBean getDiscountCoupon() {
+            return discountCoupon;
         }
 
-        public void setDiscountCoup(DiscountCoupBean discountCoup) {
-            this.discountCoup = discountCoup;
+        public void setDiscountCoupon(DiscountCouponBean discountCoupon) {
+            this.discountCoupon = discountCoupon;
         }
 
-        public ExchangeCoupBean getExchangeCoup() {
-            return exchangeCoup;
+        public ExchangeCouponBean getExchangeCoupon() {
+            return exchangeCoupon;
         }
 
-        public void setExchangeCoup(ExchangeCoupBean exchangeCoup) {
-            this.exchangeCoup = exchangeCoup;
+        public void setExchangeCoupon(ExchangeCouponBean exchangeCoupon) {
+            this.exchangeCoupon = exchangeCoupon;
         }
 
         @Override
@@ -230,18 +219,21 @@ public class CouponBean implements Parcelable{
 
         @Override
         public void writeToParcel(Parcel dest, int flags) {
+            dest.writeParcelable(cashCoupon, flags);
+            dest.writeParcelable(discountCoupon, flags);
+            dest.writeParcelable(exchangeCoupon, flags);
         }
 
         public static class CashCouponBean implements Parcelable{
             /**
              * couponType : 1
              * couponCount : 2
-             * coupList : [{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201801181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]
+             * cashCouponList : [{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201801181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]
              */
 
             private int couponType;
             private int couponCount;
-            private List<CoupListBean> coupList;
+            private List<CashCouponListBean> cashCouponList;
 
             @Override
             public String toString() {
@@ -252,8 +244,8 @@ public class CouponBean implements Parcelable{
                         .append(couponType);
                 sb.append(",\"couponCount\":")
                         .append(couponCount);
-                sb.append(",\"coupList\":")
-                        .append(coupList);
+                sb.append(",\"cashCouponList\":")
+                        .append(cashCouponList);
                 sb.append('}');
                 return sb.toString();
             }
@@ -261,6 +253,7 @@ public class CouponBean implements Parcelable{
             protected CashCouponBean(Parcel in) {
                 couponType = in.readInt();
                 couponCount = in.readInt();
+                cashCouponList = in.createTypedArrayList(CashCouponListBean.CREATOR);
             }
 
             public static final Creator<CashCouponBean> CREATOR = new Creator<CashCouponBean>() {
@@ -291,12 +284,12 @@ public class CouponBean implements Parcelable{
                 this.couponCount = couponCount;
             }
 
-            public List<CoupListBean> getCoupList() {
-                return coupList;
+            public List<CashCouponListBean> getCashCouponList() {
+                return cashCouponList;
             }
 
-            public void setCoupList(List<CoupListBean> coupList) {
-                this.coupList = coupList;
+            public void setCashCouponList(List<CashCouponListBean> cashCouponList) {
+                this.cashCouponList = cashCouponList;
             }
 
             @Override
@@ -308,13 +301,15 @@ public class CouponBean implements Parcelable{
             public void writeToParcel(Parcel dest, int flags) {
                 dest.writeInt(couponType);
                 dest.writeInt(couponCount);
+                dest.writeTypedList(cashCouponList);
             }
 
-            public static class CoupListBean implements Parcelable{
+            public static class CashCouponListBean implements Parcelable{
                 /**
                  * couponNo : 201712181033
                  * couponColor : 0
                  * couponTitle : 小店1
+                 * mechantLogo : http://api.map.baidu.com/images/weather/day/duoyun.png
                  * couponAmount : 2.03
                  * discountAmount :
                  * consumeLite : 10000.63
@@ -334,6 +329,7 @@ public class CouponBean implements Parcelable{
                 private String couponNo;
                 private int couponColor;
                 private String couponTitle;
+                private String mechantLogo;
                 private double couponAmount;
                 private String discountAmount;
                 private double consumeLite;
@@ -368,6 +364,8 @@ public class CouponBean implements Parcelable{
                             .append(receiveTime).append('\"');
                     sb.append(",\"qrCode\":\"")
                             .append(qrCode).append('\"');
+                    sb.append(",\"mechantLogo\":\"")
+                            .append(mechantLogo).append('\"');
                     sb.append(",\"explain\":\"")
                             .append(explain).append('\"');
                     sb.append(",\"endDay\":\"")
@@ -392,10 +390,11 @@ public class CouponBean implements Parcelable{
                     return sb.toString();
                 }
 
-                protected CoupListBean(Parcel in) {
+                protected CashCouponListBean(Parcel in) {
                     couponNo = in.readString();
                     couponColor = in.readInt();
                     couponTitle = in.readString();
+                    mechantLogo = in.readString();
                     couponAmount = in.readDouble();
                     discountAmount = in.readString();
                     consumeLite = in.readDouble();
@@ -412,15 +411,42 @@ public class CouponBean implements Parcelable{
                     qrCode = in.readString();
                 }
 
-                public static final Creator<CoupListBean> CREATOR = new Creator<CoupListBean>() {
+                @Override
+                public void writeToParcel(Parcel dest, int flags) {
+                    dest.writeString(couponNo);
+                    dest.writeInt(couponColor);
+                    dest.writeString(couponTitle);
+                    dest.writeString(mechantLogo);
+                    dest.writeDouble(couponAmount);
+                    dest.writeString(discountAmount);
+                    dest.writeDouble(consumeLite);
+                    dest.writeString(validPeriod);
+                    dest.writeString(receiveTime);
+                    dest.writeString(startDay);
+                    dest.writeString(endDay);
+                    dest.writeInt(repertoryAmount);
+                    dest.writeInt(usedLimit);
+                    dest.writeString(explain);
+                    dest.writeInt(usedQty);
+                    dest.writeInt(usedCount);
+                    dest.writeInt(cancelCount);
+                    dest.writeString(qrCode);
+                }
+
+                @Override
+                public int describeContents() {
+                    return 0;
+                }
+
+                public static final Creator<CashCouponListBean> CREATOR = new Creator<CashCouponListBean>() {
                     @Override
-                    public CoupListBean createFromParcel(Parcel in) {
-                        return new CoupListBean(in);
+                    public CashCouponListBean createFromParcel(Parcel in) {
+                        return new CashCouponListBean(in);
                     }
 
                     @Override
-                    public CoupListBean[] newArray(int size) {
-                        return new CoupListBean[size];
+                    public CashCouponListBean[] newArray(int size) {
+                        return new CashCouponListBean[size];
                     }
                 };
 
@@ -446,6 +472,14 @@ public class CouponBean implements Parcelable{
 
                 public void setCouponTitle(String couponTitle) {
                     this.couponTitle = couponTitle;
+                }
+
+                public String getMechantLogo() {
+                    return mechantLogo;
+                }
+
+                public void setMechantLogo(String mechantLogo) {
+                    this.mechantLogo = mechantLogo;
                 }
 
                 public double getCouponAmount() {
@@ -559,75 +593,62 @@ public class CouponBean implements Parcelable{
                 public void setQrCode(String qrCode) {
                     this.qrCode = qrCode;
                 }
-
-                @Override
-                public int describeContents() {
-                    return 0;
-                }
-
-                @Override
-                public void writeToParcel(Parcel dest, int flags) {
-                    dest.writeString(couponNo);
-                    dest.writeInt(couponColor);
-                    dest.writeString(couponTitle);
-                    dest.writeDouble(couponAmount);
-                    dest.writeString(discountAmount);
-                    dest.writeDouble(consumeLite);
-                    dest.writeString(validPeriod);
-                    dest.writeString(receiveTime);
-                    dest.writeString(startDay);
-                    dest.writeString(endDay);
-                    dest.writeInt(repertoryAmount);
-                    dest.writeInt(usedLimit);
-                    dest.writeString(explain);
-                    dest.writeInt(usedQty);
-                    dest.writeInt(usedCount);
-                    dest.writeInt(cancelCount);
-                    dest.writeString(qrCode);
-                }
             }
         }
 
-        public static class DiscountCoupBean implements Parcelable{
+        public static class DiscountCouponBean implements Parcelable{
             /**
              * couponType : 2
              * couponCount : 2
-             * coupList : [{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201801181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]
+             * discountCouponList : [{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"201801181033","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]
              */
 
             private int couponType;
             private int couponCount;
-            private List<CoupListBeanX> coupList;
+            private List<DiscountCouponListBean> discountCouponList;
 
             @Override
             public String toString() {
                 final StringBuilder sb = new StringBuilder("{");
-                sb.append("\"describeContents\":")
+                sb.append("\"discountCouponList\":")
+                        .append(discountCouponList);
+                sb.append(",\"describeContents\":")
                         .append(describeContents());
                 sb.append(",\"couponType\":")
                         .append(couponType);
                 sb.append(",\"couponCount\":")
                         .append(couponCount);
-                sb.append(",\"coupList\":")
-                        .append(coupList);
                 sb.append('}');
                 return sb.toString();
             }
 
-            protected DiscountCoupBean(Parcel in) {
+            protected DiscountCouponBean(Parcel in) {
                 couponType = in.readInt();
                 couponCount = in.readInt();
+                discountCouponList = in.createTypedArrayList(DiscountCouponListBean.CREATOR);
             }
 
-            public static final Creator<DiscountCoupBean> CREATOR = new Creator<DiscountCoupBean>() {
+            @Override
+            public void writeToParcel(Parcel dest, int flags) {
+                dest.writeInt(couponType);
+                dest.writeInt(couponCount);
+                dest.writeTypedList(discountCouponList);
+            }
+
+            @Override
+            public int describeContents() {
+                return 0;
+            }
+
+            public static final Creator<DiscountCouponBean> CREATOR = new Creator<DiscountCouponBean>() {
                 @Override
-                public DiscountCoupBean createFromParcel(Parcel in) {
-                    return new DiscountCoupBean(in);
+                public DiscountCouponBean createFromParcel(Parcel in) {
+                    return new DiscountCouponBean(in);
                 }
 
                 @Override
-                public DiscountCoupBean[] newArray(int size) {
-                    return new DiscountCoupBean[size];
+                public DiscountCouponBean[] newArray(int size) {
+                    return new DiscountCouponBean[size];
                 }
             };
 
@@ -647,30 +668,20 @@ public class CouponBean implements Parcelable{
                 this.couponCount = couponCount;
             }
 
-            public List<CoupListBeanX> getCoupList() {
-                return coupList;
+            public List<DiscountCouponListBean> getDiscountCouponList() {
+                return discountCouponList;
             }
 
-            public void setCoupList(List<CoupListBeanX> coupList) {
-                this.coupList = coupList;
+            public void setDiscountCouponList(List<DiscountCouponListBean> discountCouponList) {
+                this.discountCouponList = discountCouponList;
             }
 
-            @Override
-            public int describeContents() {
-                return 0;
-            }
-
-            @Override
-            public void writeToParcel(Parcel dest, int flags) {
-                dest.writeInt(couponType);
-                dest.writeInt(couponCount);
-            }
-
-            public static class CoupListBeanX implements Parcelable{
+            public static class DiscountCouponListBean implements Parcelable{
                 /**
                  * couponNo : 201712181033
                  * couponColor : 0
                  * couponTitle : 小店1
+                 * mechantLogo : http://api.map.baidu.com/images/weather/day/duoyun.png
                  * couponAmount : 2.03
                  * discountAmount :
                  * consumeLite : 10000.63
@@ -690,6 +701,7 @@ public class CouponBean implements Parcelable{
                 private String couponNo;
                 private int couponColor;
                 private String couponTitle;
+                private String mechantLogo;
                 private double couponAmount;
                 private String discountAmount;
                 private double consumeLite;
@@ -724,6 +736,8 @@ public class CouponBean implements Parcelable{
                             .append(receiveTime).append('\"');
                     sb.append(",\"qrCode\":\"")
                             .append(qrCode).append('\"');
+                    sb.append(",\"mechantLogo\":\"")
+                            .append(mechantLogo).append('\"');
                     sb.append(",\"explain\":\"")
                             .append(explain).append('\"');
                     sb.append(",\"endDay\":\"")
@@ -748,10 +762,11 @@ public class CouponBean implements Parcelable{
                     return sb.toString();
                 }
 
-                protected CoupListBeanX(Parcel in) {
+                protected DiscountCouponListBean(Parcel in) {
                     couponNo = in.readString();
                     couponColor = in.readInt();
                     couponTitle = in.readString();
+                    mechantLogo = in.readString();
                     couponAmount = in.readDouble();
                     discountAmount = in.readString();
                     consumeLite = in.readDouble();
@@ -768,15 +783,42 @@ public class CouponBean implements Parcelable{
                     qrCode = in.readString();
                 }
 
-                public static final Creator<CoupListBeanX> CREATOR = new Creator<CoupListBeanX>() {
+                @Override
+                public void writeToParcel(Parcel dest, int flags) {
+                    dest.writeString(couponNo);
+                    dest.writeInt(couponColor);
+                    dest.writeString(couponTitle);
+                    dest.writeString(mechantLogo);
+                    dest.writeDouble(couponAmount);
+                    dest.writeString(discountAmount);
+                    dest.writeDouble(consumeLite);
+                    dest.writeString(validPeriod);
+                    dest.writeString(receiveTime);
+                    dest.writeString(startDay);
+                    dest.writeString(endDay);
+                    dest.writeInt(repertoryAmount);
+                    dest.writeInt(usedLimit);
+                    dest.writeString(explain);
+                    dest.writeInt(usedQty);
+                    dest.writeInt(usedCount);
+                    dest.writeInt(cancelCount);
+                    dest.writeString(qrCode);
+                }
+
+                @Override
+                public int describeContents() {
+                    return 0;
+                }
+
+                public static final Creator<DiscountCouponListBean> CREATOR = new Creator<DiscountCouponListBean>() {
                     @Override
-                    public CoupListBeanX createFromParcel(Parcel in) {
-                        return new CoupListBeanX(in);
+                    public DiscountCouponListBean createFromParcel(Parcel in) {
+                        return new DiscountCouponListBean(in);
                     }
 
                     @Override
-                    public CoupListBeanX[] newArray(int size) {
-                        return new CoupListBeanX[size];
+                    public DiscountCouponListBean[] newArray(int size) {
+                        return new DiscountCouponListBean[size];
                     }
                 };
 
@@ -802,6 +844,14 @@ public class CouponBean implements Parcelable{
 
                 public void setCouponTitle(String couponTitle) {
                     this.couponTitle = couponTitle;
+                }
+
+                public String getMechantLogo() {
+                    return mechantLogo;
+                }
+
+                public void setMechantLogo(String mechantLogo) {
+                    this.mechantLogo = mechantLogo;
                 }
 
                 public double getCouponAmount() {
@@ -915,75 +965,50 @@ public class CouponBean implements Parcelable{
                 public void setQrCode(String qrCode) {
                     this.qrCode = qrCode;
                 }
-
-                @Override
-                public int describeContents() {
-                    return 0;
-                }
-
-                @Override
-                public void writeToParcel(Parcel dest, int flags) {
-                    dest.writeString(couponNo);
-                    dest.writeInt(couponColor);
-                    dest.writeString(couponTitle);
-                    dest.writeDouble(couponAmount);
-                    dest.writeString(discountAmount);
-                    dest.writeDouble(consumeLite);
-                    dest.writeString(validPeriod);
-                    dest.writeString(receiveTime);
-                    dest.writeString(startDay);
-                    dest.writeString(endDay);
-                    dest.writeInt(repertoryAmount);
-                    dest.writeInt(usedLimit);
-                    dest.writeString(explain);
-                    dest.writeInt(usedQty);
-                    dest.writeInt(usedCount);
-                    dest.writeInt(cancelCount);
-                    dest.writeString(qrCode);
-                }
             }
         }
 
-        public static class ExchangeCoupBean implements Parcelable{
+        public static class ExchangeCouponBean implements Parcelable{
             /**
              * couponType : 3
              * couponCount : 2
-             * coupList : [{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"coupTitle","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]
+             * exchangeCouponList : [{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店1","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"","receiveTime":"","startDay":"201712181033","endDay":"coupTitle","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"},{"couponNo":"201712181033","couponColor":0,"couponTitle":"小店2","mechantLogo":"http://api.map.baidu.com/images/weather/day/duoyun.png","couponAmount":2.03,"discountAmount":"","consumeLite":10000.63,"validPeriod":"30","receiveTime":"201712181033","startDay":"","endDay":"","repertoryAmount":100,"usedLimit":1,"explain":"到店请出示优惠券","usedQty":2,"usedCount":2,"cancelCount":1,"qrCode":"http://1.smartpos.applinzi.com/qrCode.png?wechatNo=122&mechantCode=1000&coupNo=1005&coupType=2&coupAmount=10&discount=&consumeLite=100"}]
              */
 
             private int couponType;
             private int couponCount;
-            private List<CoupListBeanXX> coupList;
+            private List<ExchangeCouponListBean> exchangeCouponList;
 
             @Override
             public String toString() {
                 final StringBuilder sb = new StringBuilder("{");
-                sb.append("\"describeContents\":")
+                sb.append("\"exchangeCouponList\":")
+                        .append(exchangeCouponList);
+                sb.append(",\"describeContents\":")
                         .append(describeContents());
                 sb.append(",\"couponType\":")
                         .append(couponType);
                 sb.append(",\"couponCount\":")
                         .append(couponCount);
-                sb.append(",\"coupList\":")
-                        .append(coupList);
                 sb.append('}');
                 return sb.toString();
             }
 
-            protected ExchangeCoupBean(Parcel in) {
+            protected ExchangeCouponBean(Parcel in) {
                 couponType = in.readInt();
                 couponCount = in.readInt();
+                exchangeCouponList = in.createTypedArrayList(ExchangeCouponListBean.CREATOR);
             }
 
-            public static final Creator<ExchangeCoupBean> CREATOR = new Creator<ExchangeCoupBean>() {
+            public static final Creator<ExchangeCouponBean> CREATOR = new Creator<ExchangeCouponBean>() {
                 @Override
-                public ExchangeCoupBean createFromParcel(Parcel in) {
-                    return new ExchangeCoupBean(in);
+                public ExchangeCouponBean createFromParcel(Parcel in) {
+                    return new ExchangeCouponBean(in);
                 }
 
                 @Override
-                public ExchangeCoupBean[] newArray(int size) {
-                    return new ExchangeCoupBean[size];
+                public ExchangeCouponBean[] newArray(int size) {
+                    return new ExchangeCouponBean[size];
                 }
             };
 
@@ -1003,12 +1028,12 @@ public class CouponBean implements Parcelable{
                 this.couponCount = couponCount;
             }
 
-            public List<CoupListBeanXX> getCoupList() {
-                return coupList;
+            public List<ExchangeCouponListBean> getExchangeCouponList() {
+                return exchangeCouponList;
             }
 
-            public void setCoupList(List<CoupListBeanXX> coupList) {
-                this.coupList = coupList;
+            public void setExchangeCouponList(List<ExchangeCouponListBean> exchangeCouponList) {
+                this.exchangeCouponList = exchangeCouponList;
             }
 
             @Override
@@ -1020,13 +1045,15 @@ public class CouponBean implements Parcelable{
             public void writeToParcel(Parcel dest, int flags) {
                 dest.writeInt(couponType);
                 dest.writeInt(couponCount);
+                dest.writeTypedList(exchangeCouponList);
             }
 
-            public static class CoupListBeanXX implements Parcelable{
+            public static class ExchangeCouponListBean implements Parcelable{
                 /**
                  * couponNo : 201712181033
                  * couponColor : 0
                  * couponTitle : 小店1
+                 * mechantLogo : http://api.map.baidu.com/images/weather/day/duoyun.png
                  * couponAmount : 2.03
                  * discountAmount :
                  * consumeLite : 10000.63
@@ -1046,8 +1073,9 @@ public class CouponBean implements Parcelable{
                 private String couponNo;
                 private int couponColor;
                 private String couponTitle;
+                private String mechantLogo;
                 private double couponAmount;
-                private String discountAmount;
+                private double discountAmount;
                 private double consumeLite;
                 private String validPeriod;
                 private String receiveTime;
@@ -1080,6 +1108,8 @@ public class CouponBean implements Parcelable{
                             .append(receiveTime).append('\"');
                     sb.append(",\"qrCode\":\"")
                             .append(qrCode).append('\"');
+                    sb.append(",\"mechantLogo\":\"")
+                            .append(mechantLogo).append('\"');
                     sb.append(",\"explain\":\"")
                             .append(explain).append('\"');
                     sb.append(",\"endDay\":\"")
@@ -1104,12 +1134,13 @@ public class CouponBean implements Parcelable{
                     return sb.toString();
                 }
 
-                protected CoupListBeanXX(Parcel in) {
+                protected ExchangeCouponListBean(Parcel in) {
                     couponNo = in.readString();
                     couponColor = in.readInt();
                     couponTitle = in.readString();
+                    mechantLogo = in.readString();
                     couponAmount = in.readDouble();
-                    discountAmount = in.readString();
+                    discountAmount = in.readDouble();
                     consumeLite = in.readDouble();
                     validPeriod = in.readString();
                     receiveTime = in.readString();
@@ -1124,15 +1155,42 @@ public class CouponBean implements Parcelable{
                     qrCode = in.readString();
                 }
 
-                public static final Creator<CoupListBeanXX> CREATOR = new Creator<CoupListBeanXX>() {
+                @Override
+                public void writeToParcel(Parcel dest, int flags) {
+                    dest.writeString(couponNo);
+                    dest.writeInt(couponColor);
+                    dest.writeString(couponTitle);
+                    dest.writeString(mechantLogo);
+                    dest.writeDouble(couponAmount);
+                    dest.writeDouble(discountAmount);
+                    dest.writeDouble(consumeLite);
+                    dest.writeString(validPeriod);
+                    dest.writeString(receiveTime);
+                    dest.writeString(startDay);
+                    dest.writeString(endDay);
+                    dest.writeInt(repertoryAmount);
+                    dest.writeInt(usedLimit);
+                    dest.writeString(explain);
+                    dest.writeInt(usedQty);
+                    dest.writeInt(usedCount);
+                    dest.writeInt(cancelCount);
+                    dest.writeString(qrCode);
+                }
+
+                @Override
+                public int describeContents() {
+                    return 0;
+                }
+
+                public static final Creator<ExchangeCouponListBean> CREATOR = new Creator<ExchangeCouponListBean>() {
                     @Override
-                    public CoupListBeanXX createFromParcel(Parcel in) {
-                        return new CoupListBeanXX(in);
+                    public ExchangeCouponListBean createFromParcel(Parcel in) {
+                        return new ExchangeCouponListBean(in);
                     }
 
                     @Override
-                    public CoupListBeanXX[] newArray(int size) {
-                        return new CoupListBeanXX[size];
+                    public ExchangeCouponListBean[] newArray(int size) {
+                        return new ExchangeCouponListBean[size];
                     }
                 };
 
@@ -1160,6 +1218,14 @@ public class CouponBean implements Parcelable{
                     this.couponTitle = couponTitle;
                 }
 
+                public String getMechantLogo() {
+                    return mechantLogo;
+                }
+
+                public void setMechantLogo(String mechantLogo) {
+                    this.mechantLogo = mechantLogo;
+                }
+
                 public double getCouponAmount() {
                     return couponAmount;
                 }
@@ -1168,11 +1234,11 @@ public class CouponBean implements Parcelable{
                     this.couponAmount = couponAmount;
                 }
 
-                public String getDiscountAmount() {
+                public double getDiscountAmount() {
                     return discountAmount;
                 }
 
-                public void setDiscountAmount(String discountAmount) {
+                public void setDiscountAmount(double discountAmount) {
                     this.discountAmount = discountAmount;
                 }
 
@@ -1270,32 +1336,6 @@ public class CouponBean implements Parcelable{
 
                 public void setQrCode(String qrCode) {
                     this.qrCode = qrCode;
-                }
-
-                @Override
-                public int describeContents() {
-                    return 0;
-                }
-
-                @Override
-                public void writeToParcel(Parcel dest, int flags) {
-                    dest.writeString(couponNo);
-                    dest.writeInt(couponColor);
-                    dest.writeString(couponTitle);
-                    dest.writeDouble(couponAmount);
-                    dest.writeString(discountAmount);
-                    dest.writeDouble(consumeLite);
-                    dest.writeString(validPeriod);
-                    dest.writeString(receiveTime);
-                    dest.writeString(startDay);
-                    dest.writeString(endDay);
-                    dest.writeInt(repertoryAmount);
-                    dest.writeInt(usedLimit);
-                    dest.writeString(explain);
-                    dest.writeInt(usedQty);
-                    dest.writeInt(usedCount);
-                    dest.writeInt(cancelCount);
-                    dest.writeString(qrCode);
                 }
             }
         }
