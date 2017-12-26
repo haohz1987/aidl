@@ -45,6 +45,7 @@ public class MemberShip extends BaseActivity<MainModel.View, MainPresenter>
         listContainer = findViewById(R.id.list_container);
         listContainer.setLayoutManager(new LinearLayoutManager(this));
         initAdapter();
+
     }
 
     private void initAdapter() {

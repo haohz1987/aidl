@@ -63,3 +63,9 @@ http://blog.csdn.net/luoyanglizi/article/details/51586437
         我们只能通过Service API来与它进行交流。
     5.process:
         service运行的进程的name。默认启动的service是运行在主进程中的。
+
+
+  dragger2:      https://www.jianshu.com/p/22c397354997
+
+
+
