@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.hhz.aidl.R;
 import com.hhz.aidl.adapter.MemberShipAdapter;
-import com.hhz.aidl.mvp.model.MainModel;
+import com.hhz.aidl.mvp.model.MainContract;
 import com.hhz.aidl.mvp.presenter.MainPresenter;
 import com.hhz.aidl.rxjava.CouponBean;
 import com.hhz.aidl.rxjava.MemberShipBean;
@@ -24,8 +24,8 @@ import java.util.HashMap;
  * Created by haohz on 2017/12/22.
  */
 
-public class MemberShip extends BaseActivity<MainModel.View, MainPresenter>
-        implements MainModel.View{
+public class MemberShip extends BaseActivity<MainContract.View, MainPresenter>
+        implements MainContract.View{
 
     private RecyclerView listContainer;
     public static MemberShipAdapter memberShipAdapter;
@@ -100,7 +100,7 @@ public class MemberShip extends BaseActivity<MainModel.View, MainPresenter>
                 Bundle data = msg.getData();
                 ArrayList<MemberShipBean.ResultBean> list = data.getParcelableArrayList("list");
 //                int page = data.getInt("page");
-                if (memberShipAdapter != null && list != null) {
+                if (memberShipAdapter != null && list != null && list.size()>0) {
                     memberShipAdapter.appendData(list, 1);//初始化数据
                 }
             }

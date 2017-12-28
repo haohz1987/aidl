@@ -81,14 +81,87 @@
                 android:text="优惠券列表+luaTable" />
 
 
+     <!--       <TableLayout
+                android:id="@+id/table_layout"
+                android:layout_below="@+id/btn_getCoupList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="#FFFFFF">
+
+                <TableRow
+                    android:id="@+id/startDateRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="起始日期"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/twenty_sp" />
+
+                    <TextView
+                        android:id="@+id/startDateShowTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="20dp"
+                        android:gravity="left|center"
+                        android:textSize="@dimen/twenty_sp" />
+                    <ImageView
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_gravity="center"
+                        android:background="@drawable/date_picker_selector"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/xian"/>
+                <TableRow
+                    android:id="@+id/endDateRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="结束日期"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/twenty_sp" />
+                    <TextView
+                        android:id="@+id/endDateShowTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left|center"
+                        android:paddingLeft="20dp"
+                        android:textSize="@dimen/twenty_sp" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_gravity="center"
+                        android:background="@drawable/date_picker_selector"/>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/xian"/>
+            </TableLayout>-->
 
             <TextView
                 android:id="@+id/tv_request"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/btn_getCoupList"
+                android:layout_below="@+id/table_layout"
                 android:layout_marginTop="10dp" />
-
         </RelativeLayout>
     </ScrollView>
 

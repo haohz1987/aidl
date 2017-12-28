@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.hhz.aidl.R;
 import com.hhz.aidl.adapter.CouponAdapter;
-import com.hhz.aidl.mvp.model.MainModel;
+import com.hhz.aidl.mvp.model.MainContract;
 import com.hhz.aidl.mvp.presenter.MainPresenter;
 import com.hhz.aidl.rxjava.CouponBean;
 import com.hhz.aidl.rxjava.MemberShipBean;
@@ -26,8 +26,8 @@ import java.util.HashMap;
  * Created by haohz on 2017/12/22.
  */
 
-public class Coupon extends BaseActivity<MainModel.View, MainPresenter>
-        implements MainModel.View{
+public class Coupon extends BaseActivity<MainContract.View, MainPresenter>
+        implements MainContract.View{
     private RecyclerView listContainer;
     public static CouponAdapter couponAdapter;
     @SuppressWarnings("unchecked")

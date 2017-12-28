@@ -2,7 +2,7 @@ package com.hhz.aidl.mvp.presenter;
 
 import com.hhz.aidl.util.LogT;
 import com.hhz.aidl.mvp.BasePresenterImpl;
-import com.hhz.aidl.mvp.model.MainModel;
+import com.hhz.aidl.mvp.model.MainContract;
 import com.hhz.aidl.rxjava.CouponBean;
 import com.hhz.aidl.rxjava.MemberShipBean;
 import com.hhz.aidl.rxjava.RecordBean;
@@ -18,7 +18,7 @@ import rx.schedulers.Schedulers;
  * Created by haohz on 2017/12/22.
  */
 
-public class MainPresenter extends BasePresenterImpl<MainModel.View> implements MainModel.Presenter {
+public class MainPresenter extends BasePresenterImpl<MainContract.View> implements MainContract.Presenter {
 
     @Override
     public void getOpenId(HashMap<String, Object> params) {
@@ -89,7 +89,6 @@ public class MainPresenter extends BasePresenterImpl<MainModel.View> implements 
 
     @Override
     public void getRecord(HashMap<String, Object> params) {
-        LogT.w("getRecord");
         if (getIView() != null)
             RxApi.getInstance().getRecord(params)
                     .compose(getIView().<RecordBean>bindToLife())

@@ -65,7 +65,7 @@ http://blog.csdn.net/luoyanglizi/article/details/51586437
         service运行的进程的name。默认启动的service是运行在主进程中的。
 
 
-  dragger2:      https://www.jianshu.com/p/22c397354997
-
+    dragger2:    https://www.jianshu.com/p/22c397354997
+    bitmap:      http://ms.csdn.net/geek/69041?from=timeline
 
 

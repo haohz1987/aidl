@@ -12,7 +12,7 @@ import java.util.HashMap;
  * Created by haohz on 2017/12/22.
  */
 
-public interface MainModel {
+public interface MainContract {
     interface View extends IBaseView {
         void onGetOpenIdSuccess(MemberShipBean memberShipBean);
         void onGetCoupListSuccess(CouponBean couponBean);

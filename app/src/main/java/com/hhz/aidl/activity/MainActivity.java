@@ -6,25 +6,37 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.hhz.aidl.view.ActionSheetCoupon;
-import com.hhz.aidl.view.ColorSelectDialog;
-import com.hhz.aidl.util.CouponColorType;
 import com.hhz.aidl.R;
-import com.hhz.aidl.mvp.model.MainModel;
+import com.hhz.aidl.mvp.model.MainContract;
 import com.hhz.aidl.mvp.presenter.MainPresenter;
 import com.hhz.aidl.rxjava.CouponBean;
 import com.hhz.aidl.rxjava.MemberShipBean;
 import com.hhz.aidl.rxjava.RecordBean;
 import com.hhz.aidl.service.IntentServiceDemo;
 import com.hhz.aidl.service.ServiceDemo;
+import com.hhz.aidl.util.CouponColorType;
+import com.hhz.aidl.view.ActionSheetCoupon;
+import com.hhz.aidl.view.CalendarDialogView;
+import com.hhz.aidl.view.CalendarView;
+import com.hhz.aidl.view.ColorSelectDialog;
+import com.hhz.aidl.view.ZZTShowDialog;
 
+import java.util.Date;
 import java.util.HashMap;
 
-public class MainActivity extends BaseActivity<MainModel.View, MainPresenter>
-        implements MainModel.View,View.OnClickListener, ActionSheetCoupon.OnActionSheetSelected,
-        ColorSelectDialog.OnColorSelected {
+public class MainActivity extends BaseActivity<MainContract.View, MainPresenter>
+        implements MainContract.View,View.OnClickListener, ActionSheetCoupon.OnActionSheetSelected,
+        ColorSelectDialog.OnColorSelected,CalendarView.OnItemClickListener{
 
     private HashMap<String, Object> params;
+    private ZZTShowDialog<CalendarDialogView> mCalendarDialog;
+    private boolean isDateStartPicked = false;
+    // 起始日期
+    private Date startDate;
+    // 结束日期
+    private Date endDate;
+    private TextView startDateShowTextView;
+    private TextView endDateShowTextView;
 
     @Override
     protected int getLayoutResId() {
@@ -41,6 +53,19 @@ public class MainActivity extends BaseActivity<MainModel.View, MainPresenter>
         findViewById(R.id.btn_getOpenId).setOnClickListener(this);
         findViewById(R.id.btn_getCoupList).setOnClickListener(this);
         ((TextView) findViewById(R.id.toolbar_title)).setText("Demo合集");
+//        findViewById(R.id.startDateRow).setOnClickListener(this);
+//        findViewById(R.id.endDateRow).setOnClickListener(this);
+//        mCalendarDialog =  new ZZTShowDialog<CalendarDialogView>(this, new CalendarDialogView(this), R.style.dialog);
+//        mCalendarDialog.getContentView().getCalendar().setOnItemClickListener(this);
+//        startDateShowTextView = findViewById(R.id.startDateShowTextView);
+//        endDateShowTextView = findViewById(R.id.endDateShowTextView);
+//        Date today = DateUtils.formatStringToDate(DateUtils.formatDateToString(new Date(), "yyyyMMdd"), "yyyyMMdd");
+//        this.startDate = today;
+//        this.endDate = new Date(today.getTime() + (24 * 60 * 60 * 1000) - 1);
+//
+//        this.startDateShowTextView.setText(DateUtils.formatDateToString(startDate, "yyyy-MM-dd"));
+//        this.endDateShowTextView.setText(DateUtils.formatDateToString(today, "yyyy-MM-dd"));
+
     }
 
     @Override
@@ -85,6 +110,16 @@ public class MainActivity extends BaseActivity<MainModel.View, MainPresenter>
             case R.id.btn_getCoupList:
                 startActivity(new Intent(MainActivity.this,Coupon.class));
                 break;
+//            case R.id.startDateRow:
+//                isDateStartPicked =true;
+//                mCalendarDialog.getContentView().setCalendarData(startDate);
+//                mCalendarDialog.show();
+//                break;
+//            case R.id.endDateRow:
+//                isDateStartPicked =false;
+//                mCalendarDialog.getContentView().setCalendarData(endDate);
+//                mCalendarDialog.show();
+//                break;
         }
     }
 
@@ -146,5 +181,23 @@ public class MainActivity extends BaseActivity<MainModel.View, MainPresenter>
     @Override
     public void onGetRecordSuccess(RecordBean recordBean) {
         ((TextView) findViewById(R.id.tv_request)).setText(recordBean.toString());
+    }
+
+    @Override
+    public void OnItemClick(Date selectedStartDate, Date selectedEndDate, Date downDate) {
+        /*mCalendarDialog.dismiss();
+        if(this.isDateStartPicked){
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(downDate);
+            this.startDate = calendar.getTime();
+            this.startDateShowTextView.setText(DateUtils.formatDateToString(startDate, "yyyy-MM-dd"));
+            this.startDateShowTextView.setTextColor(getResources().getColor(android.R.color.black));
+        }else{
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(downDate);
+            this.endDate = new Date(calendar.getTimeInMillis() + (24 * 60 * 60 * 1000) - 1);
+            this.endDateShowTextView.setText(DateUtils.formatDateToString(endDate, "yyyy-MM-dd"));
+            this.endDateShowTextView.setTextColor(getResources().getColor(android.R.color.black));
+        }*/
     }
 }
