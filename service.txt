@@ -2,6 +2,9 @@ Rxjava+Retrofit
 aidl
 service笔记
 
+ dragger2:    https://www.jianshu.com/p/22c397354997
+ bitmap:      http://ms.csdn.net/geek/69041?from=timeline
+
  Android Studio 配置 toString( ) 模板，定制 JSON 格式字串的步骤
  http://blog.csdn.net/NongJushi/article/details/75500867
 
@@ -31,6 +34,8 @@ http://blog.csdn.net/luoyanglizi/article/details/51586437
     1. int onStartCommand(Intent intent, int flags, int startId)
         service主要的操作，
         当其他组件通过startService()方法启动service时，此方法将会被调用。
+
+
     2. IBinder onBind(Intent intent)
         当其他组件通过bindService()方法与service相绑定之后，此方法将会被调用；
         重写它的时候必须返回一个IBinder对象，用来支撑其他组件与service之间的通信；
@@ -64,8 +69,31 @@ http://blog.csdn.net/luoyanglizi/article/details/51586437
     5.process:
         service运行的进程的name。默认启动的service是运行在主进程中的。
 
+4.使用场景：
+        1.startService(),其他组件通过调用此方法即可启动特定的service，并导致onStartCommand()方法调用，
+    通过intent传值，比如此时某个Activity要将一些数据存入数据库中，我就可以通过intent把数据传入service，
+    然后让service去进行连接数据库，存储数据等操作，而此时用户可以执行其他的任何操作
+    ——甚至包括销毁那个Activity——这并不会影响service存储数据这件事。
+        当一个service通过这种方式启动之后，它的生命周期就已经不受启动它的组件影响了，它可以在后台无限期的
+    运行下去，只要service自身没有调用stopSelf()并且其他的组件没有调用针对它的stopService()。
+        默认service将工作于应用的主线程，而这将会降低所有正在运行的Activity的性能。如果确定了使用这种方式
+    启动service并且不希望这个service被绑定的话，更好的做法是继承IntentService：
+    1.创建默认的工作线程，用于在应用的主线程外执行传递给 onStartCommand() 的所有 Intent
+    2.创建工作队列，用于将一个 Intent 逐一传递给 onHandleIntent() 实现，这样的话就永远不必担心多线程问题了
+    3.在处理完所有启动请求后停止服务，从此妈妈再也不用担心我忘记调用 stopSelf() 了
+    4.提供 onBind() 的默认实现（返回 null）
+    5.提供 onStartCommand() 的默认实现，可将 Intent 依次发送到工作队列和 onHandleIntent() 实现
 
-    dragger2:    https://www.jianshu.com/p/22c397354997
-    bitmap:      http://ms.csdn.net/geek/69041?from=timeline
+    在super()中对工作线程、工作队列初始化以及销毁等操作。如果让service同时处理多个请求，只能继承service.
+
+        2.bindService(),可以完成比startService()更多的事情，比如其他组件可向其发送请求，接受来自它的响应，
+    甚至通过它来进行IPC等等。我们通常将绑定它的组件成为客户端，而称它为服务器。
+        如果要创建一个支持绑定的service，我们必须要重写它的onBind()方法。这个方法会返回一个IBinder对象，
+    它是客户端用来和服务器进行交互的接口。而要得到IBinder接口，我们通常有三种方式：
+        1.继承Binder类，
+        2.使用Messenger类，
+        3.使用AIDL。
+
+
 
 
