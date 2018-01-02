@@ -2,6 +2,7 @@ package com.hhz.aidl.service;
 
 import android.app.Service;
 import android.content.Intent;
+import android.os.Binder;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.IBinder;
@@ -11,13 +12,26 @@ import android.os.Process;
 
 import com.hhz.aidl.util.LogT;
 
+import java.util.Random;
+
 /**
  * Created by haohz on 2017/12/21.
  */
 
-public class ServiceDemo extends Service {
+public class BinderService extends Service {
     private Looper mServiceLooper;
     private ServiceHandler mServiceHandler;
+    //客户端与服务端交互的接口，
+    private final IBinder mBinder=new BinderDemo();
+    private final Random mGenerator = new Random();
+    //获得IBinder的对象的三种方式-1
+    public class BinderDemo extends Binder {
+        public BinderService getService(){
+            //调用构造方法
+            return BinderService.this;
+        }
+    }
+
 
     private final class ServiceHandler extends Handler {
         public ServiceHandler(Looper looper) {
@@ -92,7 +106,10 @@ public class ServiceDemo extends Service {
         //当其他组件调用bindService()方法时，此方法将会被调用
         //如果不想让这个service被绑定，在此返回null即可
 
-        return null;
+        return mBinder;
+    }
+    public int getRandomNumber(){
+        return mGenerator.nextInt(100);
     }
 
 }

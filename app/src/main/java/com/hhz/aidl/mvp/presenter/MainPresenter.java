@@ -1,11 +1,11 @@
 package com.hhz.aidl.mvp.presenter;
 
 import com.hhz.aidl.util.LogT;
-import com.hhz.aidl.mvp.BasePresenterImpl;
+import com.hhz.aidl.base.BasePresenterImpl;
 import com.hhz.aidl.mvp.model.MainContract;
-import com.hhz.aidl.rxjava.CouponBean;
-import com.hhz.aidl.rxjava.MemberShipBean;
-import com.hhz.aidl.rxjava.RecordBean;
+import com.hhz.aidl.bean.CouponBean;
+import com.hhz.aidl.bean.MemberShipBean;
+import com.hhz.aidl.bean.RecordBean;
 import com.hhz.aidl.rxjava.RxApi;
 
 import java.util.HashMap;

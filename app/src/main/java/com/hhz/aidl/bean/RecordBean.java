@@ -1,4 +1,4 @@
-package com.hhz.aidl.rxjava;
+package com.hhz.aidl.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -145,6 +145,17 @@ public class RecordBean implements Parcelable{
         dest.writeInt(totalPage);
         dest.writeTypedList(result);
     }
+//    //dest用来存储与传输数据，且顺序要与writeToParcel()方法中一致
+//    public void readFromParcel(Parcel dest){
+//        responseCode = dest.readString();
+//        errorMessage=dest.readString();
+//        logo=dest.readString();
+//        mechantName=dest.readString();
+//        mechantId = dest.readString();
+//        totalPage=dest.readInt();
+//        dest.readTypedList(result,ResultBean.CREATOR);
+//    }
+
 
     public static class ResultBean implements Parcelable{
         /**
@@ -351,5 +362,22 @@ public class RecordBean implements Parcelable{
             dest.writeInt(usedLimit);
             dest.writeInt(recordCount);
         }
+//        //dest用来存储与传输数据，且顺序要与writeToParcel()方法中一致
+//        public void readFromParcel(Parcel dest){
+//            recordDate = dest.readString();
+//            couponType=dest.readInt();
+//            recordType=dest.readInt();
+//            serialNo=dest.readString();
+//            couponNo=dest.readString();
+//            orderAmount=dest.readDouble();
+//            couponAmount=dest.readInt();
+//            discount=dest.readDouble();
+//            consumeLite=dest.readInt();
+//            usedCount=dest.readInt();
+//            usedLimit=dest.readInt();
+//            recordCount=dest.readInt();
+//
+//
+//        }
     }
 }

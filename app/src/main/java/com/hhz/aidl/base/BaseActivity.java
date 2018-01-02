@@ -1,4 +1,4 @@
-package com.hhz.aidl.activity;
+package com.hhz.aidl.base;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -10,8 +10,6 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.hhz.aidl.R;
-import com.hhz.aidl.mvp.BasePresenterImpl;
-import com.hhz.aidl.mvp.IBaseView;
 import com.trello.rxlifecycle.LifecycleTransformer;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 

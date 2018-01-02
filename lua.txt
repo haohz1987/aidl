@@ -1,0 +1,111 @@
+使用场景：
+final byte data[] = (byte[]) resp.get(HttpEngine.Key_RespData);
+final LuaTable luaTable = LuaTableUtil.stringToLuaTable(data, isDataCompile);
+final String responseCode = CommonUtils.objectToString(luaTable.rawget("responseCode"));
+网络请求返回hashtable，强转成byte[],将byte数组存入LuaTable,
+多层返回值：
+totalPages = Double.valueOf(luaTable.rawget("totalPages").toString()).intValue();
+LuaTable list = (LuaTable) luaTable.rawget("list");
+Vector<LuaTable> dataList = LuaTableUtil.getArray(list);
+if (list != null) {
+    this.bills = new ArrayList<>();
+    this.queryBillsAdapter = new QueryBillsAdapter(this, this.bills);
+    this.queryBillsListView.setAdapter(this.queryBillsAdapter);
+    for (LuaTable billData : dataList) {
+        Bill bill = CommonUtils.generateBill(billData, null);
+        this.bills.add(bill);
+    }
+}
+
+public static Vector<LuaTable> getArray(LuaTable obj)
+public class Bill implements Serializable
+public static Bill generateBill(LuaTable data, Bill.APPCODE appCode)
+将账单lua数据转化为Bill对象,需要放到Bill.java里?
+public enum APPCODE {
+    TRANS, SAME_TRANS, SUPER_TRANS, MARKET_TRANS;
+}
+Double total = (Double) data.rawget("total");
+　	实现List接口的常用类有LinkedList，ArrayList，Vector和Stack。
+Vector非常类似ArrayList，但是Vector是同步的。由Vector创建的Iterator，虽然和ArrayList创建的 Iterator是同一接口，但是，因为Vector是同步的，当一个Iterator被创建而且正在被使用，另一个线程改变了Vector的状态（例如，添加或删除了一些元素），这时调用Iterator的方法时将抛出ConcurrentModificationException，因此必须捕获该异常。
+
+Lua 是一种轻量小巧的脚本语言，用标准C语言编写并以源代码形式开放， 其设计目的是为了嵌入应用程序中，从而为应用程序提供灵活的扩展和定制功能。
+
+Lua 特性
+•	轻量级: 它用标准C语言编写并以源代码形式开放，编译后仅仅一百余K，可以很方便的嵌入别的程序里。
+•	可扩展: Lua提供了非常易于使用的扩展接口和机制：由宿主语言(通常是C或C++)提供这些功能，Lua可以使用它们，就像是本来就内置的功能一样。
+•	其它特性:
+o	支持面向过程(procedure-oriented)编程和函数式编程(functional programming)；
+o	自动内存管理；只提供了一种通用类型的表（table），用它可以实现数组，哈希表，集合，对象；
+o	语言内置模式匹配；闭包(closure)；函数也可以看做一个值；提供多线程（协同进程，并非操作系统所支持的线程）支持；
+o	通过闭包和table可以很方便地支持面向对象编程所需要的一些关键机制，比如数据抽象，虚函数，继承和重载等。
+Lua 应用场景
+•	游戏开发
+•	独立应用脚本
+•	Web 应用脚本
+•	扩展和数据库插件如：MySQL Proxy 和 MySQL WorkBench
+•	安全系统，如入侵检测系统
+
+项目中添加kahlua.jar
+lua脚本语言中一个独特的数据类型就是表，表其实就是java中的map、哈希表，比如说下面一个表：
+T1 = {} -- 定义一个空表
+T1[1]=10 --定义表的内容
+T1["John"]={Age=27, Gender="Male"}
+
+而每一个脚本文件实际上就是一个大表，每一个变量、方法都是表的成员，因此脚本的变量默认都是全局的，而且也可以定以方法为变量，kahlua正是依据这个概念来的。
+
+1、初始化：
+LuaState state=new LuaState(System.out);
+UserdataArray.register(state);
+OsLib.register(state);
+LuaCompiler.register(state);
+se.krka.kahlua.vm.LuaState对象是kahlua引擎的核心，一切操作都由它来完成，在生成LuaState对象后再进行一些注册。
+2、获取全局表：
+1.	LuaTable table=state.getEnvironment();
+2.
+3.	LuaTable有一系列函数添加、获取脚本内容，最常用的有：
+4.	void rawset(Object key, Object value);//添加内容
+5.	Object rawget(Object key);//获取内容
+3、加载脚本：
+1.	InputStream is=this.getClass().getResourceAsStream(scriptName);
+2.	//scriptName为脚本文件的路径
+3.	LuaClosure closure=LuaCompiler.loadis(is , "lua" , table);
+4.	//LoadCompiler为编译器，loadis为加载输入流的方法
+5.	//is为输入流；"lua"为编译器的名字，好像任意字符串都可以；table为全局表
+6.	//LuaClosure为脚本编译后的语句。
+整个脚本编译后相当于一个大的方法，并将其添加到全局表。
+4、执行脚本：
+1.	sate.call(closure, null);
+2.	LuaState的public Object call(Object fun, Object[] args)
+方法是用来执行全局表中的方法，前面说到，整个脚本编译后是作为一个方法存入全局表的，因此也可以用这个方法执行脚本。
+5、方法：
+public Object call(Object fun, Object[] args)中fun为函数对象，args为参数
+（1）在Java中调用Lua方法
+1.	state.call( table.rawget("say") , new String[]{"Hello!"});
+即从全局表中取出函数并执行。
+（2）在Lua中调用Java方法
+首先生成一个继承自JavaFunction接口的类，然后添加到全局表中
+JavaFunction只有一个public abstract int call(LuaCallFrame callFrame, int nArguments)方法，其中callFrame用于获取输入参数及指定返回值，nArguments获取输入参数数量。返回值为返回参数的个数，因为lua函数可以有多个返回值的。
+1.	class JavaFunctionSay implements JavaFunction{
+2.	public int call(LuaCallFrame frame, int arg) {
+3.	String str=BaseLib.rawTostring(frame.get(0));//获取输入参数
+4.	say(str);//执行对应Java内容
+5.	frame.push("result");//返回参数
+6.	return 1;
+7.	}
+8.	}
+再用table.rawset("say", new JavaFunctionSay());添加到全局表，这样就可以在对应Lua脚本中使用say方法了。
+附注：
+kahlua显示中文有问题，应该是编码不正确，修改LexState中String newstring( byte[] chars, int offset, int len )方法的第一行编码为"GBK"后好像就可以了。
+本人在windows中使用用luac生成的lbc时出错..文件不支持中文,有中文就会报错,而英文就能顺利通过,想来可能和字符编码有关系...想在lbc中使用中文,本人的方法是:
+1.	File luascript = new File("E:\\getWeather.lua");//--其实什么后缀名无所谓的
+2.	File lbcscript=new File("C:\\Users\\信丰boy\\getWeather.lbc");
+3.	closure = LuaCompiler.loadis(new FileInputStream(luascript), "信丰boy",table);//"信丰boy"这个字符串是可以随意的.其作用是表示作用域.
+4.	OutputStream os=new FileOutputStream(lbcscript);
+5.	closure.prototype.dump(os);//这样就把lbc格式的字节码文件写到"C:\\Users\\信丰boy\\getWeather.lbc"了.
+6.	os.close();
+当下次要调用的时候
+1.	File lbcscript=new File("C:\\Users\\信丰boy\\getWeather.lbc");
+2.	closure = LuaPrototype.loadByteCode(new FileInputStream(lbcscript), table);
+ps：kuhlua不支持gfind函数，所有你得用find函数ps：kuhlua不支持gfind函数，所有你得用find函数。
+
+

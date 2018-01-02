@@ -10,8 +10,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.hhz.aidl.R;
-import com.hhz.aidl.activity.BaseActivity;
-import com.hhz.aidl.rxjava.RecordBean;
+import com.hhz.aidl.base.BaseActivity;
+import com.hhz.aidl.bean.RecordBean;
 import com.hhz.aidl.util.DateUtils;
 
 import java.util.ArrayList;

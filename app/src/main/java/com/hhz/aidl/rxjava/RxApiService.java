@@ -1,5 +1,9 @@
 package com.hhz.aidl.rxjava;
 
+import com.hhz.aidl.bean.CouponBean;
+import com.hhz.aidl.bean.MemberShipBean;
+import com.hhz.aidl.bean.RecordBean;
+
 import okhttp3.RequestBody;
 import retrofit2.http.Body;
 import retrofit2.http.POST;

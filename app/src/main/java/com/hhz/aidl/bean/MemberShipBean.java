@@ -1,4 +1,4 @@
-package com.hhz.aidl.rxjava;
+package com.hhz.aidl.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;

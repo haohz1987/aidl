@@ -1,4 +1,4 @@
-package com.hhz.aidl.activity.fragment;
+package com.hhz.aidl.base;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -7,8 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.hhz.aidl.mvp.BasePresenterImpl;
-import com.hhz.aidl.mvp.IBaseView;
 import com.trello.rxlifecycle.LifecycleTransformer;
 import com.trello.rxlifecycle.components.support.RxFragment;
 

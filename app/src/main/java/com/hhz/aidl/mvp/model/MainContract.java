@@ -1,10 +1,10 @@
 package com.hhz.aidl.mvp.model;
 
-import com.hhz.aidl.mvp.IBasePresenter;
-import com.hhz.aidl.mvp.IBaseView;
-import com.hhz.aidl.rxjava.CouponBean;
-import com.hhz.aidl.rxjava.MemberShipBean;
-import com.hhz.aidl.rxjava.RecordBean;
+import com.hhz.aidl.base.IBasePresenter;
+import com.hhz.aidl.base.IBaseView;
+import com.hhz.aidl.bean.CouponBean;
+import com.hhz.aidl.bean.MemberShipBean;
+import com.hhz.aidl.bean.RecordBean;
 
 import java.util.HashMap;
 

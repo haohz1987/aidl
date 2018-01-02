@@ -94,6 +94,89 @@ http://blog.csdn.net/luoyanglizi/article/details/51586437
         2.使用Messenger类，
         3.使用AIDL。
 
+        客户端与服务端的绑定：
+        客户端bindService()及相关配置,服务端实现onBind()重写，返回一个用做信息交互的IBinder接口。
+         @Override
+         public boolean bindService(Intent service, ServiceConnection conn,int flags) {
+            return mBase.bindService(service, conn, flags);
+         }
+        客户端配置：见MainActivity,实现ServiceConnection通过得到目标service的对象，调用其中的共有方法，
+        实现客户端与服务端交互。
+        flags:指示绑定选项的标志，如BIND_AUTO_CREATE创建尚未激活的服务，BIND_DEBUG_UNBIND，0等
+
+        服务端配置：见ServiceDemo，重写onbind(),返回Ibinder对象
+        获得IBinder的对象的三种方式：继承Binder类，使用Messenger类，使用AIDL。
+            使用AIDL步骤:
+            服务端创建一个AIDL文件，将暴露给客户端的接口在里面声明
+            在service中实现这些接口
+            客户端绑定服务端，并将onServiceConnected()得到的IBinder转为AIDL生成的IInterface实例
+            通过得到的实例调用其暴露的方法
+            AIDL使用场景：
+            一方面是如果项目中有并发处理问题的需求，或者会有大量的并发请求，这个时候
+            Messenger就不适用了——它的特性让它只能串行的解决请求。另外，我们在使用Messenger的时候
+            只能通过Message来传递信息实现交互，但是在有些时候也许我们需要直接跨进程调用服务端的方法，
+            这个时候又怎么办呢？只能使用AIDL。
+
+5.区别：
+    1.startService：启动之后不显式停止它就永远在后台运行，并且不需要客户端与服务端交互的service。
+    比方说一条专门拿来存数据到本地数据库的service，它就一直在后台等着有别的组件startService，然后把
+    拿到的数据存入数据库，这就显然是用startService做的事情。
+    生命周期：onCreate(),onStartCommand(),onDestroy()
+    2.bindService：可以交互的，可以掌控它什么时候停什么时候开始的，有进程间通信(IPC)的
+    生命周期：onCreate(),onBind(),onUnbind(),onDestroy()
+
+AIDL——IPC:
+    1.文件后缀.aidl
+    2.AIDL默认支持的数据类型不需要导包，其他类(.java)即使与.aidl同一个包名也需要导包。
+        默认支持的数据类型包括：
+            Java中的八种基本数据类型，包括 byte，short，int，long，float，double，boolean，char。
+            String 类型。
+            CharSequence类型。
+            List类型：List中的所有元素必须是AIDL支持的类型之一，或者是一个其他AIDL生成的接口，或者是
+                定义的parcelable（下文关于这个会有详解）。List可以使用泛型。
+            Map类型：Map中的所有元素必须是AIDL支持的类型之一，或者是一个其他AIDL生成的接口，或者是
+                定义的parcelable。Map是不支持泛型的。
+
+    3.定向tag：表示了在跨进程通信中数据的流向，针对客户端中传入方法的对象，
+        1.只能由客户端流向服务端in,服务端将会接收到一个那个对象的完整数据，但是客户端的那个对象不会因为
+            服务端对传参的修改而发生变动；
+        2.只能由服务端流向客户端out,服务端将会接收到那个对象的的空对象，但是在服务端对接收到的空对象
+            有任何修改之后客户端将会同步变动；
+        3.双向流通inout,服务端将会接收到客户端传来对象的完整信息，并且客户端将会同步服务端对该对象的任何变动
+
+    4.两种文件：
+        1.定义parcelable对象，以供其他AIDL文件使用AIDL中非默认支持的数据类型
+            --Bill.aidl
+            --parcelable Bill;
+            进行通信的所有非默认支持的数据类型都要单独编写aidl文件。
+        2.定义方法接口，以供系统使用来完成跨进程通信
+            --DataManager.aidl
+            --interface DataManager {
+                  //所有的返回值前都不需要加任何东西，不管是什么数据类型，传参时除了Java基本类型以及String，
+                  //CharSequence之外的类型，都需要在前面加上定向tag，具体加什么量需而定
+                  Data getData();
+                  boolean setData(in Data isData);
+                  Bill getBill();
+                  boolean setBill(in Bill isBill);
+                  String tranferKey(String data,String time);
+                  void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat,
+                          double aDouble, String aString);
+              }
+        3.文件的序列化：
+             因为工具生成的parcelable只有writeToParcelable()方法，只支持为in的定向tag，如果要支持
+             out,inout的定向tag，需要实现readFromParcel(),
+                //dest用来存储与传输数据，且顺序要与writeToParcel()方法中一致
+                    public void readFromParcel(Parcel dest){
+                        responseCode = dest.readString();
+                        errorMessage=dest.readString();
+                        logo=dest.readString();
+                        mechantName=dest.readString();
+                        mechantId = dest.readString();
+                        totalPage=dest.readInt();
+                        dest.readTypedList(result,ResultBean.CREATOR);
+                    }
+
+
 
 
 

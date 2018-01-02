@@ -10,7 +10,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.hhz.aidl.R;
 import com.hhz.aidl.activity.GrantMemberCard;
-import com.hhz.aidl.rxjava.MemberShipBean;
+import com.hhz.aidl.bean.MemberShipBean;
 import com.hhz.aidl.util.ACache;
 import com.hhz.aidl.util.CouponColorType;
 import com.hhz.aidl.util.glide.GlideUtils;

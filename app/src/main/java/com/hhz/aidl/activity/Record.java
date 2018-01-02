@@ -16,11 +16,12 @@ import android.widget.TextView;
 
 import com.hhz.aidl.R;
 import com.hhz.aidl.adapter.RecordAdapter;
+import com.hhz.aidl.base.BaseActivity;
 import com.hhz.aidl.mvp.model.MainContract;
 import com.hhz.aidl.mvp.presenter.MainPresenter;
-import com.hhz.aidl.rxjava.CouponBean;
-import com.hhz.aidl.rxjava.MemberShipBean;
-import com.hhz.aidl.rxjava.RecordBean;
+import com.hhz.aidl.bean.CouponBean;
+import com.hhz.aidl.bean.MemberShipBean;
+import com.hhz.aidl.bean.RecordBean;
 import com.hhz.aidl.util.DateUtils;
 import com.hhz.aidl.view.CalendarDialogView;
 import com.hhz.aidl.view.CalendarView;

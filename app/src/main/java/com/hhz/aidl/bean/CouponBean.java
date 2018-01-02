@@ -1,4 +1,4 @@
-package com.hhz.aidl.rxjava;
+package com.hhz.aidl.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -145,6 +145,7 @@ public class CouponBean implements Parcelable{
         dest.writeInt(validRepertoryTerm);
         dest.writeTypedList(result);
     }
+
 
     public static class ResultBean implements Parcelable{
         /**

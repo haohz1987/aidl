@@ -3,11 +3,12 @@ package com.hhz.aidl.activity.fragment;
 import android.os.Bundle;
 
 import com.hhz.aidl.R;
+import com.hhz.aidl.base.BaseFragment;
 import com.hhz.aidl.mvp.model.MainContract;
 import com.hhz.aidl.mvp.presenter.MainPresenter;
-import com.hhz.aidl.rxjava.CouponBean;
-import com.hhz.aidl.rxjava.MemberShipBean;
-import com.hhz.aidl.rxjava.RecordBean;
+import com.hhz.aidl.bean.CouponBean;
+import com.hhz.aidl.bean.MemberShipBean;
+import com.hhz.aidl.bean.RecordBean;
 
 /**
  * Created by haohz on 2017/12/26.

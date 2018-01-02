@@ -5,7 +5,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hhz.aidl.R;
-import com.hhz.aidl.mvp.model.BaseModel;
+import com.hhz.aidl.base.BaseActivity;
+import com.hhz.aidl.mvp.model.BaseContract;
 import com.hhz.aidl.mvp.presenter.BasePresenter;
 import com.hhz.aidl.util.ACache;
 import com.hhz.aidl.util.glide.GlideUtils;
@@ -14,7 +15,7 @@ import com.hhz.aidl.util.glide.GlideUtils;
  * Created by haohz on 2017/12/25.
  */
 
-public class GrantMemberCard extends BaseActivity<BaseModel.View, BasePresenter> implements BaseModel.View {
+public class GrantMemberCard extends BaseActivity<BaseContract.View, BasePresenter> implements BaseContract.View {
 
     private ACache mACache;
 

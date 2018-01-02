@@ -1,4 +1,4 @@
-package com.hhz.aidl.mvp;
+package com.hhz.aidl.base;
 
 /**
  * Created by luwang on 2017/5/5.

@@ -1,4 +1,4 @@
-package com.hhz.aidl.mvp;
+package com.hhz.aidl.base;
 
 import com.trello.rxlifecycle.LifecycleTransformer;
 

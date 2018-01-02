@@ -52,11 +52,22 @@
             </intent-filter>
         </activity>
         <!--<service android:name=".service.IntentServiceDemo"/>-->
-        <service android:name=".service.ServiceDemo"/>
+
         <activity android:name=".activity.MemberShip"/>
         <activity android:name=".activity.Coupon"/>
         <activity android:name=".activity.Record"/>
         <activity android:name=".activity.GrantMemberCard"/>
+        <!--binder第一种方式：-->
+        <service android:name=".service.BinderService"/>
+        <!--binder第二种方式：exported可以不设置，有intent-filter默认为true-->
+        <service android:name=".service.MessengerService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.hhz.aidl.Messenger"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
 
     </application>
 

@@ -1,4 +1,4 @@
-package com.hhz.aidl.mvp;
+package com.hhz.aidl.base;
 
 import java.lang.ref.WeakReference;
 

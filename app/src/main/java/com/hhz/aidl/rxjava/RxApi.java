@@ -1,6 +1,9 @@
 package com.hhz.aidl.rxjava;
 
 import com.google.gson.Gson;
+import com.hhz.aidl.bean.CouponBean;
+import com.hhz.aidl.bean.MemberShipBean;
+import com.hhz.aidl.bean.RecordBean;
 import com.hhz.aidl.util.LogT;
 
 import java.util.HashMap;
