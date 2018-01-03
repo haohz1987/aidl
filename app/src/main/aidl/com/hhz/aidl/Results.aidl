@@ -3,4 +3,4 @@ package com.hhz.aidl;
 
 // Declare any non-default types here with import statements
 
-parcelable ResultBean;
+parcelable Results;

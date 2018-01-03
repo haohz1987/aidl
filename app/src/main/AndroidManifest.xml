@@ -68,6 +68,14 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </service>
+        <!--binder第一种方式:AIDL-->
+        <service android:name=".service.AIDLService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.hhz.aidlLink"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
 
     </application>
 
