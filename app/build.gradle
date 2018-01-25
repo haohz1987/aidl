@@ -16,28 +16,36 @@ android {
     }
     buildTypes {
         debug {
-//            signingConfig signingConfigs.debug
-//            buildConfigField("boolean", "LOG_DEBUG", "true");
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
-//            signingConfig signingConfigs.release
-//            buildConfigField "boolean", "LOG_DEBUG", "true"
             minifyEnabled true
-            // 移除无用的resource文件
-            shrinkResources true
+            multiDexEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            android.applicationVariants.all { variant ->
+//                variant.outputs.all {
+//                    if(variant.name.endsWith("Debug")){
+//                        outputFileName = "${variant.productFlavors[0].name}_v${versionName}_${versionCode}_${releaseTime()}_debug.apk"
+//                    }else{
+//                        outputFileName = "${variant.productFlavors[0].name}_v${versionName}_${versionCode}_${releaseTime()}.apk"
+//                    }
+//                }
+//            }
         }
     }
     sourceSets {
         main {
-            /*    manifest.srcFile 'AndroidManifest.xml'*/
             java.srcDirs = ['src/main/java','src/main/aidl']
-//            aidl.srcDirs = ['src/main/aidl']
-            /*  jniLibs.srcDirs=['libs']*/
         }
     }
+}
+/***
+ * 自定义系统时间 中国为东八区
+ * @return
+ */
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC＋8"))
 }
 
 dependencies {
@@ -61,5 +69,6 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.2.0'
 
     implementation project(':recyclerview-lib')
+
 
 }

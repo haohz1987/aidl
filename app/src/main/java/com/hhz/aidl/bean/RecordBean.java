@@ -179,7 +179,7 @@ public class RecordBean implements Parcelable{
         private String serialNo;
         private String couponNo;
         private double orderAmount;
-        private int couponAmount;
+        private double couponAmount;
         private double discount;
         private int consumeLite;
         private int usedCount;
@@ -294,7 +294,7 @@ public class RecordBean implements Parcelable{
             this.orderAmount = orderAmount;
         }
 
-        public int getCouponAmount() {
+        public double getCouponAmount() {
             return couponAmount;
         }
 
@@ -355,7 +355,7 @@ public class RecordBean implements Parcelable{
             dest.writeString(serialNo);
             dest.writeString(couponNo);
             dest.writeDouble(orderAmount);
-            dest.writeInt(couponAmount);
+            dest.writeDouble(couponAmount);
             dest.writeDouble(discount);
             dest.writeInt(consumeLite);
             dest.writeInt(usedCount);

@@ -63,19 +63,6 @@ public class MainActivity extends BaseActivity<MainContract.View, MainPresenter>
         findViewById(R.id.btn_getOpenId).setOnClickListener(this);
         findViewById(R.id.btn_getCoupList).setOnClickListener(this);
         ((TextView) findViewById(R.id.toolbar_title)).setText("Demo合集");
-//        findViewById(R.id.startDateRow).setOnClickListener(this);
-//        findViewById(R.id.endDateRow).setOnClickListener(this);
-//        mCalendarDialog =  new ZZTShowDialog<CalendarDialogView>(this, new CalendarDialogView(this), R.style.dialog);
-//        mCalendarDialog.getContentView().getCalendar().setOnItemClickListener(this);
-//        startDateShowTextView = findViewById(R.id.startDateShowTextView);
-//        endDateShowTextView = findViewById(R.id.endDateShowTextView);
-//        Date today = DateUtils.formatStringToDate(DateUtils.formatDateToString(new Date(), "yyyyMMdd"), "yyyyMMdd");
-//        this.startDate = today;
-//        this.endDate = new Date(today.getTime() + (24 * 60 * 60 * 1000) - 1);
-//
-//        this.startDateShowTextView.setText(DateUtils.formatDateToString(startDate, "yyyy-MM-dd"));
-//        this.endDateShowTextView.setText(DateUtils.formatDateToString(today, "yyyy-MM-dd"));
-
     }
 
     @Override
@@ -156,6 +143,7 @@ public class MainActivity extends BaseActivity<MainContract.View, MainPresenter>
             if(resultsManager!=null){
                 try {
                     resultBeans=resultsManager.getResults();
+                    LogT.w("aidl_数据交换_inout");
                     LogT.w("客户端_连接中，读取的服务端数据："+resultBeans.toString());
                 } catch (RemoteException e) {
                     e.printStackTrace();
@@ -171,8 +159,6 @@ public class MainActivity extends BaseActivity<MainContract.View, MainPresenter>
             mBound = false;
              /*方法二：使用Messenger类*/
 //            mServiceMessenger = null;
-
-
         }
     };
 
@@ -262,16 +248,7 @@ public class MainActivity extends BaseActivity<MainContract.View, MainPresenter>
             case R.id.btn_getCoupList:
                 startActivity(new Intent(MainActivity.this, Coupon.class));
                 break;
-//            case R.id.startDateRow:
-//                isDateStartPicked =true;
-//                mCalendarDialog.getContentView().setCalendarData(startDate);
-//                mCalendarDialog.show();
-//                break;
-//            case R.id.endDateRow:
-//                isDateStartPicked =false;
-//                mCalendarDialog.getContentView().setCalendarData(endDate);
-//                mCalendarDialog.show();
-//                break;
+
         }
     }
 
@@ -337,19 +314,6 @@ public class MainActivity extends BaseActivity<MainContract.View, MainPresenter>
 
     @Override
     public void OnItemClick(Date selectedStartDate, Date selectedEndDate, Date downDate) {
-        /*mCalendarDialog.dismiss();
-        if(this.isDateStartPicked){
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(downDate);
-            this.startDate = calendar.getTime();
-            this.startDateShowTextView.setText(DateUtils.formatDateToString(startDate, "yyyy-MM-dd"));
-            this.startDateShowTextView.setTextColor(getResources().getColor(android.R.color.black));
-        }else{
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(downDate);
-            this.endDate = new Date(calendar.getTimeInMillis() + (24 * 60 * 60 * 1000) - 1);
-            this.endDateShowTextView.setText(DateUtils.formatDateToString(endDate, "yyyy-MM-dd"));
-            this.endDateShowTextView.setTextColor(getResources().getColor(android.R.color.black));
-        }*/
+
     }
 }

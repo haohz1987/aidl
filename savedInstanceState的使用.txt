@@ -1,0 +1,53 @@
+
+在activity的生命周期中，只要离开了可见阶段，或者说失去了焦点，activity就很可能被进程终止了！，被KILL掉了，
+这时候，就需要有种机制，能保存当时的状态，这就是savedInstanceState的作用。
+当一个Activity在PAUSE时，被kill之前，它可以调用onSaveInstanceState()来保存当前activity的状态信息
+（在paused状态时，要被KILLED的时候）。用来保存状态信息的Bundle会同时传给两个method,
+即onRestoreInstanceState() and onCreate()。
+
+package com.myandroid.test;
+  
+import android.app.Activity;  
+import android.os.Bundle;  
+import android.util.Log;  
+  
+public class AndroidTest extends Activity {  
+    private static final String TAG = "MyNewLog";  
+    /** Called when the activity is first created. */  
+    @Override  
+    public void onCreate(Bundle savedInstanceState) {  
+        super.onCreate(savedInstanceState);  
+        // If an instance of this activity had previously stopped, we can  
+        // get the original text it started with.  
+        if(null != savedInstanceState)  
+        {  
+            int IntTest = savedInstanceState.getInt("IntTest");   
+            String StrTest = savedInstanceState.getString("StrTest");   
+            Log.e(TAG, "onCreate get the savedInstanceState+IntTest="+IntTest+"+StrTest="+StrTest);    
+        }  
+  
+        setContentView(R.layout.main);  
+        Log.e(TAG, "onCreate");  
+    }  
+  
+    @Override   
+    public void onSaveInstanceState(Bundle savedInstanceState) {   
+      // Save away the original text, so we still have it if the activity  
+      // needs to be killed while paused.  
+      savedInstanceState.putInt("IntTest", 0);   
+      savedInstanceState.putString("StrTest", "savedInstanceState test");   
+      super.onSaveInstanceState(savedInstanceState);   
+      Log.e(TAG, "onSaveInstanceState");  
+    }   
+  
+    @Override   
+    public void onRestoreInstanceState(Bundle savedInstanceState) {   
+      super.onRestoreInstanceState(savedInstanceState);   
+  
+      int IntTest = savedInstanceState.getInt("IntTest");   
+  
+      String StrTest = savedInstanceState.getString("StrTest");   
+  
+      Log.e(TAG, "onRestoreInstanceState+IntTest="+IntTest+"+StrTest="+StrTest);  
+    }   
+}  

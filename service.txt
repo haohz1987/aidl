@@ -178,6 +178,7 @@ AIDL——IPC:
         4.跨进程通信：
             写完aidl，clean或rebuild之后，编译器生成一个与aidl同名的.java文件，在服务端实现aidl定义的
             方法接口的具体逻辑，然后客户端调用这些方法接口，实现跨进程通信。
+            测试log:
 01-03 14:48:32.867 10345-10345/com.hhz.aidl W/hzhao:   AIDLService.onBind (AIDLService.java:88)--->>>服务端_建立连接的规则_filter：Intent { act=com.hhz.aidlLink pkg=com.hhz.aidl }
 01-03 14:48:32.941 10345-10345/com.hhz.aidl W/hzhao:   MainActivity.onServiceConnected (MainActivity.java:142)--->>>服务连接
 01-03 14:48:32.941 10345-10345/com.hhz.aidl W/hzhao:   AIDLService.getResults (AIDLService.java:41)--->>>服务端_getResults=[{"usedLimit":0,"usedCount":0,"serialNo":"null","recordType":0,"recordDate":"这是服务端原始数据","recordCount":0,"orderAmount":0.0,"discount":"0.12","describeContents":0,"couponType":1,"couponNo":"null","couponAmount":10,"consumeLite":100}]

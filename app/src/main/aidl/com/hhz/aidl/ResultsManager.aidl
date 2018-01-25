@@ -9,7 +9,7 @@ interface ResultsManager {
      * and return values in AIDL.
      */
     List<Results> getResults();
-    boolean setResults(inout Results isData);
+    boolean setResults(in Results isData);
     void addResult(inout Results result);
     void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat,
             double aDouble, String aString);
