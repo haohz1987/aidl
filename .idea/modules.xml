@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/SmartPlatformSDK/SmartPlatformSDK.iml" filepath="$PROJECT_DIR$/SmartPlatformSDK/SmartPlatformSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/aidl.iml" filepath="$PROJECT_DIR$/aidl.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\hzhao\Desktop\project\aidl\serverdemo\app.iml" filepath="C:\Users\hzhao\Desktop\project\aidl\serverdemo\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ipc_KFC/ipc_KFC.iml" filepath="$PROJECT_DIR$/ipc_KFC/ipc_KFC.iml" />
       <module fileurl="file://$PROJECT_DIR$/recyclerview-lib/recyclerview-lib.iml" filepath="$PROJECT_DIR$/recyclerview-lib/recyclerview-lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/serverdemo/serverdemo.iml" filepath="$PROJECT_DIR$/serverdemo/serverdemo.iml" />
     </modules>
   </component>
 </project>

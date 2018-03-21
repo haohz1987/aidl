@@ -1,1 +1,1 @@
-include ':app', ':recyclerview-lib'
+include ':serverdemo', ':recyclerview-lib', ':ipc_KFC', ':SmartPlatformSDK'

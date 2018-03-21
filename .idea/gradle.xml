@@ -8,8 +8,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/SmartPlatformSDK" />
+            <option value="$PROJECT_DIR$/ipc_KFC" />
             <option value="$PROJECT_DIR$/recyclerview-lib" />
+            <option value="$PROJECT_DIR$/serverdemo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

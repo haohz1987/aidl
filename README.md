@@ -1,44 +1,16 @@
 Demo合辑，
 
-#1.Glide缓存
+## 1.Glide缓存 readCache
+## 2.aidl基础使用 serverdemo
+场景，修改assets文件夹下“.json”内容，点击“客->服”,查看服务端与客户端间传递及修改的参数值
 
-    /**
-     *
-     * 默认所有图片地址均不同
-     *
-     * @param context
-     * @param imageView 放入的图片
-     * @param qrCodeUrl 请求网址
-     * @param mACache 本地缓存工具
-     * @param cacheName 缓存到本地的网址标签名
-     */
-    public static void readCache(Context context,ImageView imageView, String qrCodeUrl,ACache mACache, String cacheName) {
-        cacheName = cacheName+"_cache";
-        //有缓存的网址
-        if (!ACache.isEmpty(mACache.getAsString(cacheName))) {
-            String qrCodeUrlCache = mACache.getAsString(cacheName);
-            if (!GlideUtils.haveCache(context, qrCodeUrlCache)) {
-                GlideUtils.noneCache(context,imageView, qrCodeUrl,mACache,cacheName);
-                return;
-            }
-            if(ACache.isEmpty(qrCodeUrl)){
-                Glide.with(context).load(GlideUtils.getCache(context, qrCodeUrlCache)).into(imageView);
-                return;
-            }
-            if (qrCodeUrl.equals(qrCodeUrlCache)) {
-                Glide.with(context).load(GlideUtils.getCache(context, qrCodeUrl)).into(imageView);
-            }
-            //缓存地址错误或不是最新
-            else {
-                GlideUtils.noneCache(context,imageView, qrCodeUrl,mACache,cacheName);
-            }
-        } else {
-            GlideUtils.noneCache(context,imageView, qrCodeUrl,mACache,cacheName);
-        }
-    }
-
-
-
+## 3.aidl 进程间通讯，多线程、多客户端并发访问，实现app间跳转及通讯
+场景：
+ APP1-仿淘宝、京东购物车
+ APP2-跳转到支付端APP(智能pos)，并回调返回支付结果。
+ 需要交互修改的支付端数据：
+ 1.包名：Constant.KEY_TAGET_APPPACKAGENAME
+ 2.登录账号：ShopCarActivity.java -> onClick() -> case R.id.tvSubmit: -> smartPay();
 
 
 

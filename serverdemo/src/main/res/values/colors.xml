@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <drawable name="sheetClicked">#ff9605</drawable>
+    <drawable name="sheetNormal">#ffffff</drawable>
+
+    <color name="sheetTextcolor">#aaaeaf</color>
+    <color name="sheetTextClicked">#ff9605</color>
+
+    <color name="couponColor01">#999A01</color>
+    <color name="couponColor02">#3399FE</color>
+    <color name="couponColor03">#FF3366</color>
+    <color name="couponColor04">#FF6634</color>
+    <color name="couponColor05">#999999</color>
+    <color name="couponColor06">#65CC33</color>
+    <color name="couponColor07">#FFFF67</color>
+    <color name="couponColor08">#CC33FF</color>
+    <color name="couponColor09">#006634</color>
+    <color name="couponColor10">#CD6567</color>
+
+    <color name="selectBg">#C6C6C6</color>
+    <color name="sky_blue">#00bb9a</color>
+
+    <color name="colorWhite">#F1EEEF</color>
+    <color name="placeholder_color">#1A000000</color>
+</resources>

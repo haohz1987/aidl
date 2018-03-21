@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.hhz.aidl"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        // dex突破65535的限制
+        multiDexEnabled true
+        ndk {
+            abiFilters("armeabi", "armeabi-v7a", "x86", "mips")
+        }
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            multiDexEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            android.applicationVariants.all { variant ->
+//                variant.outputs.all {
+//                    if(variant.name.endsWith("Debug")){
+//                        outputFileName = "${variant.productFlavors[0].name}_v${versionName}_${versionCode}_${releaseTime()}_debug.apk"
+//                    }else{
+//                        outputFileName = "${variant.productFlavors[0].name}_v${versionName}_${versionCode}_${releaseTime()}.apk"
+//                    }
+//                }
+//            }
+        }
+    }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java','src/main/aidl']
+        }
+    }
+}
+/***
+ * 自定义系统时间 中国为东八区
+ * @return
+ */
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC＋8"))
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:multidex:1.0.2'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.0.0-beta4'
+    implementation 'com.squareup.okhttp3:okhttp:3.7.0'
+    implementation 'io.reactivex:rxjava:1.2.1'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+    implementation 'com.trello:rxlifecycle:1.0'
+    implementation 'com.trello:rxlifecycle-components:1.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.2.0'
+
+    implementation project(':recyclerview-lib')
+
+
+}
