@@ -7,6 +7,7 @@ Demo合辑，
     场景：修改assets文件夹下“.json”内容，点击“客->服”,查看服务端与客户端间传递及修改的参数值
 
 ## 3.aidl 进程间通讯，多线程、多客户端并发访问，实现app间跳转及通讯
+ ![img](https://github.com/haohz1987/aidl/blob/master/Kq3WG3V4aq.gif)
 
     场景：
      APP1-仿淘宝、京东购物车
@@ -17,7 +18,7 @@ Demo合辑，
 
     2.登录账号：ShopCarActivity.java -> onClick() -> case R.id.tvSubmit: -> smartPay();
 
-    ![img](https://github.com/haohz1987/aidl/blob/master/Kq3WG3V4aq.gif)
+
 
 ## 4.支付管理器源码：见[支付管理器](https://github.com/haohz1987/Launcher-master)
 
